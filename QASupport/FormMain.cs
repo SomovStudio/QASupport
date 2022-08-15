@@ -19,8 +19,8 @@ namespace QASupport
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            label2.Text = "Version: " + App.Version + " (" + App.LastUpdate + ")";
-            App.MainForm = this;
+            label2.Text = "Version: " + Appication.Version + " (" + Appication.LastUpdate + ")";
+            Appication.MainForm = this;
             timer1.Start();
         }
 
@@ -33,6 +33,12 @@ namespace QASupport
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConsole console = new FormConsole();
+            console.Show();
         }
     }
 }
