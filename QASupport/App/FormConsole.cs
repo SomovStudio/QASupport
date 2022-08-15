@@ -17,7 +17,8 @@ namespace QASupport
             InitializeComponent();
         }
 
-        private bool move = false;
+        private bool _move = false;
+        private bool _resize = false;
 
         private void FormConsole_Load(object sender, EventArgs e)
         {
@@ -26,23 +27,39 @@ namespace QASupport
 
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
-            move = true;
+            _move = true;
         }
 
         private void label1_MouseUp(object sender, MouseEventArgs e)
         {
-            move = false;
+            _move = false;
         }
 
         private void label1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (move == true)
+            if (_move == true)
             {
-                this.Location = new Point(this.Location.X + e.X, this.Location.Y + e.Y);
-
+                this.Location = new Point(this.Location.X + e.X - (this.Width / 2), this.Location.Y + e.Y);
             }
         }
 
-        
+        private void resize_MouseDown(object sender, MouseEventArgs e)
+        {
+            _resize = true;
+        }
+
+        private void resize_MouseUp(object sender, MouseEventArgs e)
+        {
+            _resize = false;
+        }
+
+        private void resize_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(_resize == true)
+            {
+                this.Width += e.X;
+                this.Height += e.Y;
+            }
+        }
     }
 }
