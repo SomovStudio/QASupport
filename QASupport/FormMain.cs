@@ -19,6 +19,7 @@ namespace QASupport
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            label2.Text = "Version: " + App.Version + " (" + App.LastUpdate + ")";
             App.MainForm = this;
             timer1.Start();
         }
