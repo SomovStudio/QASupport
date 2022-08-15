@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\App.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
