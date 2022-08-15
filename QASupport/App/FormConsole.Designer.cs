@@ -33,19 +33,21 @@
             this.window = new System.Windows.Forms.Panel();
             this.footer = new System.Windows.Forms.Panel();
             this.resize = new System.Windows.Forms.Label();
+            this.header = new System.Windows.Forms.Panel();
             this.window.SuspendLayout();
             this.footer.SuspendLayout();
+            this.header.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
             // 
-            this.title.BackColor = System.Drawing.Color.Teal;
-            this.title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.Dock = System.Windows.Forms.DockStyle.Right;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(0, 0);
+            this.title.Location = new System.Drawing.Point(25, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(798, 25);
+            this.title.Size = new System.Drawing.Size(773, 25);
             this.title.TabIndex = 0;
             this.title.Text = "Консоль";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -57,8 +59,8 @@
             // 
             this.window.BackColor = System.Drawing.Color.White;
             this.window.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.window.Controls.Add(this.header);
             this.window.Controls.Add(this.footer);
-            this.window.Controls.Add(this.title);
             this.window.Dock = System.Windows.Forms.DockStyle.Fill;
             this.window.Location = new System.Drawing.Point(0, 0);
             this.window.Name = "window";
@@ -90,6 +92,16 @@
             this.resize.MouseMove += new System.Windows.Forms.MouseEventHandler(this.resize_MouseMove);
             this.resize.MouseUp += new System.Windows.Forms.MouseEventHandler(this.resize_MouseUp);
             // 
+            // header
+            // 
+            this.header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("header.BackgroundImage")));
+            this.header.Controls.Add(this.title);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(798, 25);
+            this.header.TabIndex = 2;
+            // 
             // FormConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,6 +115,7 @@
             this.Load += new System.EventHandler(this.FormConsole_Load);
             this.window.ResumeLayout(false);
             this.footer.ResumeLayout(false);
+            this.header.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -113,5 +126,6 @@
         private System.Windows.Forms.Panel window;
         private System.Windows.Forms.Panel footer;
         private System.Windows.Forms.Label resize;
+        private System.Windows.Forms.Panel header;
     }
 }
