@@ -28,32 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsole));
-            this.title = new System.Windows.Forms.Label();
             this.window = new System.Windows.Forms.Panel();
+            this.header = new System.Windows.Forms.Panel();
             this.footer = new System.Windows.Forms.Panel();
             this.resize = new System.Windows.Forms.Label();
-            this.header = new System.Windows.Forms.Panel();
+            this.buttonClose = new System.Windows.Forms.Label();
+            this.buttonResize = new System.Windows.Forms.Label();
+            this.buttonRoll = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.title = new System.Windows.Forms.Label();
             this.window.SuspendLayout();
-            this.footer.SuspendLayout();
             this.header.SuspendLayout();
+            this.footer.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // title
-            // 
-            this.title.BackColor = System.Drawing.Color.Transparent;
-            this.title.Dock = System.Windows.Forms.DockStyle.Right;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(25, 0);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(773, 25);
-            this.title.TabIndex = 0;
-            this.title.Text = "Консоль";
-            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
-            this.title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
-            this.title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label1_MouseUp);
             // 
             // window
             // 
@@ -66,6 +55,22 @@
             this.window.Name = "window";
             this.window.Size = new System.Drawing.Size(800, 450);
             this.window.TabIndex = 1;
+            // 
+            // header
+            // 
+            this.header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("header.BackgroundImage")));
+            this.header.Controls.Add(this.title);
+            this.header.Controls.Add(this.buttonRoll);
+            this.header.Controls.Add(this.buttonResize);
+            this.header.Controls.Add(this.buttonClose);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(798, 25);
+            this.header.TabIndex = 2;
+            this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.header_MouseDown);
+            this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_MouseMove);
+            this.header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.header_MouseUp);
             // 
             // footer
             // 
@@ -92,15 +97,63 @@
             this.resize.MouseMove += new System.Windows.Forms.MouseEventHandler(this.resize_MouseMove);
             this.resize.MouseUp += new System.Windows.Forms.MouseEventHandler(this.resize_MouseUp);
             // 
-            // header
+            // buttonClose
             // 
-            this.header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("header.BackgroundImage")));
-            this.header.Controls.Add(this.title);
-            this.header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(798, 25);
-            this.header.TabIndex = 2;
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonClose.ImageIndex = 0;
+            this.buttonClose.ImageList = this.imageList1;
+            this.buttonClose.Location = new System.Drawing.Point(758, 0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(40, 25);
+            this.buttonClose.TabIndex = 1;
+            // 
+            // buttonResize
+            // 
+            this.buttonResize.BackColor = System.Drawing.Color.Transparent;
+            this.buttonResize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonResize.ImageIndex = 1;
+            this.buttonResize.ImageList = this.imageList1;
+            this.buttonResize.Location = new System.Drawing.Point(718, 0);
+            this.buttonResize.Name = "buttonResize";
+            this.buttonResize.Size = new System.Drawing.Size(40, 25);
+            this.buttonResize.TabIndex = 2;
+            // 
+            // buttonRoll
+            // 
+            this.buttonRoll.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRoll.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonRoll.ImageIndex = 3;
+            this.buttonRoll.ImageList = this.imageList1;
+            this.buttonRoll.Location = new System.Drawing.Point(678, 0);
+            this.buttonRoll.Name = "buttonRoll";
+            this.buttonRoll.Size = new System.Drawing.Size(40, 25);
+            this.buttonRoll.TabIndex = 3;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "button_close.png");
+            this.imageList1.Images.SetKeyName(1, "button_resize_max.png");
+            this.imageList1.Images.SetKeyName(2, "button_resize_min.png");
+            this.imageList1.Images.SetKeyName(3, "button_roll.png");
+            // 
+            // title
+            // 
+            this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.title.ForeColor = System.Drawing.Color.White;
+            this.title.Location = new System.Drawing.Point(0, 0);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(678, 25);
+            this.title.TabIndex = 4;
+            this.title.Text = "Консоль";
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.title_MouseDown);
+            this.title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.title_MouseMove);
+            this.title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.title_MouseUp);
             // 
             // FormConsole
             // 
@@ -114,18 +167,21 @@
             this.Text = "FormConsole";
             this.Load += new System.EventHandler(this.FormConsole_Load);
             this.window.ResumeLayout(false);
-            this.footer.ResumeLayout(false);
             this.header.ResumeLayout(false);
+            this.footer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label title;
         private System.Windows.Forms.Panel window;
         private System.Windows.Forms.Panel footer;
         private System.Windows.Forms.Label resize;
         private System.Windows.Forms.Panel header;
+        private System.Windows.Forms.Label buttonRoll;
+        private System.Windows.Forms.Label buttonResize;
+        private System.Windows.Forms.Label buttonClose;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Label title;
     }
 }

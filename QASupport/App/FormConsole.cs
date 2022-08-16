@@ -25,24 +25,6 @@ namespace QASupport
 
         }
 
-        private void label1_MouseDown(object sender, MouseEventArgs e)
-        {
-            _move = true;
-        }
-
-        private void label1_MouseUp(object sender, MouseEventArgs e)
-        {
-            _move = false;
-        }
-
-        private void label1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (_move == true)
-            {
-                this.Location = new Point(this.Location.X + e.X - (this.Width / 2), this.Location.Y + e.Y);
-            }
-        }
-
         private void resize_MouseDown(object sender, MouseEventArgs e)
         {
             _resize = true;
@@ -60,6 +42,42 @@ namespace QASupport
                 this.Width += e.X;
                 this.Height += e.Y;
             }
+        }
+
+        private void header_MouseDown(object sender, MouseEventArgs e)
+        {
+            _move = true;
+        }
+
+        private void header_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_move == true)
+            {
+                this.Location = new Point(this.Location.X + e.X - (this.Width / 2), this.Location.Y + e.Y);
+            }
+        }
+
+        private void header_MouseUp(object sender, MouseEventArgs e)
+        {
+            _move = false;
+        }
+
+        private void title_MouseDown(object sender, MouseEventArgs e)
+        {
+            _move = true;
+        }
+
+        private void title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_move == true)
+            {
+                this.Location = new Point(this.Location.X + e.X - (this.Width / 2), this.Location.Y + e.Y);
+            }
+        }
+
+        private void title_MouseUp(object sender, MouseEventArgs e)
+        {
+            _move = false;
         }
     }
 }
