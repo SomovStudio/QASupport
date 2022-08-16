@@ -77,9 +77,9 @@
             this.footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.footer.Controls.Add(this.resize);
             this.footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.footer.Location = new System.Drawing.Point(0, 428);
+            this.footer.Location = new System.Drawing.Point(0, 426);
             this.footer.Name = "footer";
-            this.footer.Size = new System.Drawing.Size(798, 20);
+            this.footer.Size = new System.Drawing.Size(798, 22);
             this.footer.TabIndex = 1;
             // 
             // resize
@@ -91,7 +91,7 @@
             this.resize.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.resize.Location = new System.Drawing.Point(783, 0);
             this.resize.Name = "resize";
-            this.resize.Size = new System.Drawing.Size(15, 20);
+            this.resize.Size = new System.Drawing.Size(15, 22);
             this.resize.TabIndex = 0;
             this.resize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.resize_MouseDown);
             this.resize.MouseMove += new System.Windows.Forms.MouseEventHandler(this.resize_MouseMove);
@@ -107,6 +107,9 @@
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(40, 25);
             this.buttonClose.TabIndex = 1;
+            this.buttonClose.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonClose_MouseClick);
+            this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
+            this.buttonClose.MouseHover += new System.EventHandler(this.buttonClose_MouseHover);
             // 
             // buttonResize
             // 
@@ -118,6 +121,9 @@
             this.buttonResize.Name = "buttonResize";
             this.buttonResize.Size = new System.Drawing.Size(40, 25);
             this.buttonResize.TabIndex = 2;
+            this.buttonResize.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonResize_MouseClick);
+            this.buttonResize.MouseLeave += new System.EventHandler(this.buttonResize_MouseLeave);
+            this.buttonResize.MouseHover += new System.EventHandler(this.buttonResize_MouseHover);
             // 
             // buttonRoll
             // 
@@ -129,6 +135,9 @@
             this.buttonRoll.Name = "buttonRoll";
             this.buttonRoll.Size = new System.Drawing.Size(40, 25);
             this.buttonRoll.TabIndex = 3;
+            this.buttonRoll.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonRoll_MouseClick);
+            this.buttonRoll.MouseLeave += new System.EventHandler(this.buttonRoll_MouseLeave);
+            this.buttonRoll.MouseHover += new System.EventHandler(this.buttonRoll_MouseHover);
             // 
             // imageList1
             // 

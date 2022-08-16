@@ -79,5 +79,60 @@ namespace QASupport
         {
             _move = false;
         }
+
+        private void buttonClose_MouseHover(object sender, EventArgs e)
+        {
+            buttonClose.BackColor = Color.Crimson;
+        }
+
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackColor = Color.Transparent;
+        }
+
+        private void buttonClose_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonResize_MouseHover(object sender, EventArgs e)
+        {
+            buttonResize.BackColor = Color.SlateBlue;
+        }
+
+        private void buttonResize_MouseLeave(object sender, EventArgs e)
+        {
+            buttonResize.BackColor = Color.Transparent;
+        }
+
+        private void buttonResize_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+                buttonResize.ImageIndex = 2;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+                buttonResize.ImageIndex = 1;
+            }
+            
+        }
+
+        private void buttonRoll_MouseHover(object sender, EventArgs e)
+        {
+            buttonRoll.BackColor = Color.SlateBlue;
+        }
+
+        private void buttonRoll_MouseLeave(object sender, EventArgs e)
+        {
+            buttonRoll.BackColor = Color.Transparent;
+        }
+
+        private void buttonRoll_MouseClick(object sender, MouseEventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }
