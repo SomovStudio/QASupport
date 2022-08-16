@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\Appication.cs" />
+    <Compile Include="App\FormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\FormTemplate.Designer.cs">
+      <DependentUpon>FormTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\FormConsole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="App\FormTemplate.resx">
+      <DependentUpon>FormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="App\FormConsole.resx">
       <DependentUpon>FormConsole.cs</DependentUpon>
     </EmbeddedResource>
