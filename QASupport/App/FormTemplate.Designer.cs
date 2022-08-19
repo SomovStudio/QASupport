@@ -171,7 +171,6 @@
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.window);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTemplate";
             this.Text = "FormConsole";
             this.Load += new System.EventHandler(this.FormConsole_Load);
