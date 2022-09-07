@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QASupport.App;
 
 namespace QASupport
 {
@@ -37,8 +38,8 @@ namespace QASupport
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormConsole console = new FormConsole();
-            console.Show();
+            FormSettings settings = new FormSettings();
+            settings.Show();
         }
     }
 }
