@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -41,5 +42,51 @@ namespace QASupport
             FormSettings settings = new FormSettings();
             settings.Show();
         }
+
+        private void notepadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("cmd.exe");
+            }
+            catch (Exception ex)
+            {
+                //DataResources.consoleMessage("ОШИБКА: " + ex.Message);
+            }
+        }
+
+        private void devicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("devmgmt.msc");
+            }
+            catch (Exception ex)
+            {
+                //DataResources.consoleMessage("ОШИБКА: " + ex.Message);
+            }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
