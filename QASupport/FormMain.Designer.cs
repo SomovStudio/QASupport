@@ -32,20 +32,35 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.devicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.browsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.edgeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iE11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.fastADBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchSiteContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testSitemapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testRedirectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sEOScannerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testEventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jsonFileEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,30 +74,106 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fastADBToolStripMenuItem,
+            this.sEOScannerToolStripMenuItem,
+            this.searchSiteContentToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.testSitemapToolStripMenuItem,
+            this.testCookieToolStripMenuItem,
+            this.testRedirectToolStripMenuItem,
+            this.testEventsToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.jsonFileEditorToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.browsersToolStripMenuItem,
             this.servicesToolStripMenuItem,
+            this.toolStripSeparator3,
             this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem,
             this.toolStripSeparator1,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 342);
+            // 
+            // servicesToolStripMenuItem
+            // 
+            this.servicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.notepadToolStripMenuItem,
+            this.paintToolStripMenuItem,
+            this.calcToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.cmdToolStripMenuItem,
+            this.devicesToolStripMenuItem});
+            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
+            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.servicesToolStripMenuItem.Text = "Сервис";
+            // 
+            // notepadToolStripMenuItem
+            // 
+            this.notepadToolStripMenuItem.Name = "notepadToolStripMenuItem";
+            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.notepadToolStripMenuItem.Text = "Блокнот";
+            this.notepadToolStripMenuItem.Click += new System.EventHandler(this.notepadToolStripMenuItem_Click);
+            // 
+            // paintToolStripMenuItem
+            // 
+            this.paintToolStripMenuItem.Name = "paintToolStripMenuItem";
+            this.paintToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.paintToolStripMenuItem.Text = "Рисовать";
+            this.paintToolStripMenuItem.Click += new System.EventHandler(this.paintToolStripMenuItem_Click);
+            // 
+            // calcToolStripMenuItem
+            // 
+            this.calcToolStripMenuItem.Name = "calcToolStripMenuItem";
+            this.calcToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.calcToolStripMenuItem.Text = "Калькулятор";
+            this.calcToolStripMenuItem.Click += new System.EventHandler(this.calcToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(188, 6);
+            // 
+            // cmdToolStripMenuItem
+            // 
+            this.cmdToolStripMenuItem.Name = "cmdToolStripMenuItem";
+            this.cmdToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cmdToolStripMenuItem.Text = "Системная консоль";
+            this.cmdToolStripMenuItem.Click += new System.EventHandler(this.cmdToolStripMenuItem_Click);
+            // 
+            // devicesToolStripMenuItem
+            // 
+            this.devicesToolStripMenuItem.Name = "devicesToolStripMenuItem";
+            this.devicesToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.devicesToolStripMenuItem.Text = "Диспетчер устройств";
+            this.devicesToolStripMenuItem.Click += new System.EventHandler(this.devicesToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.settingsToolStripMenuItem.Text = "Настройки";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.aboutToolStripMenuItem.Text = "О программе";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
             // 
             // closeToolStripMenuItem
             // 
+            this.closeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("closeToolStripMenuItem.Image")));
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.closeToolStripMenuItem.Text = "Закрыть";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -113,65 +204,95 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Version:";
             // 
-            // servicesToolStripMenuItem
+            // toolStripSeparator3
             // 
-            this.servicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.notepadToolStripMenuItem,
-            this.paintToolStripMenuItem,
-            this.calcToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.cmdToolStripMenuItem,
-            this.devicesToolStripMenuItem});
-            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
-            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.servicesToolStripMenuItem.Text = "Сервис";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(192, 6);
             // 
-            // aboutToolStripMenuItem
+            // browsersToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "О программе";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.browsersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.edgeToolStripMenuItem,
+            this.iE11ToolStripMenuItem});
+            this.browsersToolStripMenuItem.Name = "browsersToolStripMenuItem";
+            this.browsersToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.browsersToolStripMenuItem.Text = "Браузер";
             // 
-            // notepadToolStripMenuItem
+            // edgeToolStripMenuItem
             // 
-            this.notepadToolStripMenuItem.Name = "notepadToolStripMenuItem";
-            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.notepadToolStripMenuItem.Text = "Блокнот";
-            this.notepadToolStripMenuItem.Click += new System.EventHandler(this.notepadToolStripMenuItem_Click);
+            this.edgeToolStripMenuItem.Name = "edgeToolStripMenuItem";
+            this.edgeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.edgeToolStripMenuItem.Text = "Edge";
             // 
-            // paintToolStripMenuItem
+            // iE11ToolStripMenuItem
             // 
-            this.paintToolStripMenuItem.Name = "paintToolStripMenuItem";
-            this.paintToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.paintToolStripMenuItem.Text = "Рисовать";
-            this.paintToolStripMenuItem.Click += new System.EventHandler(this.paintToolStripMenuItem_Click);
+            this.iE11ToolStripMenuItem.Name = "iE11ToolStripMenuItem";
+            this.iE11ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iE11ToolStripMenuItem.Text = "IE11";
             // 
-            // calcToolStripMenuItem
+            // toolStripSeparator4
             // 
-            this.calcToolStripMenuItem.Name = "calcToolStripMenuItem";
-            this.calcToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.calcToolStripMenuItem.Text = "Калькулятор";
-            this.calcToolStripMenuItem.Click += new System.EventHandler(this.calcToolStripMenuItem_Click);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(192, 6);
             // 
-            // cmdToolStripMenuItem
+            // fastADBToolStripMenuItem
             // 
-            this.cmdToolStripMenuItem.Name = "cmdToolStripMenuItem";
-            this.cmdToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.cmdToolStripMenuItem.Text = "Системная консоль";
-            this.cmdToolStripMenuItem.Click += new System.EventHandler(this.cmdToolStripMenuItem_Click);
+            this.fastADBToolStripMenuItem.Name = "fastADBToolStripMenuItem";
+            this.fastADBToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.fastADBToolStripMenuItem.Text = "FastADB";
             // 
-            // devicesToolStripMenuItem
+            // searchSiteContentToolStripMenuItem
             // 
-            this.devicesToolStripMenuItem.Name = "devicesToolStripMenuItem";
-            this.devicesToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.devicesToolStripMenuItem.Text = "Диспетчер устройств";
-            this.devicesToolStripMenuItem.Click += new System.EventHandler(this.devicesToolStripMenuItem_Click);
+            this.searchSiteContentToolStripMenuItem.Name = "searchSiteContentToolStripMenuItem";
+            this.searchSiteContentToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.searchSiteContentToolStripMenuItem.Text = "SearchSiteContent";
             // 
-            // toolStripSeparator2
+            // testSitemapToolStripMenuItem
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(188, 6);
+            this.testSitemapToolStripMenuItem.Name = "testSitemapToolStripMenuItem";
+            this.testSitemapToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.testSitemapToolStripMenuItem.Text = "TestSitemap";
+            // 
+            // testCookieToolStripMenuItem
+            // 
+            this.testCookieToolStripMenuItem.Name = "testCookieToolStripMenuItem";
+            this.testCookieToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.testCookieToolStripMenuItem.Text = "TestCookie";
+            // 
+            // testRedirectToolStripMenuItem
+            // 
+            this.testRedirectToolStripMenuItem.Name = "testRedirectToolStripMenuItem";
+            this.testRedirectToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.testRedirectToolStripMenuItem.Text = "TestRedirect";
+            // 
+            // sEOScannerToolStripMenuItem
+            // 
+            this.sEOScannerToolStripMenuItem.Name = "sEOScannerToolStripMenuItem";
+            this.sEOScannerToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.sEOScannerToolStripMenuItem.Text = "SEOScanner";
+            // 
+            // testEventsToolStripMenuItem
+            // 
+            this.testEventsToolStripMenuItem.Name = "testEventsToolStripMenuItem";
+            this.testEventsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.testEventsToolStripMenuItem.Text = "TestEvents";
+            // 
+            // jsonFileEditorToolStripMenuItem
+            // 
+            this.jsonFileEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("jsonFileEditorToolStripMenuItem.Image")));
+            this.jsonFileEditorToolStripMenuItem.Name = "jsonFileEditorToolStripMenuItem";
+            this.jsonFileEditorToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.jsonFileEditorToolStripMenuItem.Text = "Редактор Json файлов";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(192, 6);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(192, 6);
             // 
             // FormMain
             // 
@@ -213,5 +334,20 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem devicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem browsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem edgeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iE11ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem jsonFileEditorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fastADBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchSiteContentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testSitemapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testCookieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testRedirectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sEOScannerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testEventsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }
 }

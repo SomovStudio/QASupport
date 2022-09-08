@@ -45,17 +45,39 @@ namespace QASupport
 
         private void notepadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Process.Start("notepad.exe");
+            }
+            catch (Exception ex)
+            {
+                //DataResources.consoleMessage("ОШИБКА: " + ex.Message);
+            }
         }
 
         private void paintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Process.Start("mspaint.exe");
+            }
+            catch (Exception ex)
+            {
+                //DataResources.consoleMessage("ОШИБКА: " + ex.Message);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void calcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Process.Start("calc.exe");
+            }
+            catch (Exception ex)
+            {
+                //DataResources.consoleMessage("ОШИБКА: " + ex.Message);
+            }
         }
 
         private void cmdToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,7 +108,5 @@ namespace QASupport
         {
 
         }
-
-        
     }
 }
