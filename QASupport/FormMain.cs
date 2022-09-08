@@ -106,7 +106,14 @@ namespace QASupport
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormAbout about = new FormAbout();
+            about.Show();
+        }
 
+        private void errorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormErrors errors = new FormErrors();
+            errors.Show();
         }
     }
 }
