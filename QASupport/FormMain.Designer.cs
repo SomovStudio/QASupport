@@ -55,23 +55,26 @@
             this.devicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jurnalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.jurnalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.errorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
             // 
+            this.notifyIcon1.BalloonTipText = "QASupport";
+            this.notifyIcon1.BalloonTipTitle = "QASupport";
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "QASupport";
             this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             // 
             // contextMenuStrip1
             // 
@@ -97,6 +100,7 @@
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(196, 364);
+            this.contextMenuStrip1.MouseLeave += new System.EventHandler(this.contextMenuStrip1_MouseLeave);
             // 
             // fastADBToolStripMenuItem
             // 
@@ -249,6 +253,23 @@
             this.settingsToolStripMenuItem.Text = "Настройки";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
+            // jurnalToolStripMenuItem
+            // 
+            this.jurnalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.errorsToolStripMenuItem});
+            this.jurnalToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("jurnalToolStripMenuItem.Image")));
+            this.jurnalToolStripMenuItem.Name = "jurnalToolStripMenuItem";
+            this.jurnalToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.jurnalToolStripMenuItem.Text = "Журнал событий";
+            // 
+            // errorsToolStripMenuItem
+            // 
+            this.errorsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("errorsToolStripMenuItem.Image")));
+            this.errorsToolStripMenuItem.Name = "errorsToolStripMenuItem";
+            this.errorsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.errorsToolStripMenuItem.Text = "Ошибки";
+            this.errorsToolStripMenuItem.Click += new System.EventHandler(this.errorsToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
@@ -296,23 +317,6 @@
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Version:";
-            // 
-            // jurnalToolStripMenuItem
-            // 
-            this.jurnalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.errorsToolStripMenuItem});
-            this.jurnalToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("jurnalToolStripMenuItem.Image")));
-            this.jurnalToolStripMenuItem.Name = "jurnalToolStripMenuItem";
-            this.jurnalToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.jurnalToolStripMenuItem.Text = "Журнал событий";
-            // 
-            // errorsToolStripMenuItem
-            // 
-            this.errorsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("errorsToolStripMenuItem.Image")));
-            this.errorsToolStripMenuItem.Name = "errorsToolStripMenuItem";
-            this.errorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.errorsToolStripMenuItem.Text = "Ошибки";
-            this.errorsToolStripMenuItem.Click += new System.EventHandler(this.errorsToolStripMenuItem_Click);
             // 
             // FormMain
             // 

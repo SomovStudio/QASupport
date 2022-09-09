@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace QASupport
 {
-    public static class Appication
+    public static class QASupportApp
     {
         public const string Version = "1.0.0";
-        public const string LastUpdate = "15.08.2022";
+        public const string LastUpdate = "09.09.2022";
 
         public static FormMain MainForm { get; set; }
     }

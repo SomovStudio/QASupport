@@ -19,10 +19,12 @@ namespace QASupport
             InitializeComponent();
         }
 
+        public FormAbout About;
+
         private void FormMain_Load(object sender, EventArgs e)
         {
-            label2.Text = "Version: " + Appication.Version + " (" + Appication.LastUpdate + ")";
-            Appication.MainForm = this;
+            label2.Text = "Version: " + QASupportApp.Version + " (" + QASupportApp.LastUpdate + ")";
+            QASupportApp.MainForm = this;
             timer1.Start();
         }
 
@@ -106,14 +108,27 @@ namespace QASupport
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAbout about = new FormAbout();
-            about.Show();
+            if(About == null)
+            {
+                About = new FormAbout();
+                About.Show();
+            }
         }
 
         private void errorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormErrors errors = new FormErrors();
             errors.Show();
+        }
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            contextMenuStrip1.Show(Cursor.Position);
+        }
+
+        private void contextMenuStrip1_MouseLeave(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Hide();
         }
     }
 }

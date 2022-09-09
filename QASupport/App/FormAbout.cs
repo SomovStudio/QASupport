@@ -16,5 +16,52 @@ namespace QASupport.App
         {
             InitializeComponent();
         }
+
+        private void FormAbout_Load(object sender, EventArgs e)
+        {
+            labelVersion.Text = "Версия: " + QASupportApp.Version;
+            labelDate.Text = "Дата последнего обновления: " + QASupportApp.LastUpdate;
+        }
+
+        private void FormAbout_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            QASupportApp.MainForm.About = null;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://opensource.org/licenses/MIT");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"mailto:somov.studio@gmail.com");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://somovstudio.github.io/");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
     }
 }
