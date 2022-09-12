@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace QASupport.App
 {
-    public partial class FormErrors : Form
+    public partial class FormLogs : Form
     {
-        public FormErrors()
+        public FormLogs()
         {
             InitializeComponent();
         }
 
-        private void FormErrors_Load(object sender, EventArgs e)
+        private void FormLogs_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void FormErrors_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormLogs_FormClosing(object sender, FormClosingEventArgs e)
         {
 
         }

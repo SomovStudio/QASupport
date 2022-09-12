@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\FormLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\FormLogs.Designer.cs">
+      <DependentUpon>FormLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\QASupportApp.cs" />
     <Compile Include="App\FormAbout.cs">
       <SubType>Form</SubType>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\FormErrors.resx">
       <DependentUpon>FormErrors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\FormLogs.resx">
+      <DependentUpon>FormLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>

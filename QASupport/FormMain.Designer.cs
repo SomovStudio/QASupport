@@ -57,6 +57,7 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jurnalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.логиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +75,7 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "QASupport";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
+            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             // 
             // contextMenuStrip1
             // 
@@ -99,8 +100,7 @@
             this.toolStripSeparator1,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 364);
-            this.contextMenuStrip1.MouseLeave += new System.EventHandler(this.contextMenuStrip1_MouseLeave);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 342);
             // 
             // fastADBToolStripMenuItem
             // 
@@ -256,6 +256,7 @@
             // jurnalToolStripMenuItem
             // 
             this.jurnalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.логиToolStripMenuItem,
             this.errorsToolStripMenuItem});
             this.jurnalToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("jurnalToolStripMenuItem.Image")));
             this.jurnalToolStripMenuItem.Name = "jurnalToolStripMenuItem";
@@ -266,9 +267,17 @@
             // 
             this.errorsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("errorsToolStripMenuItem.Image")));
             this.errorsToolStripMenuItem.Name = "errorsToolStripMenuItem";
-            this.errorsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.errorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.errorsToolStripMenuItem.Text = "Ошибки";
             this.errorsToolStripMenuItem.Click += new System.EventHandler(this.errorsToolStripMenuItem_Click);
+            // 
+            // логиToolStripMenuItem
+            // 
+            this.логиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("логиToolStripMenuItem.Image")));
+            this.логиToolStripMenuItem.Name = "логиToolStripMenuItem";
+            this.логиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.логиToolStripMenuItem.Text = "Логи";
+            this.логиToolStripMenuItem.Click += new System.EventHandler(this.логиToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -375,5 +384,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem jurnalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem errorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem логиToolStripMenuItem;
     }
 }
