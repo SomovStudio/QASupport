@@ -8,12 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Web.WebView2.WinForms;
 using QASupport.App;
+using QASupport.JsonFileEditor;
 
 namespace QASupport
 {
     public partial class FormMain : Form
     {
+        // иконки https://icons8.ru/
+
         public FormMain()
         {
             InitializeComponent();
@@ -28,8 +32,8 @@ namespace QASupport
             QASupportApp.MainForm = this;
             QASupportApp.Logs = new RichTextBox();
             QASupportApp.Errors = new RichTextBox();
-            QASupportApp.LogsForm = new FormLogs();
-            QASupportApp.ErrorsForm = new FormErrors();
+            //QASupportApp.LogsForm = new FormLogs();
+            //QASupportApp.ErrorsForm = new FormErrors();
             timer1.Start();
         }
 
@@ -97,6 +101,7 @@ namespace QASupport
 
         private void errorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (QASupportApp.ErrorsForm == null) QASupportApp.ErrorsForm = new FormErrors();
             if (QASupportApp.ErrorsForm.IsDisposed) QASupportApp.ErrorsForm = new FormErrors();
             QASupportApp.ErrorsForm.Show();
             QASupportApp.ErrorsForm.Errors.Text = QASupportApp.Errors.Text;
@@ -105,10 +110,37 @@ namespace QASupport
 
         private void логиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (QASupportApp.LogsForm == null) QASupportApp.LogsForm = new FormLogs();
             if (QASupportApp.LogsForm.IsDisposed) QASupportApp.LogsForm = new FormLogs();
             QASupportApp.LogsForm.Show();
             QASupportApp.LogsForm.Logs.Text = QASupportApp.Logs.Text;
             QASupportApp.LogsForm.Logs.ScrollToCaret();
+        }
+
+        private void jsonFileEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormJsonEditor editor = new FormJsonEditor();
+            editor.Show();
+        }
+
+        private void edgeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start("msedge.exe"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void iE11ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WebBrowser webBrowser = new WebBrowser();
+                webBrowser.Navigate("https://www.google.com/", "_blank");
+                QASupportApp.LogMsg("QASupport", "Открыт браузер Internet Explorer 11");
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("QASupport", ex.Message);
+            }
         }
     }
 }

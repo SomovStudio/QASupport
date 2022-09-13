@@ -26,11 +26,11 @@ namespace QASupport
             {
                 Logs.AppendText("[" + DateTime.Now.ToString() + "][" + appName + "]: " + message + Environment.NewLine);
                 Logs.ScrollToCaret();
-                if (LogsForm.IsDisposed == false)
-                {
-                    LogsForm.Logs.Text = Logs.Text;
-                    LogsForm.Logs.ScrollToCaret();
-                }
+
+                if (QASupportApp.LogsForm == null) return;
+                if (QASupportApp.LogsForm.IsDisposed) return;
+                QASupportApp.LogsForm.Logs.Text = QASupportApp.Logs.Text;
+                QASupportApp.LogsForm.Logs.ScrollToCaret();
             }
             catch (Exception ex)
             {
@@ -42,16 +42,12 @@ namespace QASupport
         {
             Errors.AppendText("[" + DateTime.Now.ToString() + "][" + appName + "] ОШИБКА: " + message + Environment.NewLine);
             Errors.ScrollToCaret();
-            if (ErrorsForm.IsDisposed == true)
-            {
-                ErrorsForm = new FormErrors();
-                ErrorsForm.Show();
-            }
-            if (LogsForm.IsDisposed == false)
-            {
-                ErrorsForm.Errors.Text = Errors.Text;
-                ErrorsForm.Errors.ScrollToCaret();
-            }
+
+            if (QASupportApp.ErrorsForm == null) QASupportApp.ErrorsForm = new FormErrors();
+            if (QASupportApp.ErrorsForm.IsDisposed) QASupportApp.ErrorsForm = new FormErrors();
+            QASupportApp.ErrorsForm.Show();
+            QASupportApp.ErrorsForm.Errors.Text = QASupportApp.Errors.Text;
+            QASupportApp.ErrorsForm.Errors.ScrollToCaret();
         }
     }
 }
