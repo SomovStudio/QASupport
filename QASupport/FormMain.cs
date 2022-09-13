@@ -20,6 +20,7 @@ namespace QASupport
         }
 
         public FormAbout About;
+        public FormSettings Settings;
 
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -46,8 +47,9 @@ namespace QASupport
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormSettings settings = new FormSettings();
-            settings.Show();
+            if (Settings == null) Settings = new FormSettings();
+            if (Settings.IsDisposed == true) Settings = new FormSettings();
+            Settings.Show();
         }
 
         private void notepadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,11 +84,9 @@ namespace QASupport
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(About == null)
-            {
-                About = new FormAbout();
-                About.Show();
-            }
+            if (About == null) About = new FormAbout();
+            if (About.IsDisposed == true) About = new FormAbout();
+            About.Show();
         }
 
         private void notifyIcon1_Click(object sender, EventArgs e)
