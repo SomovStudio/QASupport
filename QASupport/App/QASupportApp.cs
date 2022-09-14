@@ -24,13 +24,19 @@ namespace QASupport
         {
             try
             {
+                if(QASupportApp.LogsForm != null)
+                {
+                    if (QASupportApp.LogsForm.IsDisposed == false)
+                    {
+                        if(QASupportApp.LogsForm.Logs.Lines.Count() != QASupportApp.Logs.Lines.Count())
+                        {
+                            QASupportApp.LogsForm.Logs.Text = QASupportApp.Logs.Text;
+                        }                        
+                        QASupportApp.LogsForm.Logs.AppendText("[" + DateTime.Now.ToString() + "][" + appName + "]: " + message + Environment.NewLine);
+                        QASupportApp.LogsForm.Logs.ScrollToCaret();
+                    }
+                }
                 Logs.AppendText("[" + DateTime.Now.ToString() + "][" + appName + "]: " + message + Environment.NewLine);
-                Logs.ScrollToCaret();
-
-                if (QASupportApp.LogsForm == null) return;
-                if (QASupportApp.LogsForm.IsDisposed) return;
-                QASupportApp.LogsForm.Logs.Text = QASupportApp.Logs.Text;
-                QASupportApp.LogsForm.Logs.ScrollToCaret();
             }
             catch (Exception ex)
             {
@@ -40,14 +46,24 @@ namespace QASupport
 
         public static void ErrorMsg(string appName, string message)
         {
-            Errors.AppendText("[" + DateTime.Now.ToString() + "][" + appName + "] ОШИБКА: " + message + Environment.NewLine);
-            Errors.ScrollToCaret();
-
-            if (QASupportApp.ErrorsForm == null) QASupportApp.ErrorsForm = new FormErrors();
-            if (QASupportApp.ErrorsForm.IsDisposed) QASupportApp.ErrorsForm = new FormErrors();
-            QASupportApp.ErrorsForm.Show();
-            QASupportApp.ErrorsForm.Errors.Text = QASupportApp.Errors.Text;
+            if (QASupportApp.ErrorsForm == null)
+            {
+                QASupportApp.ErrorsForm = new FormErrors();
+                QASupportApp.ErrorsForm.Show();
+            }
+            if (QASupportApp.ErrorsForm.IsDisposed)
+            {
+                QASupportApp.ErrorsForm = new FormErrors();
+                QASupportApp.ErrorsForm.Show();
+            }            
+            if (QASupportApp.ErrorsForm.Errors.Lines.Count() != QASupportApp.Errors.Lines.Count())
+            {
+                QASupportApp.ErrorsForm.Errors.Text = QASupportApp.Errors.Text;
+            }
+            QASupportApp.ErrorsForm.Errors.AppendText("[" + DateTime.Now.ToString() + "][" + appName + "] ОШИБКА: " + message + Environment.NewLine);
             QASupportApp.ErrorsForm.Errors.ScrollToCaret();
+
+            Errors.AppendText("[" + DateTime.Now.ToString() + "][" + appName + "] ОШИБКА: " + message + Environment.NewLine);
         }
     }
 }

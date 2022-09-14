@@ -32,10 +32,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.Errors = new System.Windows.Forms.RichTextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(784, 25);
@@ -52,6 +56,7 @@
             // 
             // Errors
             // 
+            this.Errors.BackColor = System.Drawing.Color.White;
             this.Errors.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Errors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Errors.Location = new System.Drawing.Point(0, 25);
@@ -60,6 +65,16 @@
             this.Errors.Size = new System.Drawing.Size(784, 164);
             this.Errors.TabIndex = 2;
             this.Errors.Text = "";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // FormErrors
             // 
@@ -75,6 +90,8 @@
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormErrors_FormClosing);
             this.Load += new System.EventHandler(this.FormErrors_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,5 +102,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         public System.Windows.Forms.RichTextBox Errors;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

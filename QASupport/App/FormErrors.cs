@@ -19,12 +19,19 @@ namespace QASupport.App
 
         private void FormErrors_Load(object sender, EventArgs e)
         {
-
+            QASupportApp.LogMsg("QASupport", "Открыт журнал ошибок");
+            Errors.AppendText(""+ Environment.NewLine);
+            Errors.ScrollToCaret();
         }
 
         private void FormErrors_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

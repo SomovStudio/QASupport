@@ -103,8 +103,8 @@ namespace QASupport
         {
             if (QASupportApp.ErrorsForm == null) QASupportApp.ErrorsForm = new FormErrors();
             if (QASupportApp.ErrorsForm.IsDisposed) QASupportApp.ErrorsForm = new FormErrors();
-            QASupportApp.ErrorsForm.Show();
             QASupportApp.ErrorsForm.Errors.Text = QASupportApp.Errors.Text;
+            QASupportApp.ErrorsForm.Show();
             QASupportApp.ErrorsForm.Errors.ScrollToCaret();
         }
 
@@ -112,9 +112,8 @@ namespace QASupport
         {
             if (QASupportApp.LogsForm == null) QASupportApp.LogsForm = new FormLogs();
             if (QASupportApp.LogsForm.IsDisposed) QASupportApp.LogsForm = new FormLogs();
-            QASupportApp.LogsForm.Show();
             QASupportApp.LogsForm.Logs.Text = QASupportApp.Logs.Text;
-            QASupportApp.LogsForm.Logs.ScrollToCaret();
+            QASupportApp.LogsForm.Show();
         }
 
         private void jsonFileEditorToolStripMenuItem_Click(object sender, EventArgs e)
