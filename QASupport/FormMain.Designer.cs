@@ -94,13 +94,13 @@
             this.browsersToolStripMenuItem,
             this.servicesToolStripMenuItem,
             this.toolStripSeparator3,
-            this.settingsToolStripMenuItem,
             this.jurnalToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem,
             this.toolStripSeparator1,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 364);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 342);
             // 
             // fastADBToolStripMenuItem
             // 
@@ -268,7 +268,6 @@
             this.jurnalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.логиToolStripMenuItem,
             this.errorsToolStripMenuItem});
-            this.jurnalToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("jurnalToolStripMenuItem.Image")));
             this.jurnalToolStripMenuItem.Name = "jurnalToolStripMenuItem";
             this.jurnalToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.jurnalToolStripMenuItem.Text = "Журнал событий";
@@ -277,7 +276,7 @@
             // 
             this.логиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("логиToolStripMenuItem.Image")));
             this.логиToolStripMenuItem.Name = "логиToolStripMenuItem";
-            this.логиToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.логиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.логиToolStripMenuItem.Text = "Логи";
             this.логиToolStripMenuItem.Click += new System.EventHandler(this.логиToolStripMenuItem_Click);
             // 
@@ -285,7 +284,7 @@
             // 
             this.errorsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("errorsToolStripMenuItem.Image")));
             this.errorsToolStripMenuItem.Name = "errorsToolStripMenuItem";
-            this.errorsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.errorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.errorsToolStripMenuItem.Text = "Ошибки";
             this.errorsToolStripMenuItem.Click += new System.EventHandler(this.errorsToolStripMenuItem_Click);
             // 
