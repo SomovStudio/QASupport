@@ -21,6 +21,7 @@ namespace QASupport
         public FormMain()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         public FormAbout About;
@@ -32,8 +33,6 @@ namespace QASupport
             QASupportApp.MainForm = this;
             QASupportApp.Logs = new RichTextBox();
             QASupportApp.Errors = new RichTextBox();
-            //QASupportApp.LogsForm = new FormLogs();
-            //QASupportApp.ErrorsForm = new FormErrors();
             timer1.Start();
         }
 

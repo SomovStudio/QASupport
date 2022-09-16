@@ -95,7 +95,36 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tsslTitleCoding = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslCoding = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslSeparator = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslTitleFile = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslFile = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -112,6 +141,7 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -378,6 +408,12 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslTitleCoding,
+            this.tsslCoding,
+            this.tsslSeparator,
+            this.tsslTitleFile,
+            this.tsslFile});
             this.statusStrip1.Location = new System.Drawing.Point(0, 707);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
@@ -387,7 +423,7 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer2.Location = new System.Drawing.Point(0, 49);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -398,7 +434,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(1008, 683);
+            this.splitContainer2.Size = new System.Drawing.Size(1008, 658);
             this.splitContainer2.SplitterDistance = 335;
             this.splitContainer2.TabIndex = 3;
             // 
@@ -447,7 +483,7 @@
             this.panel4.Controls.Add(this.toolStrip2);
             this.panel4.Location = new System.Drawing.Point(4, 23);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(328, 658);
+            this.panel4.Size = new System.Drawing.Size(328, 633);
             this.panel4.TabIndex = 1;
             // 
             // treeView1
@@ -456,7 +492,7 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 25);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(326, 631);
+            this.treeView1.Size = new System.Drawing.Size(326, 606);
             this.treeView1.TabIndex = 0;
             // 
             // toolStrip2
@@ -571,8 +607,8 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.panel7);
             this.splitContainer3.Panel2.Controls.Add(this.panel8);
-            this.splitContainer3.Size = new System.Drawing.Size(669, 683);
-            this.splitContainer3.SplitterDistance = 384;
+            this.splitContainer3.Size = new System.Drawing.Size(669, 658);
+            this.splitContainer3.SplitterDistance = 369;
             this.splitContainer3.TabIndex = 0;
             // 
             // panel5
@@ -590,7 +626,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.Color.SteelBlue;
+            this.label5.BackColor = System.Drawing.Color.MediumPurple;
             this.label5.Location = new System.Drawing.Point(0, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(666, 2);
@@ -599,7 +635,7 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.SteelBlue;
+            this.label6.BackColor = System.Drawing.Color.MediumPurple;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -620,7 +656,7 @@
             this.panel6.Controls.Add(this.label9);
             this.panel6.Location = new System.Drawing.Point(0, 23);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(665, 359);
+            this.panel6.Size = new System.Drawing.Size(665, 344);
             this.panel6.TabIndex = 2;
             // 
             // editorRichTextBox
@@ -631,7 +667,7 @@
             this.editorRichTextBox.Location = new System.Drawing.Point(0, 0);
             this.editorRichTextBox.Name = "editorRichTextBox";
             this.editorRichTextBox.ReadOnly = true;
-            this.editorRichTextBox.Size = new System.Drawing.Size(663, 337);
+            this.editorRichTextBox.Size = new System.Drawing.Size(663, 322);
             this.editorRichTextBox.TabIndex = 0;
             this.editorRichTextBox.Text = "";
             this.editorRichTextBox.WordWrap = false;
@@ -641,7 +677,7 @@
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label9.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label9.Location = new System.Drawing.Point(0, 337);
+            this.label9.Location = new System.Drawing.Point(0, 322);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(663, 20);
             this.label9.TabIndex = 0;
@@ -663,7 +699,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.BackColor = System.Drawing.Color.SteelBlue;
+            this.label7.BackColor = System.Drawing.Color.SlateBlue;
             this.label7.Location = new System.Drawing.Point(0, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(666, 2);
@@ -672,7 +708,7 @@
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.SteelBlue;
+            this.label8.BackColor = System.Drawing.Color.SlateBlue;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -692,7 +728,7 @@
             this.panel8.Controls.Add(this.dataGridView1);
             this.panel8.Location = new System.Drawing.Point(0, 20);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(665, 272);
+            this.panel8.Size = new System.Drawing.Size(665, 262);
             this.panel8.TabIndex = 3;
             // 
             // dataGridView1
@@ -704,8 +740,227 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(663, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(663, 260);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // tsslTitleCoding
+            // 
+            this.tsslTitleCoding.Name = "tsslTitleCoding";
+            this.tsslTitleCoding.Size = new System.Drawing.Size(69, 17);
+            this.tsslTitleCoding.Text = "Кодировка:";
+            // 
+            // tsslCoding
+            // 
+            this.tsslCoding.Name = "tsslCoding";
+            this.tsslCoding.Size = new System.Drawing.Size(44, 17);
+            this.tsslCoding.Text = "default";
+            // 
+            // tsslSeparator
+            // 
+            this.tsslSeparator.Name = "tsslSeparator";
+            this.tsslSeparator.Size = new System.Drawing.Size(10, 17);
+            this.tsslSeparator.Text = "|";
+            // 
+            // tsslTitleFile
+            // 
+            this.tsslTitleFile.Name = "tsslTitleFile";
+            this.tsslTitleFile.Size = new System.Drawing.Size(39, 17);
+            this.tsslTitleFile.Text = "Файл:";
+            // 
+            // tsslFile
+            // 
+            this.tsslFile.Name = "tsslFile";
+            this.tsslFile.Size = new System.Drawing.Size(16, 17);
+            this.tsslFile.Text = "...";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripDropDownButton2,
+            this.toolStripButton9,
+            this.toolStripDropDownButton3,
+            this.toolStripSeparator3,
+            this.toolStripComboBox1,
+            this.toolStripButton4,
+            this.toolStripSeparator4,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripButton3,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1008, 25);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Новый файл";
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem8,
+            this.toolStripSeparator10,
+            this.toolStripMenuItem9});
+            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton2.Text = "Открыть файл как...";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(219, 22);
+            this.toolStripMenuItem2.Text = "Кодировка UTF-8";
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(219, 22);
+            this.toolStripMenuItem7.Text = "Кодировка UTF-8-BOM";
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(219, 22);
+            this.toolStripMenuItem8.Text = "Кодировка Windows 1251";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(216, 6);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(219, 22);
+            this.toolStripMenuItem9.Text = "Кодировка по умолчанию";
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton9.Text = "Сохранить файл";
+            // 
+            // toolStripDropDownButton3
+            // 
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem6,
+            this.toolStripMenuItem11,
+            this.toolStripMenuItem12,
+            this.toolStripSeparator11,
+            this.toolStripMenuItem13});
+            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton3.Text = "Сохранить файл как...";
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(219, 22);
+            this.toolStripMenuItem6.Text = "Кодировка UTF-8";
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(219, 22);
+            this.toolStripMenuItem11.Text = "Кодировка UTF-8-BOM";
+            // 
+            // toolStripMenuItem12
+            // 
+            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(219, 22);
+            this.toolStripMenuItem12.Text = "Кодировка Windows 1251";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(216, 6);
+            // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(219, 22);
+            this.toolStripMenuItem13.Text = "Кодировка по умолчанию";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "Поиск";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton5.Text = "Шрифт представления";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton6.Text = "О программе...";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "Сохранить файл";
+            this.toolStripButton3.Visible = false;
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "Открыть файл";
+            this.toolStripButton2.Visible = false;
             // 
             // FormJsonEditor
             // 
@@ -713,13 +968,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.splitContainer2);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormJsonEditor";
             this.Text = "Редактор Json файлов";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormJsonEditor_FormClosed);
+            this.Load += new System.EventHandler(this.FormJsonEditor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -738,6 +998,8 @@
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -811,5 +1073,33 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьЗаписьТолькоЗначениеToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslTitleCoding;
+        private System.Windows.Forms.ToolStripStatusLabel tsslCoding;
+        private System.Windows.Forms.ToolStripStatusLabel tsslSeparator;
+        private System.Windows.Forms.ToolStripStatusLabel tsslTitleFile;
+        private System.Windows.Forms.ToolStripStatusLabel tsslFile;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

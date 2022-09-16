@@ -100,12 +100,14 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="JsonFileEditor\EncodingType.cs" />
     <Compile Include="JsonFileEditor\FormJsonEditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="JsonFileEditor\FormJsonEditor.Designer.cs">
       <DependentUpon>FormJsonEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="JsonFileEditor\JsonData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="App\FormAbout.resx">

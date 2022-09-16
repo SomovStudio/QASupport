@@ -15,6 +15,17 @@ namespace QASupport.JsonFileEditor
         public FormJsonEditor()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
+        }
+
+        private void FormJsonEditor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormJsonEditor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }
