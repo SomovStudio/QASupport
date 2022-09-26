@@ -207,7 +207,7 @@ namespace QASupport.JsonFileEditor
                     }
                     writer.Write(editorRichTextBox.Text);
                     writer.Close();
-                    /////////////this.Text = "Json File Editor";
+                    this.Text = "Редактор Json файлов";
                     QASupportApp.LogMsg("JsonFileEditor", "Файл сохранен");
                 }
                 else
@@ -270,7 +270,7 @@ namespace QASupport.JsonFileEditor
                     }
                     writer.Write(editorRichTextBox.Text);
                     writer.Close();
-                    ////////////////this.Text = "Json File Editor";
+                    this.Text = "Редактор Json файлов";
                     QASupportApp.LogMsg("JsonFileEditor", "Файл сохранен");
                 }
             }
@@ -470,7 +470,7 @@ namespace QASupport.JsonFileEditor
                 setNodeInDataGridView();
 
                 updateEditorRichTextBox(Convert.ToInt32(_selectedNode.Tag));
-                this.Text = "Json File Editor [ изменения не сохранены ]";
+                this.Text = "Редактор Json файлов [ изменения не сохранены ]";
                 QASupportApp.LogMsg("JsonFileEditor", "Добавлен объект");
             }
             catch (Exception ex)
@@ -511,7 +511,7 @@ namespace QASupport.JsonFileEditor
                 setNodeInDataGridView();
 
                 updateEditorRichTextBox(Convert.ToInt32(_selectedNode.Tag));
-                this.Text = "Json File Editor [ изменения не сохранены ]";
+                this.Text = "Редактор Json файлов [ изменения не сохранены ]";
                 QASupportApp.LogMsg("JsonFileEditor", "Добавлен массив");
             }
             catch (Exception ex)
@@ -519,6 +519,146 @@ namespace QASupport.JsonFileEditor
                 QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
             }
         }
+
+        private void addKeyValueInTree() // добавить ключь/значение в дерево
+        {
+            try
+            {
+                if (_selectedNode == null) _selectedNode = getSelectNode();
+                if (_selectedNode == null)
+                {
+                    QASupportApp.LogMsg("JsonFileEditor", "В дереве объектов нет выбранного узла");
+                    return;
+                }
+
+                if (_selectedNode.Text.Contains("[ ]") != true && _selectedNode.Text.Contains("{ }") != true && _selectedNode.Text != _safeFileName)
+                {
+                    QASupportApp.LogMsg("JsonFileEditor", "Невозможно добавить значение в другое значение. Значение можно добавить только в объект или в массив.");
+                    return;
+                }
+
+                int count = _selectedNode.Nodes.Count;
+                if (count > 0)
+                {
+                    string text = _selectedNode.Nodes[count - 1].Text;
+                    int lenght = text.Length;
+                    if (text[lenght - 1] != ',' && text[lenght - 1] != ']' && text[lenght - 1] != '}')
+                    {
+                        text += ",";
+                        _selectedNode.Nodes[count - 1].Text = text;
+                    }
+                }
+                _selectedNode.Nodes.Add("\"Key\": 0");
+                setNodeInDataGridView();
+
+                updateEditorRichTextBox(Convert.ToInt32(_selectedNode.Tag));
+                this.Text = "Json File Editor [ изменения не сохранены ]";
+
+                QASupportApp.LogMsg("JsonFileEditor", "Добавлено ключ:значение");
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void addValueInTree() // добавить значение в дерево
+        {
+            try
+            {
+                if (_selectedNode == null) _selectedNode = getSelectNode();
+                if (_selectedNode == null)
+                {
+                    QASupportApp.LogMsg("JsonFileEditor", "В дереве объектов нет выбранного узла");
+                    return;
+                }
+
+                if (_selectedNode.Text.Contains("[ ]") != true && _selectedNode.Text.Contains("{ }") != true && _selectedNode.Text != _safeFileName)
+                {
+                    QASupportApp.LogMsg("JsonFileEditor", "Невозможно добавить значение в другое значение. Значение можно добавить только в объект или в массив.");
+                    return;
+                }
+
+                int count = _selectedNode.Nodes.Count;
+                if (count > 0)
+                {
+                    string text = _selectedNode.Nodes[count - 1].Text;
+                    int lenght = text.Length;
+                    if (text[lenght - 1] != ',' && text[lenght - 1] != ']' && text[lenght - 1] != '}')
+                    {
+                        text += ",";
+                        _selectedNode.Nodes[count - 1].Text = text;
+                    }
+                }
+                _selectedNode.Nodes.Add("0");
+                setNodeInDataGridView();
+
+                updateEditorRichTextBox(Convert.ToInt32(_selectedNode.Tag));
+                this.Text = "Json File Editor [ изменения не сохранены ]";
+
+                QASupportApp.LogMsg("JsonFileEditor", "Добавлено значение");
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void deleteNodeInTree() // удалить узел дерева
+        {
+            try
+            {
+                if (_selectedNode == null) _selectedNode = getSelectNode();
+                if (_selectedNode == null)
+                {
+                    QASupportApp.LogMsg("JsonFileEditor", "В дереве объектов нет выбранного узла");
+                    return;
+                }
+
+                if (_selectedNode.Text == _safeFileName)
+                {
+                    QASupportApp.LogMsg("JsonFileEditor", "Невозможно удалить коренной узел который является основой файла " + _safeFileName);
+                    return;
+                }
+
+                if (MessageBox.Show("Удалить запись '" + _selectedNode.Text + "' безвозвратно?", "Вопрос", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return; // отмена удаления
+                }
+
+                TreeNode parent = _selectedNode.Parent;
+                _selectedNode.Remove();
+                _selectedNode = null;
+                dataGridView1.AllowUserToAddRows = false;
+
+                int count = parent.Nodes.Count;
+                if (count > 0)
+                {
+                    string text = parent.Nodes[count - 1].Text;
+                    int lenght = text.Length;
+                    if (text[lenght - 1] == ',')
+                    {
+                        text = text.Remove(lenght - 1, 1);
+                        parent.Nodes[count - 1].Text = text;
+                    }
+                }
+
+                clearTable();
+                treeView1.Focus();
+                setNodeInDataGridView();
+
+                updateEditorRichTextBox(Convert.ToInt32(_selectedNode.Tag));
+                this.Text = "Json File Editor [ изменения не сохранены ]";
+
+                QASupportApp.LogMsg("JsonFileEditor", "Удаление выполнено");
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+
 
 
 
