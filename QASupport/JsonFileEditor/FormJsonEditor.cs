@@ -658,7 +658,54 @@ namespace QASupport.JsonFileEditor
             }
         }
 
+        /* Поиск по тексту */
+        int _findIndex = 0;
+        int _findLast = 0;
+        String _findText = "";
+        private void findText(ToolStripComboBox _cbox)
+        {
+            try
+            {
+                bool resolution = true;
+                for (int k = 0; k < _cbox.Items.Count; k++)
+                    if (_cbox.Items[k].ToString() == _cbox.Text) resolution = false;
+                if (resolution) _cbox.Items.Add(_cbox.Text);
+                if (_findText != _cbox.Text)
+                {
+                    _findIndex = 0;
+                    _findLast = 0;
+                    _findText = _cbox.Text;
+                }
+                if (editorRichTextBox.Find(_cbox.Text, _findIndex, editorRichTextBox.TextLength - 1, RichTextBoxFinds.None) >= 0)
+                {
+                    editorRichTextBox.Select();
+                    _findIndex = editorRichTextBox.SelectionStart + editorRichTextBox.SelectionLength;
+                    if (_findLast == editorRichTextBox.SelectionStart)
+                    {
+                        QASupportApp.LogMsg("JsonFileEditor", "Поиск завершен.");
+                        _findIndex = 0;
+                        _findLast = 0;
+                        _findText = _cbox.Text;
+                    }
+                    else
+                    {
+                        _findLast = editorRichTextBox.SelectionStart;
+                    }
+                }
+                else
+                {
+                    QASupportApp.LogMsg("JsonFileEditor", "Поиск завершен.");
+                    _findIndex = 0;
+                    _findLast = 0;
+                    _findText = _cbox.Text;
+                }
 
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
 
 
 
@@ -834,6 +881,20 @@ namespace QASupport.JsonFileEditor
             }
         }
 
+        private void развернутьВсеУзлыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                treeView1.BeginUpdate();
+                treeView1.ExpandAll();
+                treeView1.EndUpdate();
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
         private void добавитьОбъектToolStripMenuItem_Click(object sender, EventArgs e)
         {
             addObjectInTree();
@@ -882,6 +943,45 @@ namespace QASupport.JsonFileEditor
         private void удалитьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             deleteNodeInTree();
+        }
+
+        private void onlineJSONValidatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://jsonformatter.curiousconcept.com/");
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void описаниеФорматаJSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://json.org/");
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void toolStripComboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar.GetHashCode().ToString() == "851981")
+                {
+                    findText(toolStripComboBox1);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
         }
     }
 }
