@@ -707,6 +707,23 @@ namespace QASupport.JsonFileEditor
             }
         }
 
+        private int getStringNumber() // получить номер выбранной строки
+        {
+            try
+            {
+                int selectLine = editorRichTextBox.GetLineFromCharIndex(editorRichTextBox.SelectionStart) + 1;
+                label9.Text = "Строка: " + selectLine.ToString();
+                return selectLine;
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                return 0;
+            }
+        }
+
+
+
 
 
         /*
@@ -976,6 +993,324 @@ namespace QASupport.JsonFileEditor
                 if (e.KeyChar.GetHashCode().ToString() == "851981")
                 {
                     findText(toolStripComboBox1);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            findText(toolStripComboBox1);
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            try
+            {
+                editorRichTextBox.Select(0, editorRichTextBox.Text.Length);
+                editorRichTextBox.SelectionBackColor = Color.White;
+
+                _selectedNode = e.Node;
+
+                if (_selectedNode != null && e.Node.Text != _safeFileName)
+                {
+                    setNodeInDataGridView();
+
+                    if (editorRichTextBox.Lines.Length > 0)
+                    {
+                        int line = Convert.ToInt32(_selectedNode.Tag);
+                        if (line < 0) return;
+                        int start = editorRichTextBox.GetFirstCharIndexFromLine(line);
+                        int length = editorRichTextBox.Lines[line].Length;
+                        editorRichTextBox.Select(start, length);
+                        editorRichTextBox.SelectionBackColor = Color.Yellow;
+                        editorRichTextBox.ScrollToCaret();
+                    }
+                }
+                else if (e.Node.Text == _safeFileName)
+                {
+                    clearTable();
+                    dataGridView1.AllowUserToAddRows = false; // запрещаем добавление строк
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void editorRichTextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                int line = getStringNumber();
+                TreeNode node = getNodeByLineNumber(line - 1, treeView1.Nodes[0]);
+                if (node != null)
+                {
+                    node.EnsureVisible();
+                    node.ExpandAll();
+                    //node.Checked = true;
+                    treeView1.SelectedNode = node;
+                    treeView1.Focus();
+                }
+                else
+                {
+                    //consoleMessage("Строка " + line + ": нет соответствующего узла в окне навигации");
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void editorRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            getStringNumber();
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // узел не выбран
+                if (_selectedNode == null)
+                {
+                    QASupportApp.LogMsg("JsonFileEditor", "В дереве объектов нет выбранного узла");
+                    return;
+                }
+
+                string k = "";
+                string v = "";
+
+                // добавление новых данных -----------------
+                if (e.RowIndex > _ds.Tables[0].Rows.Count - 1)
+                {
+                    k = dataGridView1.Rows[e.RowIndex].Cells["Key"].Value.ToString();
+                    v = dataGridView1.Rows[e.RowIndex].Cells["Value"].Value.ToString();
+
+                    k = k.Trim();
+                    v = v.Trim();
+                    if (k.Length > 0)
+                    {
+                        if (k[0] != '"' && k[k.Length - 1] != '"') k = "\"" + k + "\"";
+                        else if (k[0] != '"') k = "\"" + k;
+                        else if (k[k.Length - 1] != '"') k = k + "\"";
+                    }
+                    if (v.Length > 0)
+                    {
+                        if (v[0] == '[' && v[v.Length - 1] == ']') v = "[ ]";
+                        else if (v[0] == '{' && v[v.Length - 1] == '}') v = "{ }";
+                        else if (v[0] == '[') v = "[ ]";
+                        else if (v[0] == '{') v = "{ }";
+                        else if (v[0] == ']') v = "[ ]";
+                        else if (v[0] == '}') v = "{ }";
+                    }
+
+                    List<string> validationResultNewStr = JsonData.ValidateJson(k, v);
+                    if (validationResultNewStr.Count > 0)
+                    {
+                        foreach (string error in validationResultNewStr) QASupportApp.ErrorMsg("JsonFileEditor", error);
+                    }
+
+                    int countNodes = _selectedNode.Nodes.Count;
+                    if (_selectedNode.Nodes.Count > 0)
+                    {
+                        int checkIndexChar = _selectedNode.Nodes[countNodes - 1].Text.Length - 1;
+                        string text = _selectedNode.Nodes[countNodes - 1].Text;
+                        if (text[checkIndexChar] != ',' &&
+                           text[checkIndexChar] != ']' &&
+                           text[checkIndexChar] != '}')
+                        {
+                            _selectedNode.Nodes[countNodes - 1].Text += ",";
+                        }
+                    }
+                    if (k != "" && v != "") _selectedNode.Nodes.Add(k + ": " + v);
+                    else if (k != "" && v == "")
+                    {
+                        _selectedNode.Nodes.Add(k + ": 0");
+                        QASupportApp.LogMsg("JsonFileEditor", "Ключу " + k + " по умолчанию было присвоено значение 0");
+                    }
+                    else if (k == "" && v != "") _selectedNode.Nodes.Add(v);
+
+                    setNodeInDataGridView();
+
+                    updateEditorRichTextBox(Convert.ToInt32(_selectedNode.Tag));
+                    this.Text = "Json File Editor [ изменения не сохранены ]";
+                    return;
+                }
+
+                // редактирование данных -------------------
+                int index = e.RowIndex;
+                DataRow row = _ds.Tables[0].Rows[index];
+                int count = _ds.Tables[0].Rows.Count;
+                string value = "";
+
+                k = row[0].ToString();
+                v = row[1].ToString();
+                k = k.Trim();
+                v = v.Trim();
+                if (k.Length > 0)
+                {
+                    if (k[0] != '"' && k[k.Length - 1] != '"') k = "\"" + k + "\"";
+                    else if (k[0] != '"') k = "\"" + k;
+                    else if (k[k.Length - 1] != '"') k = k + "\"";
+                }
+                if (v.Length > 0)
+                {
+                    if (v[0] == '[' && v[v.Length - 1] == ']') v = "[ ]";
+                    else if (v[0] == '{' && v[v.Length - 1] == '}') v = "{ }";
+                    else if (v[0] == '[') v = "[ ]";
+                    else if (v[0] == '{') v = "{ }";
+                    else if (v[0] == ']') v = "[ ]";
+                    else if (v[0] == '}') v = "{ }";
+                }
+
+                List<string> validationResult = JsonData.ValidateJson(k, v);
+                if (validationResult.Count > 0)
+                {
+                    foreach (string error in validationResult)
+                    {
+                        QASupportApp.ErrorMsg("JsonFileEditor", error);
+                    }
+                    return;
+                }
+
+                if (_selectedNode.Text.Contains("{ }") || _selectedNode.Text.Contains("[ ]"))
+                {
+                    if (k != "" && v != "" && index != (count - 1)) value = k + ": " + v + ",";
+                    else if (k != "" && v != "" && index == (count - 1)) value = k + ": " + v;
+                    else if (k == "" && v != "" && index != (count - 1)) value = v + ",";
+                    else if (k == "" && v != "" && index == (count - 1)) value = v;
+                    else if (k != "" && v == "" && index != (count - 1))
+                    {
+                        value = k + ": 0,";
+                        QASupportApp.LogMsg("JsonFileEditor", "Ключу " + k + " по умолчанию было присвоено значение 0");
+                    }
+                    else if (k != "" && v == "" && index == (count - 1))
+                    {
+                        value = k + ": 0";
+                        QASupportApp.LogMsg("JsonFileEditor", "Ключу " + k + " по умолчанию было присвоено значение 0");
+                    }
+
+                    _selectedNode.Nodes[index].Text = value;
+                }
+                else
+                {
+                    bool lastLine;
+                    if (_selectedNode.Text[_selectedNode.Text.Length - 1] == ',') lastLine = false;
+                    else lastLine = true;
+
+                    if (k != "" && v != "" && lastLine == false) value = k + ": " + v + ",";
+                    else if (k != "" && v != "" && lastLine == true) value = k + ": " + v;
+                    else if (k == "" && v != "" && lastLine == false) value = v + ",";
+                    else if (k == "" && v != "" && lastLine == true) value = v;
+                    else if (k != "" && v == "" && lastLine == false)
+                    {
+                        value = k + ": 0,";
+                        QASupportApp.LogMsg("JsonFileEditor", "Ключу " + k + " по умолчанию было присвоено значение 0");
+                    }
+                    else if (k != "" && v == "" && lastLine == true)
+                    {
+                        value = k + ": 0";
+                        QASupportApp.LogMsg("JsonFileEditor", "Ключу " + k + " по умолчанию было присвоено значение 0");
+                    }
+
+                    _selectedNode.Text = value;
+                }
+
+                setNodeInDataGridView();
+                updateEditorRichTextBox(Convert.ToInt32(_selectedNode.Tag));
+                this.Text = "Json File Editor [ изменения не сохранены ]";
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            // добавление новой строки
+        }
+
+        private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            // после удаления
+            try
+            {
+                if (_selectedNode == null)
+                {
+                    _ds.Tables[0].Clear();
+                }
+                this.Text = "Json File Editor [ изменения не сохранены ]";
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+            }
+        }
+
+        private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            try
+            {
+                // во время удаления
+                if (_selectedNode == null)
+                {
+                    e.Cancel = true;
+                    return; // узел не выбран
+                }
+
+                int index = e.Row.Index;
+
+                if (MessageBox.Show("Удалить запись ?", "Вопрос", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return; // отмена удаления
+                }
+
+                if (_selectedNode.Text.Contains("{ }") || _selectedNode.Text.Contains("[ ]"))
+                {
+                    _selectedNode.Nodes[index].Remove();
+                    int count = _selectedNode.Nodes.Count;
+                    if (count > 0)
+                    {
+                        string text = _selectedNode.Nodes[count - 1].Text;
+                        int lenght = text.Length;
+                        if (text[lenght - 1] == ',')
+                        {
+                            text = text.Remove(lenght - 1, 1);
+                            _selectedNode.Nodes[count - 1].Text = text;
+                        }
+                    }
+                    updateEditorRichTextBox(Convert.ToInt32(_selectedNode.Tag));
+                }
+                else
+                {
+                    TreeNode parent = _selectedNode.Parent;
+                    _selectedNode.Remove();
+                    _selectedNode = null;
+                    dataGridView1.AllowUserToAddRows = false;
+
+                    if (parent != null)
+                    {
+                        int count = parent.Nodes.Count;
+                        if (count > 0)
+                        {
+                            string text = parent.Nodes[count - 1].Text;
+                            int lenght = text.Length;
+                            if (text[lenght - 1] == ',')
+                            {
+                                text = text.Remove(lenght - 1, 1);
+                                parent.Nodes[count - 1].Text = text;
+                            }
+                        }
+                        updateEditorRichTextBox(Convert.ToInt32(parent.Tag));
+                    }
                 }
             }
             catch (Exception ex)
