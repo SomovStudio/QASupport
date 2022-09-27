@@ -187,23 +187,28 @@ namespace QASupport.JsonFileEditor
                     StreamWriter writer;
                     if (encoding == DEFAULT)
                     {
-                        writer = new StreamWriter(saveJsonFileDialog.FileName, false, Encoding.Default);
+                        //writer = new StreamWriter(saveJsonFileDialog.FileName, false, Encoding.Default);
+                        writer = new StreamWriter(_pathFileName, false, Encoding.Default);
                     }
                     else if (encoding == UTF_8)
                     {
-                        writer = new StreamWriter(saveJsonFileDialog.FileName, false, new UTF8Encoding(false));
+                        //writer = new StreamWriter(saveJsonFileDialog.FileName, false, new UTF8Encoding(false));
+                        writer = new StreamWriter(_pathFileName, false, new UTF8Encoding(false));
                     }
                     else if (encoding == UTF_8_BOM)
                     {
-                        writer = new StreamWriter(saveJsonFileDialog.FileName, false, new UTF8Encoding(true));
+                        //writer = new StreamWriter(saveJsonFileDialog.FileName, false, new UTF8Encoding(true));
+                        writer = new StreamWriter(_pathFileName, false, new UTF8Encoding(true));
                     }
                     else if (encoding == WINDOWS_1251)
                     {
-                        writer = new StreamWriter(saveJsonFileDialog.FileName, false, Encoding.GetEncoding("Windows-1251"));
+                        //writer = new StreamWriter(saveJsonFileDialog.FileName, false, Encoding.GetEncoding("Windows-1251"));
+                        writer = new StreamWriter(_pathFileName, false, Encoding.GetEncoding("Windows-1251"));
                     }
                     else
                     {
-                        writer = new StreamWriter(saveJsonFileDialog.FileName, false, Encoding.Default);
+                        //writer = new StreamWriter(saveJsonFileDialog.FileName, false, Encoding.Default);
+                        writer = new StreamWriter(_pathFileName, false, Encoding.Default);
                     }
                     writer.Write(editorRichTextBox.Text);
                     writer.Close();
@@ -217,7 +222,8 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                //QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.ErrorMsg("JsonFileEditor", ex.ToString());
             }
         }
 
@@ -1113,7 +1119,7 @@ namespace QASupport.JsonFileEditor
                     List<string> validationResultNewStr = JsonData.ValidateJson(k, v);
                     if (validationResultNewStr.Count > 0)
                     {
-                        foreach (string error in validationResultNewStr) QASupportApp.ErrorMsg("JsonFileEditor", error);
+                        foreach (string error in validationResultNewStr) QASupportApp.LogMsg("JsonFileEditor", error);
                     }
 
                     int countNodes = _selectedNode.Nodes.Count;
@@ -1174,7 +1180,7 @@ namespace QASupport.JsonFileEditor
                 {
                     foreach (string error in validationResult)
                     {
-                        QASupportApp.ErrorMsg("JsonFileEditor", error);
+                        QASupportApp.LogMsg("JsonFileEditor", error);
                     }
                     return;
                 }
@@ -1317,6 +1323,31 @@ namespace QASupport.JsonFileEditor
             {
                 QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
             }
+        }
+
+        private void добавитьОбъектToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            addObjectInTree();
+        }
+
+        private void добавитьМассивToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            addArrayInTree();
+        }
+
+        private void добавитьЗаписьКлючЗначениеToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            addKeyValueInTree();
+        }
+
+        private void добавитьЗаписьТолькоЗначениеToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            addValueInTree();
+        }
+
+        private void удалитьToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            deleteNodeInTree();
         }
     }
 }

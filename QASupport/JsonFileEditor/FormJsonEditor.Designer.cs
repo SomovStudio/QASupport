@@ -59,6 +59,7 @@
             this.добавитьЗаписьТолькоЗначениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.описаниеФорматаJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onlineJSONValidatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslTitleCoding = new System.Windows.Forms.ToolStripStatusLabel();
@@ -127,7 +128,6 @@
             this.очиститьКонсольToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.копироватьВесьТекстToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.описаниеФорматаJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -389,10 +389,17 @@
             this.сервисToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.сервисToolStripMenuItem.Text = "Сервис";
             // 
+            // описаниеФорматаJSONToolStripMenuItem
+            // 
+            this.описаниеФорматаJSONToolStripMenuItem.Name = "описаниеФорматаJSONToolStripMenuItem";
+            this.описаниеФорматаJSONToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.описаниеФорматаJSONToolStripMenuItem.Text = "Описание формата JSON";
+            this.описаниеФорматаJSONToolStripMenuItem.Click += new System.EventHandler(this.описаниеФорматаJSONToolStripMenuItem_Click);
+            // 
             // onlineJSONValidatorToolStripMenuItem
             // 
             this.onlineJSONValidatorToolStripMenuItem.Name = "onlineJSONValidatorToolStripMenuItem";
-            this.onlineJSONValidatorToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.onlineJSONValidatorToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.onlineJSONValidatorToolStripMenuItem.Text = "Online JSON Validator";
             this.onlineJSONValidatorToolStripMenuItem.Click += new System.EventHandler(this.onlineJSONValidatorToolStripMenuItem_Click);
             // 
@@ -526,7 +533,7 @@
             this.добавитьЗаписьТолькоЗначениеToolStripMenuItem2,
             this.удалитьToolStripMenuItem2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(280, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(280, 136);
             // 
             // добавитьОбъектToolStripMenuItem2
             // 
@@ -534,6 +541,7 @@
             this.добавитьОбъектToolStripMenuItem2.Name = "добавитьОбъектToolStripMenuItem2";
             this.добавитьОбъектToolStripMenuItem2.Size = new System.Drawing.Size(279, 22);
             this.добавитьОбъектToolStripMenuItem2.Text = "Добавить объект { }";
+            this.добавитьОбъектToolStripMenuItem2.Click += new System.EventHandler(this.добавитьОбъектToolStripMenuItem2_Click);
             // 
             // добавитьМассивToolStripMenuItem2
             // 
@@ -541,18 +549,21 @@
             this.добавитьМассивToolStripMenuItem2.Name = "добавитьМассивToolStripMenuItem2";
             this.добавитьМассивToolStripMenuItem2.Size = new System.Drawing.Size(279, 22);
             this.добавитьМассивToolStripMenuItem2.Text = "Добавить массив [ ]";
+            this.добавитьМассивToolStripMenuItem2.Click += new System.EventHandler(this.добавитьМассивToolStripMenuItem2_Click);
             // 
             // добавитьЗаписьКлючЗначениеToolStripMenuItem2
             // 
             this.добавитьЗаписьКлючЗначениеToolStripMenuItem2.Name = "добавитьЗаписьКлючЗначениеToolStripMenuItem2";
             this.добавитьЗаписьКлючЗначениеToolStripMenuItem2.Size = new System.Drawing.Size(279, 22);
             this.добавитьЗаписьКлючЗначениеToolStripMenuItem2.Text = "Добавить запись \"Ключ\": \"Значение\"";
+            this.добавитьЗаписьКлючЗначениеToolStripMenuItem2.Click += new System.EventHandler(this.добавитьЗаписьКлючЗначениеToolStripMenuItem2_Click);
             // 
             // добавитьЗаписьТолькоЗначениеToolStripMenuItem2
             // 
             this.добавитьЗаписьТолькоЗначениеToolStripMenuItem2.Name = "добавитьЗаписьТолькоЗначениеToolStripMenuItem2";
             this.добавитьЗаписьТолькоЗначениеToolStripMenuItem2.Size = new System.Drawing.Size(279, 22);
             this.добавитьЗаписьТолькоЗначениеToolStripMenuItem2.Text = "Добавить запись только \"Значение\"";
+            this.добавитьЗаписьТолькоЗначениеToolStripMenuItem2.Click += new System.EventHandler(this.добавитьЗаписьТолькоЗначениеToolStripMenuItem2_Click);
             // 
             // удалитьToolStripMenuItem2
             // 
@@ -560,6 +571,7 @@
             this.удалитьToolStripMenuItem2.Name = "удалитьToolStripMenuItem2";
             this.удалитьToolStripMenuItem2.Size = new System.Drawing.Size(279, 22);
             this.удалитьToolStripMenuItem2.Text = "Удалить";
+            this.удалитьToolStripMenuItem2.Click += new System.EventHandler(this.удалитьToolStripMenuItem2_Click);
             // 
             // toolStrip2
             // 
@@ -1008,13 +1020,6 @@
             this.копироватьВесьТекстToolStripMenuItem.Name = "копироватьВесьТекстToolStripMenuItem";
             this.копироватьВесьТекстToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.копироватьВесьТекстToolStripMenuItem.Text = "Копировать весь текст";
-            // 
-            // описаниеФорматаJSONToolStripMenuItem
-            // 
-            this.описаниеФорматаJSONToolStripMenuItem.Name = "описаниеФорматаJSONToolStripMenuItem";
-            this.описаниеФорматаJSONToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.описаниеФорматаJSONToolStripMenuItem.Text = "Описание формата JSON";
-            this.описаниеФорматаJSONToolStripMenuItem.Click += new System.EventHandler(this.описаниеФорматаJSONToolStripMenuItem_Click);
             // 
             // FormJsonEditor
             // 
