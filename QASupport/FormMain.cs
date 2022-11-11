@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Microsoft.Web.WebView2.WinForms;
 using QASupport.App;
 using QASupport.JsonFileEditor;
+using QASupport.TestSitemap;
 
 namespace QASupport
 {
@@ -139,6 +140,12 @@ namespace QASupport
             {
                 QASupportApp.ErrorMsg("QASupport", ex.Message);
             }
+        }
+
+        private void testSitemapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTestSitemap testsitemap = new FormTestSitemap();
+            testsitemap.Show();
         }
     }
 }

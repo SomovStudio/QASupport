@@ -124,6 +124,21 @@
     <value>130, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="testSitemapToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAhFJREFUOE+dk0tPE1EYhucfdYZ2zrSdXkQSFAXTAAEbVBIk8VKgrUiaWqktYHoB
+        UQRrW6BiXWJxoRB33ihNRLsoC2eBJrLpClfdtcnrORN1Wq0LmOTJmXw55/2+PDOH4w0kqBOIotOR/SNh
+        IF8EvRjgeIHs6fQEx0IQiyxA+V04daYL5wcuUS42xdHThxbRqAXwYqkhYPbefdwJT2PE7f0H7/gEnmaf
+        wWxt/X9AfG4eXY5ubUMdxGTB42QKsu2kVmcBApGUa64xDA1fQSKZRjQ2C7d3HD5/AJdpbdRzA1evj6C3
+        z4lUehn9zgG4Rt0UD0TRXOKIZFWS6RU8XErgzdt32Nx6jdDUDN5/2EYkGkd+p4CPu7uYf7CAnUIBa9ks
+        1p/n1GYm2V7iJNmqBENTmAyFsZ7bUD04Lwxi8VECEz4/wtMzuBuJIRqfw8vNLcTo6g9MUhcnNAcCNcsb
+        JNUBM62XzDBIsgp719PVbGtFMpWGxd6m7v3joF4im2RhcQkR6oFN8Ip2XFnN4NbtoPp1WM1osTdKrA8Q
+        jRa0tXeo4376XES1WsX+129YzazB0d0LSbZp3ZsFMFxjHlQqFdQ/tVoNy5knjYcZzQLaOzqR23iB7wcH
+        ODz8gXK5jO18HoNDw42HGc0CGKJRxumz59DT70Qn/bFMzPhfe1R+BRz7MtGzRY5eSR8viHtskiNBu7cY
+        yM2f3Qz1Nzh0KJwAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="jsonFileEditorToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1487,7 +1502,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAEsCAIAAACUnPcNAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAUyhJREFUeF7t3XeUFFeC53uJNuqe7p6dme6Znt63Pe+tmd2ZN2/evt2d2Xm9s+f1
+        wAAADsABataJCQAAUyhJREFUeF7t3XeUFFeC53uJNuqe7p6dme6Znt63Pe+tmd2ZN2/evt2d2Xm9s+f1
         7B8NBQhXeKjCFqaKAgpT2MJ7IQRCCIFwEkbCCCs8Eh7hPUJIeO992azKuO9GRSgi8pdZWRkZ8QvI4t7z
         OX0qIyKL0mnlV0HciFuvtfuDqDE6BKJzILoGIicQPQORF4j+cXVMFw06+KBRINID0SwQLQLROhBtHFSg
         XYOSkkBJSaCkJFBSEigpCRQZZDXC1CYHSkoCJSWBkpJASUmgpCQq0J5ASUmgpCRQUhIoKQmUlASKDLo2

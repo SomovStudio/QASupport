@@ -99,7 +99,7 @@
             this.toolStripSeparator1,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 342);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 364);
             // 
             // fastADBToolStripMenuItem
             // 
@@ -126,9 +126,11 @@
             // 
             // testSitemapToolStripMenuItem
             // 
+            this.testSitemapToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("testSitemapToolStripMenuItem.Image")));
             this.testSitemapToolStripMenuItem.Name = "testSitemapToolStripMenuItem";
             this.testSitemapToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.testSitemapToolStripMenuItem.Text = "TestSitemap";
+            this.testSitemapToolStripMenuItem.Click += new System.EventHandler(this.testSitemapToolStripMenuItem_Click);
             // 
             // testCookieToolStripMenuItem
             // 
