@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTestSitemap));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,6 +105,9 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBoxHelp = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -125,6 +129,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -522,6 +527,7 @@
             this.button8.TabIndex = 20;
             this.button8.Text = "Открыть файл";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // textBoxTXT
             // 
@@ -543,6 +549,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "Открыть файл";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBoxXML
             // 
@@ -690,7 +697,9 @@
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.ImageList = this.imageList1;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -700,12 +709,13 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.textBox100);
+            this.tabPage3.ImageIndex = 2;
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(991, 174);
+            this.tabPage3.Size = new System.Drawing.Size(991, 173);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "100";
+            this.tabPage3.Text = "100 (информационные)";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // textBox100
@@ -718,18 +728,19 @@
             this.textBox100.Name = "textBox100";
             this.textBox100.ReadOnly = true;
             this.textBox100.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox100.Size = new System.Drawing.Size(985, 168);
+            this.textBox100.Size = new System.Drawing.Size(985, 167);
             this.textBox100.TabIndex = 0;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.textBox200);
+            this.tabPage4.ImageIndex = 3;
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(991, 174);
+            this.tabPage4.Size = new System.Drawing.Size(991, 173);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "200";
+            this.tabPage4.Text = "200 (успешно)";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // textBox200
@@ -742,18 +753,19 @@
             this.textBox200.Name = "textBox200";
             this.textBox200.ReadOnly = true;
             this.textBox200.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox200.Size = new System.Drawing.Size(985, 168);
+            this.textBox200.Size = new System.Drawing.Size(985, 167);
             this.textBox200.TabIndex = 1;
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.textBox300);
+            this.tabPage5.ImageIndex = 4;
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(991, 174);
+            this.tabPage5.Size = new System.Drawing.Size(991, 173);
             this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "300";
+            this.tabPage5.Text = "300 (перенаправление)";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // textBox300
@@ -766,18 +778,19 @@
             this.textBox300.Name = "textBox300";
             this.textBox300.ReadOnly = true;
             this.textBox300.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox300.Size = new System.Drawing.Size(985, 168);
+            this.textBox300.Size = new System.Drawing.Size(985, 167);
             this.textBox300.TabIndex = 1;
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.textBox400);
+            this.tabPage6.ImageIndex = 0;
             this.tabPage6.Location = new System.Drawing.Point(4, 4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(991, 174);
+            this.tabPage6.Size = new System.Drawing.Size(991, 173);
             this.tabPage6.TabIndex = 3;
-            this.tabPage6.Text = "400";
+            this.tabPage6.Text = "400 (ошибка клиента)";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // textBox400
@@ -790,18 +803,19 @@
             this.textBox400.Name = "textBox400";
             this.textBox400.ReadOnly = true;
             this.textBox400.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox400.Size = new System.Drawing.Size(985, 168);
+            this.textBox400.Size = new System.Drawing.Size(985, 167);
             this.textBox400.TabIndex = 1;
             // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.textBox500);
+            this.tabPage7.ImageIndex = 1;
             this.tabPage7.Location = new System.Drawing.Point(4, 4);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(991, 174);
+            this.tabPage7.Size = new System.Drawing.Size(991, 173);
             this.tabPage7.TabIndex = 4;
-            this.tabPage7.Text = "500";
+            this.tabPage7.Text = "500 (ошибка сервера)";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // textBox500
@@ -814,18 +828,19 @@
             this.textBox500.Name = "textBox500";
             this.textBox500.ReadOnly = true;
             this.textBox500.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox500.Size = new System.Drawing.Size(985, 168);
+            this.textBox500.Size = new System.Drawing.Size(985, 167);
             this.textBox500.TabIndex = 1;
             // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.textBoxOther);
+            this.tabPage8.ImageIndex = 6;
             this.tabPage8.Location = new System.Drawing.Point(4, 4);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(991, 174);
+            this.tabPage8.Size = new System.Drawing.Size(991, 173);
             this.tabPage8.TabIndex = 5;
-            this.tabPage8.Text = "другие";
+            this.tabPage8.Text = "Другие ответы";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // textBoxOther
@@ -838,7 +853,7 @@
             this.textBoxOther.Name = "textBoxOther";
             this.textBoxOther.ReadOnly = true;
             this.textBoxOther.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxOther.Size = new System.Drawing.Size(985, 168);
+            this.textBoxOther.Size = new System.Drawing.Size(985, 167);
             this.textBoxOther.TabIndex = 1;
             // 
             // openFileDialog1
@@ -852,6 +867,43 @@
             // openFileDialog2
             // 
             this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "error.png");
+            this.imageList1.Images.SetKeyName(1, "exclamation.png");
+            this.imageList1.Images.SetKeyName(2, "flag_blue.png");
+            this.imageList1.Images.SetKeyName(3, "flag_green.png");
+            this.imageList1.Images.SetKeyName(4, "flag_orange.png");
+            this.imageList1.Images.SetKeyName(5, "flag_red.png");
+            this.imageList1.Images.SetKeyName(6, "help.png");
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.textBoxHelp);
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(991, 173);
+            this.tabPage2.TabIndex = 6;
+            this.tabPage2.Text = "Справка (расшифровка ответов)";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBoxHelp
+            // 
+            this.textBoxHelp.BackColor = System.Drawing.Color.White;
+            this.textBoxHelp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxHelp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxHelp.Location = new System.Drawing.Point(3, 3);
+            this.textBoxHelp.Multiline = true;
+            this.textBoxHelp.Name = "textBoxHelp";
+            this.textBoxHelp.ReadOnly = true;
+            this.textBoxHelp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxHelp.Size = new System.Drawing.Size(985, 167);
+            this.textBoxHelp.TabIndex = 2;
+            this.textBoxHelp.Text = resources.GetString("textBoxHelp.Text");
             // 
             // FormTestSitemap
             // 
@@ -901,6 +953,8 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -983,5 +1037,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox textBoxHelp;
     }
 }

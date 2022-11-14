@@ -145,5 +145,21 @@ namespace QASupport.TestSitemap
                 textBoxUserAgent.Enabled = true;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBoxXML.Text = openFileDialog1.FileName;
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                textBoxTXT.Text = openFileDialog2.FileName;
+            }
+        }
     }
 }
