@@ -258,6 +258,7 @@
             this.остановитьПроверкуToolStripMenuItem.Name = "остановитьПроверкуToolStripMenuItem";
             this.остановитьПроверкуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.остановитьПроверкуToolStripMenuItem.Text = "Остановить проверку";
+            this.остановитьПроверкуToolStripMenuItem.Click += new System.EventHandler(this.остановитьПроверкуToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -352,6 +353,7 @@
             this.toolStripButtonStart.Name = "toolStripButtonStart";
             this.toolStripButtonStart.Size = new System.Drawing.Size(137, 22);
             this.toolStripButtonStart.Text = "Запустить проверку";
+            this.toolStripButtonStart.Click += new System.EventHandler(this.toolStripButtonStart_Click);
             // 
             // toolStripButtonStop
             // 
@@ -360,6 +362,7 @@
             this.toolStripButtonStop.Name = "toolStripButtonStop";
             this.toolStripButtonStop.Size = new System.Drawing.Size(146, 22);
             this.toolStripButtonStop.Text = "Остановить проверку";
+            this.toolStripButtonStop.Click += new System.EventHandler(this.toolStripButtonStop_Click);
             // 
             // statusStrip1
             // 
@@ -730,6 +733,8 @@
             this.textBox100.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox100.Size = new System.Drawing.Size(985, 167);
             this.textBox100.TabIndex = 0;
+            this.textBox100.Text = "...";
+            this.textBox100.WordWrap = false;
             // 
             // tabPage4
             // 
@@ -755,6 +760,8 @@
             this.textBox200.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox200.Size = new System.Drawing.Size(985, 167);
             this.textBox200.TabIndex = 1;
+            this.textBox200.Text = "...";
+            this.textBox200.WordWrap = false;
             // 
             // tabPage5
             // 
@@ -780,6 +787,8 @@
             this.textBox300.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox300.Size = new System.Drawing.Size(985, 167);
             this.textBox300.TabIndex = 1;
+            this.textBox300.Text = "...";
+            this.textBox300.WordWrap = false;
             // 
             // tabPage6
             // 
@@ -805,6 +814,8 @@
             this.textBox400.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox400.Size = new System.Drawing.Size(985, 167);
             this.textBox400.TabIndex = 1;
+            this.textBox400.Text = "...";
+            this.textBox400.WordWrap = false;
             // 
             // tabPage7
             // 
@@ -830,6 +841,8 @@
             this.textBox500.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox500.Size = new System.Drawing.Size(985, 167);
             this.textBox500.TabIndex = 1;
+            this.textBox500.Text = "...";
+            this.textBox500.WordWrap = false;
             // 
             // tabPage8
             // 
@@ -855,6 +868,8 @@
             this.textBoxOther.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxOther.Size = new System.Drawing.Size(985, 167);
             this.textBoxOther.TabIndex = 1;
+            this.textBoxOther.Text = "...";
+            this.textBoxOther.WordWrap = false;
             // 
             // openFileDialog1
             // 
