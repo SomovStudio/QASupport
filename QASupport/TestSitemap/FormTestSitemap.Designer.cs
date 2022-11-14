@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTestSitemap));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +101,6 @@
             this.textBox500 = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.textBoxOther = new System.Windows.Forms.TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -581,6 +579,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(8, 6);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(154, 17);
@@ -696,7 +695,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(991, 174);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "100-е ответы";
+            this.tabPage3.Text = "100";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // textBox100
@@ -720,7 +719,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(991, 174);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "200-е ответы";
+            this.tabPage4.Text = "200";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // textBox200
@@ -744,7 +743,7 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(991, 174);
             this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "300-е ответы";
+            this.tabPage5.Text = "300";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // textBox300
@@ -768,7 +767,7 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(991, 174);
             this.tabPage6.TabIndex = 3;
-            this.tabPage6.Text = "400-е ответы";
+            this.tabPage6.Text = "400";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // textBox400
@@ -792,7 +791,7 @@
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(991, 174);
             this.tabPage7.TabIndex = 4;
-            this.tabPage7.Text = "500-е ответы";
+            this.tabPage7.Text = "500";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // textBox500
@@ -816,7 +815,7 @@
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage8.Size = new System.Drawing.Size(991, 174);
             this.tabPage8.TabIndex = 5;
-            this.tabPage8.Text = "Другие ответы";
+            this.tabPage8.Text = "другие";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // textBoxOther
@@ -831,15 +830,6 @@
             this.textBoxOther.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxOther.Size = new System.Drawing.Size(985, 168);
             this.textBoxOther.TabIndex = 1;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "control_play_blue.png");
-            this.imageList1.Images.SetKeyName(1, "control_play.png");
-            this.imageList1.Images.SetKeyName(2, "control_stop_blue.png");
-            this.imageList1.Images.SetKeyName(3, "control_stop.png");
             // 
             // FormTestSitemap
             // 
@@ -955,7 +945,6 @@
         private System.Windows.Forms.ToolStripMenuItem действиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem запуститьПроверкуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem остановитьПроверкуToolStripMenuItem;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;

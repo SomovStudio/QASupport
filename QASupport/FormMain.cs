@@ -86,11 +86,10 @@ namespace QASupport
             catch (Exception ex){ QASupportApp.ErrorMsg("QASupport", ex.Message); }
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void панельУправленияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (About == null) About = new FormAbout();
-            if (About.IsDisposed == true) About = new FormAbout();
-            About.Show();
+            try { Process.Start("control"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
         }
 
         private void notifyIcon1_Click(object sender, EventArgs e)
@@ -146,6 +145,85 @@ namespace QASupport
         {
             FormTestSitemap testsitemap = new FormTestSitemap();
             testsitemap.Show();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (About == null) About = new FormAbout();
+            if (About.IsDisposed == true) About = new FormAbout();
+            About.Show();
+        }
+
+        private void w3CMarupValidationServiceпроверкаРазметкиHTMLXHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://validator.w3.org/"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void w3CCSSValidationServiceпроверкаCSSСтилейToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://jigsaw.w3.org/css-validator/"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void xMLValidatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://codebeautify.org/xmlvalidator"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void jSONValidatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://jsonformatter.curiousconcept.com/"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void мастерСоставленияРегулярногоВыраженияДляPHPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://uvsoftium.ru/php/regexp.php"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void декодированиеURLАдресовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://konstantinbulgakov.com/tools/decode"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void конвертерUnixвремениToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://time.is/ru/Unix_time_converter"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void переводЧиселИзОднойСистемыСчисленияВЛюбуюДругуюОнлайнToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://calculatori.ru/perevod-chisel.html"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void яндексМастерПроверкаОтветаСервераToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://webmaster.yandex.ru/tools/server-response/"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void просмортHTMLЗаголовковToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://bertal.ru/"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void подробнееОЗаголовкеLastModifiedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://last-modified.com/ru/last-modified-header"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void проверитьСтатус304NotModifiedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start(@"https://last-modified.com/ru"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
         }
     }
 }
