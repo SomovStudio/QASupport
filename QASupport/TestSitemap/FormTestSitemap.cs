@@ -278,11 +278,11 @@ namespace QASupport.TestSitemap
         {
             try
             {
+                thread.Abort();
                 processRun = false;
                 this.Update();
                 QASupportApp.LogMsg("TestSitemap", "Процесс проверки - завершен!");
                 MessageBox.Show("Процесс проверки - завершен!");
-                thread.Abort();
             }
             catch (Exception ex)
             {
@@ -341,40 +341,60 @@ namespace QASupport.TestSitemap
                 handler.AllowAutoRedirect = false;
                 foreach (String link in listLinks)
                 {
-                    client = new HttpClient(handler);
-                    if (checkBoxUserAgent.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBoxUserAgent.Text);
-                    client.BaseAddress = new Uri(link);
+                    try
+                    {
+                        client = new HttpClient(handler);
+                        if (checkBoxUserAgent.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBoxUserAgent.Text);
+                        client.BaseAddress = new Uri(link);
 
-                    response = client.GetAsync(link).Result;
-                    int statusCode = (int)response.StatusCode;
+                        response = client.GetAsync(link).Result;
+                        int statusCode = (int)response.StatusCode;
 
-                    textBoxProcess.AppendText("["+index.ToString() + "/" + totalPages.ToString() +"] STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                    textBoxProcess.ScrollToCaret();
+                        textBoxProcess.AppendText("[" + index.ToString() + "/" + totalPages.ToString() + "] STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                        textBoxProcess.ScrollToCaret();
 
-                    if (statusCode >= 100 && statusCode <= 199)
-                    {
-                        textBox100.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox100.ScrollToCaret();
+                        if (statusCode >= 100 && statusCode <= 199)
+                        {
+                            //textBox100.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                            textBox100.Text = textBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            //textBox100.ScrollToCaret();
+                        }
+                        if (statusCode >= 200 && statusCode <= 299)
+                        {
+                            //textBox200.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                            textBox200.Text = textBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            //textBox200.ScrollToCaret();
+                        }
+                        if (statusCode >= 300 && statusCode <= 399)
+                        {
+                            //textBox300.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                            textBox300.Text = textBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            //textBox300.ScrollToCaret();
+                        }
+                        if (statusCode >= 400 && statusCode <= 499)
+                        {
+                            //textBox400.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                            textBox400.Text = textBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            //textBox400.ScrollToCaret();
+                        }
+                        if (statusCode >= 500 && statusCode <= 599)
+                        {
+                            //textBox500.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                            textBox500.Text = textBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            //textBox500.ScrollToCaret();
+                        }
+                        if (statusCode <= 99 || statusCode >= 600)
+                        {
+                            //textBoxOther.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                            textBoxOther.Text = textBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            //textBoxOther.ScrollToCaret();
+                        }
                     }
-                    if (statusCode >= 200 && statusCode <= 299)
+                    catch (Exception ex)
                     {
-                        textBox200.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox200.ScrollToCaret();
-                    }
-                    if (statusCode >= 300 && statusCode <= 399)
-                    {
-                        textBox300.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox300.ScrollToCaret();
-                    }
-                    if (statusCode >= 400 && statusCode <= 499)
-                    {
-                        textBox400.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox400.ScrollToCaret();
-                    }
-                    if (statusCode >= 500 && statusCode <= 599)
-                    {
-                        textBox500.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox500.ScrollToCaret();
+                        //textBoxOther.AppendText("ERROR [" + ex.Message + "]: " + link + Environment.NewLine);
+                        textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
+                        //textBoxOther.ScrollToCaret();
                     }
 
                     showProgressTest(totalPages, onePercent, index);
@@ -386,11 +406,7 @@ namespace QASupport.TestSitemap
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("TestSitemap", ex.Message);
-            }
-            finally
-            {
-                TestEnd();
+                //QASupportApp.ErrorMsg("TestSitemap", ex.Message);
             }
             TestEnd();
         }
@@ -424,40 +440,46 @@ namespace QASupport.TestSitemap
                 handler.AllowAutoRedirect = false;
                 foreach (String link in listLinks)
                 {
-                    client = new HttpClient(handler);
-                    if (checkBoxUserAgent.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBoxUserAgent.Text);
-                    client.BaseAddress = new Uri(link);
+                    try
+                    {
+                        client = new HttpClient(handler);
+                        if (checkBoxUserAgent.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBoxUserAgent.Text);
+                        client.BaseAddress = new Uri(link);
 
-                    response = client.GetAsync(link).Result;
-                    int statusCode = (int)response.StatusCode;
+                        response = client.GetAsync(link).Result;
+                        int statusCode = (int)response.StatusCode;
 
-                    textBoxProcess.AppendText("[" + index.ToString() + "/" + totalPages.ToString() + "] STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                    textBoxProcess.ScrollToCaret();
+                        textBoxProcess.AppendText("[" + index.ToString() + "/" + totalPages.ToString() + "] STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                        textBoxProcess.ScrollToCaret();
 
-                    if (statusCode >= 100 && statusCode <= 199)
-                    {
-                        textBox100.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox100.ScrollToCaret();
+                        if (statusCode >= 100 && statusCode <= 199)
+                        {
+                            textBox100.Text = textBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode >= 200 && statusCode <= 299)
+                        {
+                            textBox200.Text = textBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode >= 300 && statusCode <= 399)
+                        {
+                            textBox300.Text = textBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode >= 400 && statusCode <= 499)
+                        {
+                            textBox400.Text = textBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode >= 500 && statusCode <= 599)
+                        {
+                            textBox500.Text = textBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode <= 99 || statusCode >= 600)
+                        {
+                            textBoxOther.Text = textBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
                     }
-                    if (statusCode >= 200 && statusCode <= 299)
+                    catch (Exception ex)
                     {
-                        textBox200.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox200.ScrollToCaret();
-                    }
-                    if (statusCode >= 300 && statusCode <= 399)
-                    {
-                        textBox300.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox300.ScrollToCaret();
-                    }
-                    if (statusCode >= 400 && statusCode <= 499)
-                    {
-                        textBox400.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox400.ScrollToCaret();
-                    }
-                    if (statusCode >= 500 && statusCode <= 599)
-                    {
-                        textBox500.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox500.ScrollToCaret();
+                        textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
                     }
 
                     showProgressTest(totalPages, onePercent, index);
@@ -469,11 +491,7 @@ namespace QASupport.TestSitemap
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("TestSitemap", ex.Message);
-            }
-            finally
-            {
-                TestEnd();
+                //QASupportApp.ErrorMsg("TestSitemap", ex.Message);
             }
             TestEnd();
         }
@@ -517,40 +535,46 @@ namespace QASupport.TestSitemap
                 handler.AllowAutoRedirect = false;
                 foreach (String link in listLinks)
                 {
-                    client = new HttpClient(handler);
-                    if (checkBoxUserAgent.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBoxUserAgent.Text);
-                    client.BaseAddress = new Uri(link.ToString());
+                    try
+                    {
+                        client = new HttpClient(handler);
+                        if (checkBoxUserAgent.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBoxUserAgent.Text);
+                        client.BaseAddress = new Uri(link);
 
-                    response = client.GetAsync(link.ToString()).Result;
-                    int statusCode = (int)response.StatusCode;
+                        response = client.GetAsync(link).Result;
+                        int statusCode = (int)response.StatusCode;
 
-                    textBoxProcess.AppendText("[" + index.ToString() + "/" + totalPages.ToString() + "] STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                    textBoxProcess.ScrollToCaret();
+                        textBoxProcess.AppendText("[" + index.ToString() + "/" + totalPages.ToString() + "] STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
+                        textBoxProcess.ScrollToCaret();
 
-                    if (statusCode >= 100 && statusCode <= 199)
-                    {
-                        textBox100.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox100.ScrollToCaret();
+                        if (statusCode >= 100 && statusCode <= 199)
+                        {
+                            textBox100.Text = textBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode >= 200 && statusCode <= 299)
+                        {
+                            textBox200.Text = textBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode >= 300 && statusCode <= 399)
+                        {
+                            textBox300.Text = textBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode >= 400 && statusCode <= 499)
+                        {
+                            textBox400.Text = textBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode >= 500 && statusCode <= 599)
+                        {
+                            textBox500.Text = textBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
+                        if (statusCode <= 99 || statusCode >= 600)
+                        {
+                            textBoxOther.Text = textBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                        }
                     }
-                    if (statusCode >= 200 && statusCode <= 299)
+                    catch (Exception ex)
                     {
-                        textBox200.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox200.ScrollToCaret();
-                    }
-                    if (statusCode >= 300 && statusCode <= 399)
-                    {
-                        textBox300.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox300.ScrollToCaret();
-                    }
-                    if (statusCode >= 400 && statusCode <= 499)
-                    {
-                        textBox400.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox400.ScrollToCaret();
-                    }
-                    if (statusCode >= 500 && statusCode <= 599)
-                    {
-                        textBox500.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                        textBox500.ScrollToCaret();
+                        textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
                     }
 
                     showProgressTest(totalPages, onePercent, index);
@@ -562,11 +586,7 @@ namespace QASupport.TestSitemap
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("TestSitemap", ex.Message);
-            }
-            finally
-            {
-                TestEnd();
+                //QASupportApp.ErrorMsg("TestSitemap", ex.Message);
             }
             TestEnd();
         }
