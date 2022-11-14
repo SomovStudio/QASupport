@@ -101,6 +101,9 @@
             this.textBox500 = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.textBoxOther = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -152,6 +155,7 @@
             this.сохранитьСписокПроверкиToolStripMenuItem.Name = "сохранитьСписокПроверкиToolStripMenuItem";
             this.сохранитьСписокПроверкиToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.сохранитьСписокПроверкиToolStripMenuItem.Text = "Сохранить список проверки";
+            this.сохранитьСписокПроверкиToolStripMenuItem.Click += new System.EventHandler(this.сохранитьСписокПроверкиToolStripMenuItem_Click);
             // 
             // сохранитьОтветыToolStripMenuItem
             // 
@@ -173,30 +177,35 @@
             this.сохранитьСписокОтветов100ToolStripMenuItem.Name = "сохранитьСписокОтветов100ToolStripMenuItem";
             this.сохранитьСписокОтветов100ToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.сохранитьСписокОтветов100ToolStripMenuItem.Text = "Сохранить список ответов 100";
+            this.сохранитьСписокОтветов100ToolStripMenuItem.Click += new System.EventHandler(this.сохранитьСписокОтветов100ToolStripMenuItem_Click);
             // 
             // сохранитьСписокОтветов200ToolStripMenuItem
             // 
             this.сохранитьСписокОтветов200ToolStripMenuItem.Name = "сохранитьСписокОтветов200ToolStripMenuItem";
             this.сохранитьСписокОтветов200ToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.сохранитьСписокОтветов200ToolStripMenuItem.Text = "Сохранить список ответов 200";
+            this.сохранитьСписокОтветов200ToolStripMenuItem.Click += new System.EventHandler(this.сохранитьСписокОтветов200ToolStripMenuItem_Click);
             // 
             // сохранитьСписокОтветов300ToolStripMenuItem
             // 
             this.сохранитьСписокОтветов300ToolStripMenuItem.Name = "сохранитьСписокОтветов300ToolStripMenuItem";
             this.сохранитьСписокОтветов300ToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.сохранитьСписокОтветов300ToolStripMenuItem.Text = "Сохранить список ответов 300";
+            this.сохранитьСписокОтветов300ToolStripMenuItem.Click += new System.EventHandler(this.сохранитьСписокОтветов300ToolStripMenuItem_Click);
             // 
             // сохранитьСписокОтветов400ToolStripMenuItem
             // 
             this.сохранитьСписокОтветов400ToolStripMenuItem.Name = "сохранитьСписокОтветов400ToolStripMenuItem";
             this.сохранитьСписокОтветов400ToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.сохранитьСписокОтветов400ToolStripMenuItem.Text = "Сохранить список ответов 400";
+            this.сохранитьСписокОтветов400ToolStripMenuItem.Click += new System.EventHandler(this.сохранитьСписокОтветов400ToolStripMenuItem_Click);
             // 
             // сохранитьСписокОтветов500ToolStripMenuItem
             // 
             this.сохранитьСписокОтветов500ToolStripMenuItem.Name = "сохранитьСписокОтветов500ToolStripMenuItem";
             this.сохранитьСписокОтветов500ToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.сохранитьСписокОтветов500ToolStripMenuItem.Text = "Сохранить список ответов 500";
+            this.сохранитьСписокОтветов500ToolStripMenuItem.Click += new System.EventHandler(this.сохранитьСписокОтветов500ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -208,6 +217,7 @@
             this.сохранитьСписокРазныхОтветовToolStripMenuItem.Name = "сохранитьСписокРазныхОтветовToolStripMenuItem";
             this.сохранитьСписокРазныхОтветовToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
             this.сохранитьСписокРазныхОтветовToolStripMenuItem.Text = "Сохранить список других ответов";
+            this.сохранитьСписокРазныхОтветовToolStripMenuItem.Click += new System.EventHandler(this.сохранитьСписокРазныхОтветовToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -219,6 +229,7 @@
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
             this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
+            this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
             // действиеToolStripMenuItem
             // 
@@ -499,13 +510,13 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1000, 105);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Проверка ссылок из карты сайта";
+            this.tabPage1.Text = "Способ проверки карты сайта";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Location = new System.Drawing.Point(883, 73);
+            this.button8.Location = new System.Drawing.Point(883, 69);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(101, 23);
             this.button8.TabIndex = 20;
@@ -517,7 +528,7 @@
             this.textBoxTXT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTXT.Enabled = false;
-            this.textBoxTXT.Location = new System.Drawing.Point(239, 75);
+            this.textBoxTXT.Location = new System.Drawing.Point(239, 71);
             this.textBoxTXT.Name = "textBoxTXT";
             this.textBoxTXT.Size = new System.Drawing.Size(638, 20);
             this.textBoxTXT.TabIndex = 19;
@@ -538,9 +549,9 @@
             this.textBoxXML.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxXML.Enabled = false;
-            this.textBoxXML.Location = new System.Drawing.Point(241, 39);
+            this.textBoxXML.Location = new System.Drawing.Point(239, 39);
             this.textBoxXML.Name = "textBoxXML";
-            this.textBoxXML.Size = new System.Drawing.Size(636, 20);
+            this.textBoxXML.Size = new System.Drawing.Size(638, 20);
             this.textBoxXML.TabIndex = 17;
             this.textBoxXML.Text = "C:\\sitemap.xml";
             // 
@@ -557,11 +568,10 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(8, 76);
+            this.radioButton3.Location = new System.Drawing.Point(8, 72);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(219, 17);
             this.radioButton3.TabIndex = 15;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Проверка списка ссылок из txt файла";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
@@ -572,7 +582,6 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(227, 17);
             this.radioButton2.TabIndex = 14;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Проверка sitemap из файла sitemape.xml";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -605,9 +614,9 @@
             this.textBoxUserAgent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUserAgent.Enabled = false;
-            this.textBoxUserAgent.Location = new System.Drawing.Point(166, 19);
+            this.textBoxUserAgent.Location = new System.Drawing.Point(214, 19);
             this.textBoxUserAgent.Name = "textBoxUserAgent";
-            this.textBoxUserAgent.Size = new System.Drawing.Size(826, 20);
+            this.textBoxUserAgent.Size = new System.Drawing.Size(778, 20);
             this.textBoxUserAgent.TabIndex = 14;
             this.textBoxUserAgent.Text = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.83" +
     "5.202 Safari/535.1";
@@ -619,10 +628,11 @@
             this.checkBoxUserAgent.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxUserAgent.Location = new System.Drawing.Point(8, 21);
             this.checkBoxUserAgent.Name = "checkBoxUserAgent";
-            this.checkBoxUserAgent.Size = new System.Drawing.Size(153, 17);
+            this.checkBoxUserAgent.Size = new System.Drawing.Size(200, 17);
             this.checkBoxUserAgent.TabIndex = 13;
-            this.checkBoxUserAgent.Text = "User-Agent по умолчанию";
+            this.checkBoxUserAgent.Text = "Включен User-Agent по умолчанию";
             this.checkBoxUserAgent.UseVisualStyleBackColor = true;
+            this.checkBoxUserAgent.CheckedChanged += new System.EventHandler(this.checkBoxUserAgent_CheckedChanged);
             // 
             // panel2
             // 
@@ -831,6 +841,18 @@
             this.textBoxOther.Size = new System.Drawing.Size(985, 168);
             this.textBoxOther.TabIndex = 1;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "*.xml|*.xml";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "*.txt|*.txt|*.*|*.*";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
+            // 
             // FormTestSitemap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -843,7 +865,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormTestSitemap";
-            this.Text = "TestSitemap";
+            this.Text = "TestSitemap (проверка карты сайта)";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTestSitemap_FormClosed);
             this.Load += new System.EventHandler(this.FormTestSitemap_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -957,5 +980,8 @@
         private System.Windows.Forms.TextBox textBox400;
         private System.Windows.Forms.TextBox textBox500;
         private System.Windows.Forms.TextBox textBoxOther;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
