@@ -145,6 +145,7 @@ namespace QASupport.TestSitemap
 
         private void FormTestSitemap_Load(object sender, EventArgs e)
         {
+            QASupportApp.LogMsg("TestSitemap", "Программа загружена");
             thread = new Thread(TestUrl);
         }
 
@@ -152,6 +153,7 @@ namespace QASupport.TestSitemap
         {
             try { thread.Abort(); }
             catch (Exception ex) { QASupportApp.LogMsg("TestSitemap", "Предупреждение: " + ex.Message); }
+            QASupportApp.LogMsg("TestSitemap", "Программа закрыта");
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -161,71 +163,140 @@ namespace QASupport.TestSitemap
 
         private void сохранитьСписокПроверкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try {
+                saveFileDialog1.FileName = "report.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
+                    SW.Write(textBoxProcess.Text);
+                    SW.Close();
+                    QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                }
+            }
+            catch (Exception ex)
             {
-                StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(textBoxProcess.Text);
-                SW.Close();
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
         private void сохранитьСписокОтветов100ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(richTextBox100.Text);
-                SW.Close();
+                saveFileDialog1.FileName = "report_100.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
+                    SW.Write(richTextBox100.Text);
+                    SW.Close();
+                    QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
         private void сохранитьСписокОтветов200ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(richTextBox200.Text);
-                SW.Close();
+                saveFileDialog1.FileName = "report_200.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
+                    SW.Write(richTextBox200.Text);
+                    SW.Close();
+                    QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
         private void сохранитьСписокОтветов300ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(richTextBox300.Text);
-                SW.Close();
+                saveFileDialog1.FileName = "report_300.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
+                    SW.Write(richTextBox300.Text);
+                    SW.Close();
+                    QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
         private void сохранитьСписокОтветов400ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(richTextBox400.Text);
-                SW.Close();
+                saveFileDialog1.FileName = "report_400.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
+                    SW.Write(richTextBox400.Text);
+                    SW.Close();
+                    QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
         private void сохранитьСписокОтветов500ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(richTextBox500.Text);
-                SW.Close();
+                saveFileDialog1.FileName = "report_500.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
+                    SW.Write(richTextBox500.Text);
+                    SW.Close();
+                    QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
         private void сохранитьСписокРазныхОтветовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(richTextBoxOther.Text);
-                SW.Close();
+                saveFileDialog1.FileName = "report_errors.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
+                    SW.Write(richTextBoxOther.Text);
+                    SW.Close();
+                    QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
@@ -236,11 +307,13 @@ namespace QASupport.TestSitemap
                 checkBoxUserAgent.Text = "Включен User-Agent по умолчанию";
                 textBoxUserAgent.Text = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1";
                 textBoxUserAgent.Enabled = false;
+                QASupportApp.LogMsg("TestSitemap", "Включен User-Agent по умолчанию");
             }
             else
             {
                 checkBoxUserAgent.Text = "Отключен User-Agent по умолчанию";
                 textBoxUserAgent.Enabled = true;
+                QASupportApp.LogMsg("TestSitemap", "Отключен User-Agent по умолчанию");
             }
         }
 
@@ -334,6 +407,7 @@ namespace QASupport.TestSitemap
                 MessageBox.Show("Процесс уже запущен", "Сообщение");
                 return;
             }
+            QASupportApp.LogMsg("TestSitemap", "Запущен процесс проверки карты сайта");
 
             textBoxProcess.Text = "";
             richTextBox100.Text = "";
@@ -689,6 +763,56 @@ namespace QASupport.TestSitemap
         private void выделитьВсёToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox100.SelectAll();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            richTextBox200.Copy();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            richTextBox200.SelectAll();
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            richTextBox300.Copy();
+        }
+
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            richTextBox300.SelectAll();
+        }
+
+        private void toolStripMenuItem12_Click(object sender, EventArgs e)
+        {
+            richTextBox400.Copy();
+        }
+
+        private void toolStripMenuItem15_Click(object sender, EventArgs e)
+        {
+            richTextBox400.SelectAll();
+        }
+
+        private void toolStripMenuItem17_Click(object sender, EventArgs e)
+        {
+            richTextBox500.Copy();
+        }
+
+        private void toolStripMenuItem20_Click(object sender, EventArgs e)
+        {
+            richTextBox500.SelectAll();
+        }
+
+        private void toolStripMenuItem22_Click(object sender, EventArgs e)
+        {
+            richTextBoxOther.Copy();
+        }
+
+        private void toolStripMenuItem25_Click(object sender, EventArgs e)
+        {
+            richTextBoxOther.SelectAll();
         }
     }
 }
