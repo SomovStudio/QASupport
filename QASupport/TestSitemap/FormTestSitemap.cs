@@ -14,6 +14,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Xml;
+using System.Diagnostics;
 
 namespace QASupport.TestSitemap
 {
@@ -173,7 +174,7 @@ namespace QASupport.TestSitemap
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(textBox100.Text);
+                SW.Write(richTextBox100.Text);
                 SW.Close();
             }
         }
@@ -183,7 +184,7 @@ namespace QASupport.TestSitemap
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(textBox200.Text);
+                SW.Write(richTextBox200.Text);
                 SW.Close();
             }
         }
@@ -193,7 +194,7 @@ namespace QASupport.TestSitemap
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(textBox300.Text);
+                SW.Write(richTextBox300.Text);
                 SW.Close();
             }
         }
@@ -203,7 +204,7 @@ namespace QASupport.TestSitemap
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(textBox400.Text);
+                SW.Write(richTextBox400.Text);
                 SW.Close();
             }
         }
@@ -213,7 +214,7 @@ namespace QASupport.TestSitemap
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(textBox500.Text);
+                SW.Write(richTextBox500.Text);
                 SW.Close();
             }
         }
@@ -223,7 +224,7 @@ namespace QASupport.TestSitemap
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
-                SW.Write(textBoxOther.Text);
+                SW.Write(richTextBoxOther.Text);
                 SW.Close();
             }
         }
@@ -282,6 +283,29 @@ namespace QASupport.TestSitemap
         private void TestEnd()
         {
             processRun = false;
+
+            int res100 = richTextBox100.Lines.Count() - 1;
+            if (res100 < 0) res100 = 0;
+            int res200 = richTextBox200.Lines.Count() - 1;
+            if (res200 < 0) res200 = 0;
+            int res300 = richTextBox300.Lines.Count() - 1;
+            if (res300 < 0) res300 = 0;
+            int res400 = richTextBox400.Lines.Count() - 1;
+            if (res400 < 0) res400 = 0;
+            int res500 = richTextBox500.Lines.Count() - 1;
+            if (res500 < 0) res500 = 0;
+            int resOther = richTextBoxOther.Lines.Count() - 1;
+            if (resOther < 0) resOther = 0;
+
+            textBoxProcess.AppendText(Environment.NewLine);
+            textBoxProcess.AppendText("== Результат ==========================" + Environment.NewLine);
+            textBoxProcess.AppendText("1хх ответов: " + res100.ToString() + Environment.NewLine);
+            textBoxProcess.AppendText("2хх ответов: " + res200.ToString() + Environment.NewLine);
+            textBoxProcess.AppendText("3хх ответов: " + res300.ToString() + Environment.NewLine);
+            textBoxProcess.AppendText("4хх ответов: " + res400.ToString() + Environment.NewLine);
+            textBoxProcess.AppendText("5хх ответов: " + res500.ToString() + Environment.NewLine);
+            textBoxProcess.AppendText("Других ответов:  " + resOther.ToString() + Environment.NewLine);
+            textBoxProcess.AppendText("=======================================" + Environment.NewLine);
             this.Update();
             QASupportApp.LogMsg("TestSitemap", "Процесс проверки - завершен!");
             MessageBox.Show("Процесс проверки - завершен!");
@@ -312,12 +336,12 @@ namespace QASupport.TestSitemap
             }
 
             textBoxProcess.Text = "";
-            textBox100.Text = "";
-            textBox200.Text = "";
-            textBox300.Text = "";
-            textBox400.Text = "";
-            textBox500.Text = "";
-            textBoxOther.Text = "";
+            richTextBox100.Text = "";
+            richTextBox200.Text = "";
+            richTextBox300.Text = "";
+            richTextBox400.Text = "";
+            richTextBox500.Text = "";
+            richTextBoxOther.Text = "";
             toolStripProgressBar1.Value = 0;
             toolStripProgressBar1.Maximum = 0;
             toolStripStatusLabel2.Text = "0%";
@@ -368,37 +392,37 @@ namespace QASupport.TestSitemap
                         if (statusCode >= 100 && statusCode <= 199)
                         {
                             //textBox100.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                            textBox100.Text = textBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox100.Text = richTextBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                             //textBox100.ScrollToCaret();
                         }
                         if (statusCode >= 200 && statusCode <= 299)
                         {
                             //textBox200.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                            textBox200.Text = textBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox200.Text = richTextBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                             //textBox200.ScrollToCaret();
                         }
                         if (statusCode >= 300 && statusCode <= 399)
                         {
                             //textBox300.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                            textBox300.Text = textBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox300.Text = richTextBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                             //textBox300.ScrollToCaret();
                         }
                         if (statusCode >= 400 && statusCode <= 499)
                         {
                             //textBox400.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                            textBox400.Text = textBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox400.Text = richTextBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                             //textBox400.ScrollToCaret();
                         }
                         if (statusCode >= 500 && statusCode <= 599)
                         {
                             //textBox500.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                            textBox500.Text = textBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox500.Text = richTextBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                             //textBox500.ScrollToCaret();
                         }
                         if (statusCode <= 99 || statusCode >= 600)
                         {
                             //textBoxOther.AppendText("STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine);
-                            textBoxOther.Text = textBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBoxOther.Text = richTextBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                             //textBoxOther.ScrollToCaret();
                         }
                     }
@@ -406,7 +430,7 @@ namespace QASupport.TestSitemap
                     {
                         QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
                         //textBoxOther.AppendText("ERROR [" + ex.Message + "]: " + link + Environment.NewLine);
-                        textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
+                        richTextBoxOther.Text = richTextBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
                         //textBoxOther.ScrollToCaret();
                     }
 
@@ -467,33 +491,33 @@ namespace QASupport.TestSitemap
 
                         if (statusCode >= 100 && statusCode <= 199)
                         {
-                            textBox100.Text = textBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox100.Text = richTextBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode >= 200 && statusCode <= 299)
                         {
-                            textBox200.Text = textBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox200.Text = richTextBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode >= 300 && statusCode <= 399)
                         {
-                            textBox300.Text = textBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox300.Text = richTextBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode >= 400 && statusCode <= 499)
                         {
-                            textBox400.Text = textBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox400.Text = richTextBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode >= 500 && statusCode <= 599)
                         {
-                            textBox500.Text = textBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox500.Text = richTextBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode <= 99 || statusCode >= 600)
                         {
-                            textBoxOther.Text = textBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBoxOther.Text = richTextBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                     }
                     catch (Exception ex)
                     {
                         QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
-                        textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
+                        richTextBoxOther.Text = richTextBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
                     }
 
                     showProgressTest(totalPages, onePercent, index);
@@ -563,33 +587,33 @@ namespace QASupport.TestSitemap
 
                         if (statusCode >= 100 && statusCode <= 199)
                         {
-                            textBox100.Text = textBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox100.Text = richTextBox100.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode >= 200 && statusCode <= 299)
                         {
-                            textBox200.Text = textBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox200.Text = richTextBox200.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode >= 300 && statusCode <= 399)
                         {
-                            textBox300.Text = textBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox300.Text = richTextBox300.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode >= 400 && statusCode <= 499)
                         {
-                            textBox400.Text = textBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox400.Text = richTextBox400.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode >= 500 && statusCode <= 599)
                         {
-                            textBox500.Text = textBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBox500.Text = richTextBox500.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                         if (statusCode <= 99 || statusCode >= 600)
                         {
-                            textBoxOther.Text = textBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
+                            richTextBoxOther.Text = richTextBoxOther.Text + "STATUS [" + statusCode.ToString() + "]: " + link + Environment.NewLine;
                         }
                     }
                     catch (Exception ex)
                     {
                         QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
-                        textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
+                        richTextBoxOther.Text = richTextBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
                     }
 
                     showProgressTest(totalPages, onePercent, index);
@@ -606,6 +630,65 @@ namespace QASupport.TestSitemap
             TestEnd();
         }
 
-        
+        private void richTextBox100_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try { Process.Start(e.LinkText); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestSitemap", ex.Message); }
+        }
+
+        private void richTextBox200_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try { Process.Start(e.LinkText); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestSitemap", ex.Message); }
+        }
+
+        private void richTextBox300_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try { Process.Start(e.LinkText); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestSitemap", ex.Message); }
+        }
+
+        private void richTextBox400_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try { Process.Start(e.LinkText); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestSitemap", ex.Message); }
+        }
+
+        private void richTextBox500_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try { Process.Start(e.LinkText); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestSitemap", ex.Message); }
+        }
+
+        private void richTextBoxOther_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try { Process.Start(e.LinkText); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestSitemap", ex.Message); }
+        }
+
+        private void вырезатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox100.Cut();
+        }
+
+        private void копироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox100.Copy();
+        }
+
+        private void вставитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox100.Paste();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("");
+        }
+
+        private void выделитьВсёToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox100.SelectAll();
+        }
     }
 }

@@ -91,23 +91,37 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox100 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.textBox200 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.textBox300 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.textBox400 = new System.Windows.Forms.TextBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.textBox500 = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.textBoxOther = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBoxHelp = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.richTextBox100 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox200 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox300 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox400 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox500 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxOther = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip100 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.вырезатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.копироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вставитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.выделитьВсёToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip200 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -130,6 +144,8 @@
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.contextMenuStrip100.SuspendLayout();
+            this.contextMenuStrip200.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -718,7 +734,8 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.textBox100);
+            this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Controls.Add(this.richTextBox100);
             this.tabPage3.ImageIndex = 2;
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
@@ -726,26 +743,11 @@
             this.tabPage3.Size = new System.Drawing.Size(991, 173);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "100 (информационные)";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // textBox100
-            // 
-            this.textBox100.BackColor = System.Drawing.Color.White;
-            this.textBox100.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox100.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox100.Location = new System.Drawing.Point(3, 3);
-            this.textBox100.Multiline = true;
-            this.textBox100.Name = "textBox100";
-            this.textBox100.ReadOnly = true;
-            this.textBox100.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox100.Size = new System.Drawing.Size(985, 167);
-            this.textBox100.TabIndex = 0;
-            this.textBox100.Text = "...";
-            this.textBox100.WordWrap = false;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.textBox200);
+            this.tabPage4.BackColor = System.Drawing.Color.White;
+            this.tabPage4.Controls.Add(this.richTextBox200);
             this.tabPage4.ImageIndex = 3;
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
@@ -753,26 +755,11 @@
             this.tabPage4.Size = new System.Drawing.Size(991, 173);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "200 (успешно)";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // textBox200
-            // 
-            this.textBox200.BackColor = System.Drawing.Color.White;
-            this.textBox200.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox200.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox200.Location = new System.Drawing.Point(3, 3);
-            this.textBox200.Multiline = true;
-            this.textBox200.Name = "textBox200";
-            this.textBox200.ReadOnly = true;
-            this.textBox200.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox200.Size = new System.Drawing.Size(985, 167);
-            this.textBox200.TabIndex = 1;
-            this.textBox200.Text = "...";
-            this.textBox200.WordWrap = false;
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.textBox300);
+            this.tabPage5.BackColor = System.Drawing.Color.White;
+            this.tabPage5.Controls.Add(this.richTextBox300);
             this.tabPage5.ImageIndex = 4;
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
@@ -780,26 +767,11 @@
             this.tabPage5.Size = new System.Drawing.Size(991, 173);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "300 (перенаправление)";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // textBox300
-            // 
-            this.textBox300.BackColor = System.Drawing.Color.White;
-            this.textBox300.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox300.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox300.Location = new System.Drawing.Point(3, 3);
-            this.textBox300.Multiline = true;
-            this.textBox300.Name = "textBox300";
-            this.textBox300.ReadOnly = true;
-            this.textBox300.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox300.Size = new System.Drawing.Size(985, 167);
-            this.textBox300.TabIndex = 1;
-            this.textBox300.Text = "...";
-            this.textBox300.WordWrap = false;
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.textBox400);
+            this.tabPage6.BackColor = System.Drawing.Color.White;
+            this.tabPage6.Controls.Add(this.richTextBox400);
             this.tabPage6.ImageIndex = 0;
             this.tabPage6.Location = new System.Drawing.Point(4, 4);
             this.tabPage6.Name = "tabPage6";
@@ -807,26 +779,11 @@
             this.tabPage6.Size = new System.Drawing.Size(991, 173);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "400 (ошибка клиента)";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // textBox400
-            // 
-            this.textBox400.BackColor = System.Drawing.Color.White;
-            this.textBox400.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox400.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox400.Location = new System.Drawing.Point(3, 3);
-            this.textBox400.Multiline = true;
-            this.textBox400.Name = "textBox400";
-            this.textBox400.ReadOnly = true;
-            this.textBox400.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox400.Size = new System.Drawing.Size(985, 167);
-            this.textBox400.TabIndex = 1;
-            this.textBox400.Text = "...";
-            this.textBox400.WordWrap = false;
             // 
             // tabPage7
             // 
-            this.tabPage7.Controls.Add(this.textBox500);
+            this.tabPage7.BackColor = System.Drawing.Color.White;
+            this.tabPage7.Controls.Add(this.richTextBox500);
             this.tabPage7.ImageIndex = 1;
             this.tabPage7.Location = new System.Drawing.Point(4, 4);
             this.tabPage7.Name = "tabPage7";
@@ -834,26 +791,11 @@
             this.tabPage7.Size = new System.Drawing.Size(991, 173);
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "500 (ошибка сервера)";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // textBox500
-            // 
-            this.textBox500.BackColor = System.Drawing.Color.White;
-            this.textBox500.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox500.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox500.Location = new System.Drawing.Point(3, 3);
-            this.textBox500.Multiline = true;
-            this.textBox500.Name = "textBox500";
-            this.textBox500.ReadOnly = true;
-            this.textBox500.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox500.Size = new System.Drawing.Size(985, 167);
-            this.textBox500.TabIndex = 1;
-            this.textBox500.Text = "...";
-            this.textBox500.WordWrap = false;
             // 
             // tabPage8
             // 
-            this.tabPage8.Controls.Add(this.textBoxOther);
+            this.tabPage8.BackColor = System.Drawing.Color.White;
+            this.tabPage8.Controls.Add(this.richTextBoxOther);
             this.tabPage8.ImageIndex = 6;
             this.tabPage8.Location = new System.Drawing.Point(4, 4);
             this.tabPage8.Name = "tabPage8";
@@ -861,22 +803,6 @@
             this.tabPage8.Size = new System.Drawing.Size(991, 173);
             this.tabPage8.TabIndex = 5;
             this.tabPage8.Text = "Другие ответы";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // textBoxOther
-            // 
-            this.textBoxOther.BackColor = System.Drawing.Color.White;
-            this.textBoxOther.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxOther.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxOther.Location = new System.Drawing.Point(3, 3);
-            this.textBoxOther.Multiline = true;
-            this.textBoxOther.Name = "textBoxOther";
-            this.textBoxOther.ReadOnly = true;
-            this.textBoxOther.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxOther.Size = new System.Drawing.Size(985, 167);
-            this.textBoxOther.TabIndex = 1;
-            this.textBoxOther.Text = "...";
-            this.textBoxOther.WordWrap = false;
             // 
             // tabPage2
             // 
@@ -894,6 +820,7 @@
             this.textBoxHelp.BackColor = System.Drawing.Color.White;
             this.textBoxHelp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxHelp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxHelp.Location = new System.Drawing.Point(3, 3);
             this.textBoxHelp.Multiline = true;
             this.textBoxHelp.Name = "textBoxHelp";
@@ -926,6 +853,184 @@
             // openFileDialog2
             // 
             this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
+            // 
+            // richTextBox100
+            // 
+            this.richTextBox100.BackColor = System.Drawing.Color.White;
+            this.richTextBox100.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox100.ContextMenuStrip = this.contextMenuStrip100;
+            this.richTextBox100.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox100.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox100.Name = "richTextBox100";
+            this.richTextBox100.ReadOnly = true;
+            this.richTextBox100.Size = new System.Drawing.Size(985, 167);
+            this.richTextBox100.TabIndex = 1;
+            this.richTextBox100.Text = "";
+            this.richTextBox100.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox100_LinkClicked);
+            // 
+            // richTextBox200
+            // 
+            this.richTextBox200.BackColor = System.Drawing.Color.White;
+            this.richTextBox200.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox200.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox200.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox200.Name = "richTextBox200";
+            this.richTextBox200.ReadOnly = true;
+            this.richTextBox200.Size = new System.Drawing.Size(985, 167);
+            this.richTextBox200.TabIndex = 2;
+            this.richTextBox200.Text = "";
+            this.richTextBox200.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox200_LinkClicked);
+            // 
+            // richTextBox300
+            // 
+            this.richTextBox300.BackColor = System.Drawing.Color.White;
+            this.richTextBox300.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox300.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox300.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox300.Name = "richTextBox300";
+            this.richTextBox300.ReadOnly = true;
+            this.richTextBox300.Size = new System.Drawing.Size(985, 167);
+            this.richTextBox300.TabIndex = 2;
+            this.richTextBox300.Text = "";
+            this.richTextBox300.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox300_LinkClicked);
+            // 
+            // richTextBox400
+            // 
+            this.richTextBox400.BackColor = System.Drawing.Color.White;
+            this.richTextBox400.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox400.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox400.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox400.Name = "richTextBox400";
+            this.richTextBox400.ReadOnly = true;
+            this.richTextBox400.Size = new System.Drawing.Size(985, 167);
+            this.richTextBox400.TabIndex = 2;
+            this.richTextBox400.Text = "";
+            this.richTextBox400.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox400_LinkClicked);
+            // 
+            // richTextBox500
+            // 
+            this.richTextBox500.BackColor = System.Drawing.Color.White;
+            this.richTextBox500.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox500.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox500.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox500.Name = "richTextBox500";
+            this.richTextBox500.ReadOnly = true;
+            this.richTextBox500.Size = new System.Drawing.Size(985, 167);
+            this.richTextBox500.TabIndex = 2;
+            this.richTextBox500.Text = "";
+            this.richTextBox500.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox500_LinkClicked);
+            // 
+            // richTextBoxOther
+            // 
+            this.richTextBoxOther.BackColor = System.Drawing.Color.White;
+            this.richTextBoxOther.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxOther.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxOther.Location = new System.Drawing.Point(3, 3);
+            this.richTextBoxOther.Name = "richTextBoxOther";
+            this.richTextBoxOther.ReadOnly = true;
+            this.richTextBoxOther.Size = new System.Drawing.Size(985, 167);
+            this.richTextBoxOther.TabIndex = 2;
+            this.richTextBoxOther.Text = "";
+            this.richTextBoxOther.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBoxOther_LinkClicked);
+            // 
+            // contextMenuStrip100
+            // 
+            this.contextMenuStrip100.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.вырезатьToolStripMenuItem,
+            this.копироватьToolStripMenuItem,
+            this.вставитьToolStripMenuItem,
+            this.удалитьToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.выделитьВсёToolStripMenuItem});
+            this.contextMenuStrip100.Name = "contextMenuStrip100";
+            this.contextMenuStrip100.Size = new System.Drawing.Size(149, 120);
+            // 
+            // вырезатьToolStripMenuItem
+            // 
+            this.вырезатьToolStripMenuItem.Name = "вырезатьToolStripMenuItem";
+            this.вырезатьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.вырезатьToolStripMenuItem.Text = "Вырезать";
+            this.вырезатьToolStripMenuItem.Click += new System.EventHandler(this.вырезатьToolStripMenuItem_Click);
+            // 
+            // копироватьToolStripMenuItem
+            // 
+            this.копироватьToolStripMenuItem.Name = "копироватьToolStripMenuItem";
+            this.копироватьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.копироватьToolStripMenuItem.Text = "Копировать";
+            this.копироватьToolStripMenuItem.Click += new System.EventHandler(this.копироватьToolStripMenuItem_Click);
+            // 
+            // вставитьToolStripMenuItem
+            // 
+            this.вставитьToolStripMenuItem.Name = "вставитьToolStripMenuItem";
+            this.вставитьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.вставитьToolStripMenuItem.Text = "Вставить";
+            this.вставитьToolStripMenuItem.Click += new System.EventHandler(this.вставитьToolStripMenuItem_Click);
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(145, 6);
+            // 
+            // выделитьВсёToolStripMenuItem
+            // 
+            this.выделитьВсёToolStripMenuItem.Name = "выделитьВсёToolStripMenuItem";
+            this.выделитьВсёToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.выделитьВсёToolStripMenuItem.Text = "Выделить всё";
+            this.выделитьВсёToolStripMenuItem.Click += new System.EventHandler(this.выделитьВсёToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip200
+            // 
+            this.contextMenuStrip200.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripSeparator6,
+            this.toolStripMenuItem5});
+            this.contextMenuStrip200.Name = "contextMenuStrip100";
+            this.contextMenuStrip200.Size = new System.Drawing.Size(149, 120);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem1.Text = "Вырезать";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem2.Text = "Копировать";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem3.Text = "Вставить";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem4.Text = "Удалить";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(145, 6);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem5.Text = "Выделить всё";
             // 
             // FormTestSitemap
             // 
@@ -964,19 +1069,15 @@
             this.panel4.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.contextMenuStrip100.ResumeLayout(false);
+            this.contextMenuStrip200.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1050,17 +1151,31 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.TextBox textBox100;
-        private System.Windows.Forms.TextBox textBox200;
-        private System.Windows.Forms.TextBox textBox300;
-        private System.Windows.Forms.TextBox textBox400;
-        private System.Windows.Forms.TextBox textBox500;
-        private System.Windows.Forms.TextBox textBoxOther;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox textBoxHelp;
+        private System.Windows.Forms.RichTextBox richTextBox100;
+        private System.Windows.Forms.RichTextBox richTextBox200;
+        private System.Windows.Forms.RichTextBox richTextBox300;
+        private System.Windows.Forms.RichTextBox richTextBox400;
+        private System.Windows.Forms.RichTextBox richTextBox500;
+        private System.Windows.Forms.RichTextBox richTextBoxOther;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip100;
+        private System.Windows.Forms.ToolStripMenuItem вырезатьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem копироватьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вставитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem выделитьВсёToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip200;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     }
 }
