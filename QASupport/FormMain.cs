@@ -225,5 +225,13 @@ namespace QASupport
             try { Process.Start(@"https://last-modified.com/ru"); }
             catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
         }
+
+        private void journalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (QASupportApp.LogsForm == null) QASupportApp.LogsForm = new FormLogs();
+            if (QASupportApp.LogsForm.IsDisposed) QASupportApp.LogsForm = new FormLogs();
+            QASupportApp.LogsForm.Logs.Text = QASupportApp.Logs.Text;
+            QASupportApp.LogsForm.Show();
+        }
     }
 }

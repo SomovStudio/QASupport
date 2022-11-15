@@ -92,7 +92,7 @@ namespace QASupport.TestSitemap
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("TestSitemap", ex.Message);
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
             }
 
             return list;
@@ -135,7 +135,7 @@ namespace QASupport.TestSitemap
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("TestSitemap", ex.Message);
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
             }
 
             return list;
@@ -150,7 +150,7 @@ namespace QASupport.TestSitemap
         private void FormTestSitemap_FormClosed(object sender, FormClosedEventArgs e)
         {
             try { thread.Abort(); }
-            catch (Exception ex) { QASupportApp.ErrorMsg("TestSitemap", ex.Message); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestSitemap", "Предупреждение: " + ex.Message); }
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -264,29 +264,41 @@ namespace QASupport.TestSitemap
             TestBegin();
         }
 
+        private void запуститьПроверкуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TestBegin();
+        }
+
         private void toolStripButtonStop_Click(object sender, EventArgs e)
         {
-            TestEnd();
+            TestStop();
         }
 
         private void остановитьПроверкуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TestEnd();
+            TestStop();
         }
 
         private void TestEnd()
         {
+            processRun = false;
+            this.Update();
+            QASupportApp.LogMsg("TestSitemap", "Процесс проверки - завершен!");
+            MessageBox.Show("Процесс проверки - завершен!");
+        }
+
+        private void TestStop()
+        {
             try
             {
-                thread.Abort();
                 processRun = false;
-                this.Update();
-                QASupportApp.LogMsg("TestSitemap", "Процесс проверки - завершен!");
-                MessageBox.Show("Процесс проверки - завершен!");
+                thread.Abort();
+                QASupportApp.LogMsg("TestSitemap", "Процесс проверки - остановлен!");
+                MessageBox.Show("Процесс проверки - остановлен!");
             }
             catch (Exception ex)
             {
-                //QASupportApp.ErrorMsg("TestSitemap", ex.Message);
+                QASupportApp.LogMsg("TestSitemap", "Предупреждение: " + ex.Message);
             }
         }
 
@@ -392,6 +404,7 @@ namespace QASupport.TestSitemap
                     }
                     catch (Exception ex)
                     {
+                        QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
                         //textBoxOther.AppendText("ERROR [" + ex.Message + "]: " + link + Environment.NewLine);
                         textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
                         //textBoxOther.ScrollToCaret();
@@ -406,7 +419,7 @@ namespace QASupport.TestSitemap
             }
             catch (Exception ex)
             {
-                //QASupportApp.ErrorMsg("TestSitemap", ex.Message);
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
             }
             TestEnd();
         }
@@ -479,6 +492,7 @@ namespace QASupport.TestSitemap
                     }
                     catch (Exception ex)
                     {
+                        QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
                         textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
                     }
 
@@ -491,7 +505,7 @@ namespace QASupport.TestSitemap
             }
             catch (Exception ex)
             {
-                //QASupportApp.ErrorMsg("TestSitemap", ex.Message);
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
             }
             TestEnd();
         }
@@ -574,6 +588,7 @@ namespace QASupport.TestSitemap
                     }
                     catch (Exception ex)
                     {
+                        QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
                         textBoxOther.Text = textBoxOther.Text + "ERROR [" + ex.Message + "]: " + link + Environment.NewLine;
                     }
 
@@ -586,12 +601,11 @@ namespace QASupport.TestSitemap
             }
             catch (Exception ex)
             {
-                //QASupportApp.ErrorMsg("TestSitemap", ex.Message);
+                QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
             }
             TestEnd();
         }
 
-
-
+        
     }
 }

@@ -102,12 +102,12 @@
             this.textBox500 = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.textBoxOther = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBoxHelp = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBoxHelp = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -251,6 +251,7 @@
             this.запуститьПроверкуToolStripMenuItem.Name = "запуститьПроверкуToolStripMenuItem";
             this.запуститьПроверкуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.запуститьПроверкуToolStripMenuItem.Text = "Запустить проверку";
+            this.запуститьПроверкуToolStripMenuItem.Click += new System.EventHandler(this.запуститьПроверкуToolStripMenuItem_Click);
             // 
             // остановитьПроверкуToolStripMenuItem
             // 
@@ -524,11 +525,14 @@
             // button8
             // 
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Location = new System.Drawing.Point(883, 69);
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(877, 69);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(101, 23);
+            this.button8.Size = new System.Drawing.Size(107, 23);
             this.button8.TabIndex = 20;
             this.button8.Text = "Открыть файл";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -539,18 +543,21 @@
             this.textBoxTXT.Enabled = false;
             this.textBoxTXT.Location = new System.Drawing.Point(239, 71);
             this.textBoxTXT.Name = "textBoxTXT";
-            this.textBoxTXT.Size = new System.Drawing.Size(638, 20);
+            this.textBoxTXT.Size = new System.Drawing.Size(632, 20);
             this.textBoxTXT.TabIndex = 19;
             this.textBoxTXT.Text = "C:\\linklist.txt";
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(883, 37);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(877, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 23);
+            this.button2.Size = new System.Drawing.Size(107, 23);
             this.button2.TabIndex = 18;
             this.button2.Text = "Открыть файл";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -561,7 +568,7 @@
             this.textBoxXML.Enabled = false;
             this.textBoxXML.Location = new System.Drawing.Point(239, 39);
             this.textBoxXML.Name = "textBoxXML";
-            this.textBoxXML.Size = new System.Drawing.Size(638, 20);
+            this.textBoxXML.Size = new System.Drawing.Size(632, 20);
             this.textBoxXML.TabIndex = 17;
             this.textBoxXML.Text = "C:\\sitemap.xml";
             // 
@@ -871,30 +878,6 @@
             this.textBoxOther.Text = "...";
             this.textBoxOther.WordWrap = false;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.Filter = "*.xml|*.xml";
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.Filter = "*.txt|*.txt|*.*|*.*";
-            // 
-            // openFileDialog2
-            // 
-            this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "error.png");
-            this.imageList1.Images.SetKeyName(1, "exclamation.png");
-            this.imageList1.Images.SetKeyName(2, "flag_blue.png");
-            this.imageList1.Images.SetKeyName(3, "flag_green.png");
-            this.imageList1.Images.SetKeyName(4, "flag_orange.png");
-            this.imageList1.Images.SetKeyName(5, "flag_red.png");
-            this.imageList1.Images.SetKeyName(6, "help.png");
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBoxHelp);
@@ -919,6 +902,30 @@
             this.textBoxHelp.Size = new System.Drawing.Size(985, 167);
             this.textBoxHelp.TabIndex = 2;
             this.textBoxHelp.Text = resources.GetString("textBoxHelp.Text");
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "error.png");
+            this.imageList1.Images.SetKeyName(1, "exclamation.png");
+            this.imageList1.Images.SetKeyName(2, "flag_blue.png");
+            this.imageList1.Images.SetKeyName(3, "flag_green.png");
+            this.imageList1.Images.SetKeyName(4, "flag_orange.png");
+            this.imageList1.Images.SetKeyName(5, "flag_red.png");
+            this.imageList1.Images.SetKeyName(6, "help.png");
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "*.xml|*.xml";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "*.txt|*.txt|*.*|*.*";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
             // 
             // FormTestSitemap
             // 
