@@ -12,6 +12,7 @@ using Microsoft.Web.WebView2.WinForms;
 using QASupport.App;
 using QASupport.JsonFileEditor;
 using QASupport.TestSitemap;
+using QASupport.TestRedirect;
 
 namespace QASupport
 {
@@ -232,6 +233,12 @@ namespace QASupport
             if (QASupportApp.LogsForm.IsDisposed) QASupportApp.LogsForm = new FormLogs();
             QASupportApp.LogsForm.Logs.Text = QASupportApp.Logs.Text;
             QASupportApp.LogsForm.Show();
+        }
+
+        private void testRedirectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTestRedirect testredirect = new FormTestRedirect();
+            testredirect.Show();
         }
     }
 }

@@ -40,7 +40,8 @@ namespace QASupport
             }
             catch (Exception ex)
             {
-                ErrorMsg(appName, ex.ToString());
+                //ErrorMsg(appName, ex.ToString());
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 
