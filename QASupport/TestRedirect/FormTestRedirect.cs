@@ -19,7 +19,7 @@ namespace QASupport.TestRedirect
 
         private void FormTestRedirect_Load(object sender, EventArgs e)
         {
-            checkedListBox1.SetItemChecked(2, true);
+            checkedListBox1.SetItemChecked(1, true);
         }
 
         private void button1_Click(object sender, EventArgs e)
