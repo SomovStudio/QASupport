@@ -99,6 +99,14 @@ namespace QASupport
             //contextMenuStrip1.Hide();
         }
 
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            if (QASupportApp.LogsForm == null) QASupportApp.LogsForm = new FormLogs();
+            if (QASupportApp.LogsForm.IsDisposed) QASupportApp.LogsForm = new FormLogs();
+            QASupportApp.LogsForm.Logs.Text = QASupportApp.Logs.Text;
+            QASupportApp.LogsForm.Show();
+        }
+
         private void errorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (QASupportApp.ErrorsForm == null) QASupportApp.ErrorsForm = new FormErrors();
@@ -240,5 +248,14 @@ namespace QASupport
             FormTestRedirect testredirect = new FormTestRedirect();
             testredirect.Show();
         }
+
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (About == null) About = new FormAbout();
+            if (About.IsDisposed == true) About = new FormAbout();
+            About.Show();
+        }
+
+        
     }
 }
