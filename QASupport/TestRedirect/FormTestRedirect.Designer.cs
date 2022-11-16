@@ -215,12 +215,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             // 
             // toolStrip1
@@ -421,6 +421,7 @@
             this.checkBoxUserAgent.TabIndex = 15;
             this.checkBoxUserAgent.Text = "Включен User-Agent по умолчанию";
             this.checkBoxUserAgent.UseVisualStyleBackColor = true;
+            this.checkBoxUserAgent.CheckedChanged += new System.EventHandler(this.checkBoxUserAgent_CheckedChanged);
             // 
             // toolStripButton2
             // 
@@ -429,6 +430,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(137, 22);
             this.toolStripButton2.Text = "Запустить проверку";
+            this.toolStripButton2.Click += new System.EventHandler(this.запуститьПроверкуToolStripMenuItem_Click);
             // 
             // toolStripButton3
             // 
@@ -437,6 +439,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(146, 22);
             this.toolStripButton3.Text = "Остановить проверку";
+            this.toolStripButton3.Click += new System.EventHandler(this.остановитьПроверкуToolStripMenuItem_Click);
             // 
             // действиеToolStripMenuItem
             // 
@@ -729,6 +732,7 @@
             this.запуститьПроверкуToolStripMenuItem.Name = "запуститьПроверкуToolStripMenuItem";
             this.запуститьПроверкуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.запуститьПроверкуToolStripMenuItem.Text = "Запустить проверку";
+            this.запуститьПроверкуToolStripMenuItem.Click += new System.EventHandler(this.запуститьПроверкуToolStripMenuItem_Click);
             // 
             // остановитьПроверкуToolStripMenuItem
             // 
@@ -736,6 +740,7 @@
             this.остановитьПроверкуToolStripMenuItem.Name = "остановитьПроверкуToolStripMenuItem";
             this.остановитьПроверкуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.остановитьПроверкуToolStripMenuItem.Text = "Остановить проверку";
+            this.остановитьПроверкуToolStripMenuItem.Click += new System.EventHandler(this.остановитьПроверкуToolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -852,6 +857,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormTestRedirect";
             this.Text = "TestRedirect (проверка переадресации)";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTestRedirect_FormClosed);
             this.Load += new System.EventHandler(this.FormTestRedirect_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
