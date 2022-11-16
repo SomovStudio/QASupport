@@ -16,5 +16,28 @@ namespace QASupport.TestRedirect
         {
             InitializeComponent();
         }
+
+        private void FormTestRedirect_Load(object sender, EventArgs e)
+        {
+            checkedListBox1.SetItemChecked(2, true);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int count = checkedListBox1.Items.Count;
+            for (int i = 0; i < count; i++)
+            {
+                checkedListBox1.SetItemChecked(i, true);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int count = checkedListBox1.Items.Count;
+            for (int i = 0; i < count; i++)
+            {
+                checkedListBox1.SetItemChecked(i, false);
+            }
+        }
     }
 }
