@@ -39,5 +39,15 @@ namespace QASupport.TestRedirect
                 checkedListBox1.SetItemChecked(i, false);
             }
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            splitContainer2.Panel2Collapsed = false;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            splitContainer2.Panel2Collapsed = true;
+        }
     }
 }
