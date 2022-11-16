@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,6 +25,28 @@ namespace QASupport.TestRedirect
 
         private bool processRun = false;
         private Thread thread;
+
+        private void showProgressTest(double totalPages, double onePercent, double step)
+        {
+            toolStripProgressBar1.Maximum = Convert.ToInt32(totalPages);
+            toolStripProgressBar1.Value = Convert.ToInt32(step);
+            double progressPercent = 0;
+            if (totalPages < 100 && onePercent > 0) progressPercent = (step * onePercent);
+            if (totalPages >= 100) progressPercent = (step / onePercent);
+            progressPercent = Math.Round(progressPercent, 0);
+            if (progressPercent < 100) toolStripStatusLabel2.Text = Convert.ToString(progressPercent) + "%";
+            else toolStripStatusLabel2.Text = "99%";
+
+            double dSec = (totalPages - step) * 1;
+
+            int sec = Convert.ToInt32(dSec);
+            int minutes = sec / 60;
+            int newSec = sec - minutes * 60;
+            int hour = minutes / 60;
+            int newMinnutes = minutes - hour * 60;
+            TimeSpan time = new TimeSpan(hour, newMinnutes, newSec);
+            toolStripStatusLabel5.Text = time.ToString();
+        }
 
         private void FormTestRedirect_Load(object sender, EventArgs e)
         {
@@ -93,12 +119,36 @@ namespace QASupport.TestRedirect
 
         private void TestBegin()
         {
+            if (processRun == true)
+            {
+                MessageBox.Show("Процесс уже запущен", "Сообщение");
+                return;
+            }
 
+            richTextBoxReport.Clear();
+            toolStripProgressBar1.Value = 0;
+            toolStripProgressBar1.Maximum = 0;
+            toolStripStatusLabel2.Text = "0%";
+            toolStripStatusLabel5.Text = "0:00";
+
+            if (radioButton1.Checked == true)
+            {
+                thread = new Thread(TestUrl);
+                thread.Start();
+            }
+
+            if (radioButton2.Checked == true)
+            {
+
+            }
         }
 
         private void TestEnd()
         {
-
+            processRun = false;
+            this.Update();
+            QASupportApp.LogMsg("TestRedirect", "Процесс проверки - завершен!");
+            MessageBox.Show("Процесс проверки - завершен!");
         }
 
         private void TestStop()
@@ -116,6 +166,173 @@ namespace QASupport.TestRedirect
             }
         }
 
-        
+        private void TestUrl()
+        {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
+            bool response300 = checkedListBox1.GetItemChecked(0); // 300 Multiple Choices («множество выборов»);
+            bool response301 = checkedListBox1.GetItemChecked(1); // 301 Moved Permanently («перемещено навсегда»);
+            bool response302 = checkedListBox1.GetItemChecked(2); // 302 Moved Temporarily («перемещено временно»), Found («найдено»);
+            bool response303 = checkedListBox1.GetItemChecked(3); // 303 See Other («смотреть другое»);
+            bool response304 = checkedListBox1.GetItemChecked(4); // 304 Not Modified («не изменялось»);
+            bool response305 = checkedListBox1.GetItemChecked(5); // 305 Use Proxy («использовать прокси»);
+            bool response306 = checkedListBox1.GetItemChecked(6); // 306 Зарезервировано (код использовался только в ранних спецификациях);
+            bool response307 = checkedListBox1.GetItemChecked(7); // 307 Temporary Redirect («временное перенаправление»);
+            bool response308 = checkedListBox1.GetItemChecked(8); // 308 Permanent Redirect («постоянное перенаправление»).
+
+            int count = richTextBoxFrom.Lines.Length;
+            int index = 0;
+            double totalPages = count;
+            double onePercent = 0;
+            if (totalPages < 100) onePercent = (100 / totalPages);
+            else onePercent = (totalPages / 100);
+
+            processRun = true;
+            try
+            {
+                listView1.Items.Clear();
+                ListViewItem item;
+                ListViewItem.ListViewSubItem subitem;
+
+                HttpClient client;
+                HttpResponseMessage response;
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.AllowAutoRedirect = false;
+
+                bool test = false;
+                string url = "";
+                int amount = richTextBoxFrom.Lines.Length;
+                for (int i = 0; i < amount; i++)
+                {
+                    try
+                    {
+                        index++;
+                        url = richTextBoxFrom.Lines.GetValue(i).ToString();
+
+                        client = new HttpClient(handler);
+                        if (checkBoxUserAgent.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBoxUserAgent.Text);
+                        client.BaseAddress = new Uri(url);
+                        response = client.GetAsync(url).Result;
+                        int statusCode = (int)response.StatusCode;
+
+                        string redirectedUrl = "";
+                        HttpResponseHeaders headers = response.Headers;
+                        if (headers.Location == null)
+                        {
+                            if ((int)response.StatusCode == 200)
+                            {
+                                item = new ListViewItem();
+                                subitem = new ListViewItem.ListViewSubItem();
+                                subitem.Text = url;
+                                item.SubItems.Add(subitem);
+                                subitem = new ListViewItem.ListViewSubItem();
+                                subitem.Text = "200";
+                                item.SubItems.Add(subitem);
+                                subitem = new ListViewItem.ListViewSubItem();
+                                subitem.Text = "редирект не сработал";
+                                item.SubItems.Add(subitem);
+                                subitem = new ListViewItem.ListViewSubItem();
+                                subitem.Text = "FAILED";
+                                item.SubItems.Add(subitem);
+                                item.ImageIndex = 1;
+                                listView1.Items.Add(item);
+                                richTextBoxReport.Text = richTextBoxReport.Text + "FAILED - cтатус [200] - редирект не сработал " + url + Environment.NewLine;
+                            }
+                            else
+                            {
+                                item = new ListViewItem();
+                                subitem = new ListViewItem.ListViewSubItem();
+                                subitem.Text = url;
+                                item.SubItems.Add(subitem);
+                                subitem = new ListViewItem.ListViewSubItem();
+                                subitem.Text = "ошибка";
+                                item.SubItems.Add(subitem);
+                                subitem = new ListViewItem.ListViewSubItem();
+                                subitem.Text = "произошла ошибка при чтении страницы (статус: " + ((int)response.StatusCode).ToString() + ")";
+                                item.SubItems.Add(subitem);
+                                subitem = new ListViewItem.ListViewSubItem();
+                                subitem.Text = "ERROR";
+                                item.SubItems.Add(subitem);
+                                item.ImageIndex = 1;
+                                listView1.Items.Add(item);
+                                richTextBoxReport.Text = richTextBoxReport.Text + "ERROR - cтатус [ошибка] - ошибка на странице " + url + Environment.NewLine;
+                            }
+                            continue;
+                        }
+
+                        if (headers.Location.IsAbsoluteUri)
+                        {
+                            if (headers != null && headers.Location != null) redirectedUrl = headers.Location.AbsoluteUri;
+                        }
+                        else
+                        {
+                            if (headers != null && headers.Location != null) redirectedUrl = headers.Location.OriginalString;
+                        }
+
+                        item = new ListViewItem();
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = url; //subitem.Text = response.RequestMessage.RequestUri.ToString();
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = statusCode.ToString();
+                        item.SubItems.Add(subitem);
+                        subitem = new ListViewItem.ListViewSubItem();
+                        subitem.Text = redirectedUrl;
+                        item.SubItems.Add(subitem);
+
+                        test = false;
+                        if (redirectedUrl != "")
+                        {
+                            if (response300 == true && statusCode == 300) test = true;
+                            if (response301 == true && statusCode == 301) test = true;
+                            if (response302 == true && statusCode == 302) test = true;
+                            if (response303 == true && statusCode == 303) test = true;
+                            if (response304 == true && statusCode == 304) test = true;
+                            if (response305 == true && statusCode == 305) test = true;
+                            if (response306 == true && statusCode == 306) test = true;
+                            if (response307 == true && statusCode == 307) test = true;
+                            if (response308 == true && statusCode == 308) test = true;
+                        }
+
+                        subitem = new ListViewItem.ListViewSubItem();
+                        if (test == true) subitem.Text = "PASSED";
+                        else subitem.Text = "FAILED";
+                        item.SubItems.Add(subitem);
+
+
+                        if (test == true) item.ImageIndex = 0;
+                        else item.ImageIndex = 1;
+                        listView1.Items.Add(item);
+
+                        listView1.Items[listView1.Items.Count - 1].Selected = true;
+                        listView1.Items[listView1.Items.Count - 1].EnsureVisible();
+
+                        if (test == true) richTextBoxReport.Text = richTextBoxReport.Text + "PASSED - cтатус [" + statusCode + "] - откуда [" + url + "] куда [" + redirectedUrl + "]" + Environment.NewLine;
+                        else richTextBoxReport.Text = richTextBoxReport.Text + "FAILED - cтатус [" + statusCode + "] - откуда [" + url + "] куда [" + redirectedUrl + "]" + Environment.NewLine;
+                    }
+                    catch (Exception ex)
+                    {
+                        QASupportApp.LogMsg("TestSitemap", "Ошибка: " + ex.Message);
+                    }
+
+                    showProgressTest(totalPages, onePercent, index);
+                    toolStripStatusLabel2.Text = toolStripStatusLabel2.Text + " ["+ index + "/" + amount +"]";
+                }
+
+                toolStripStatusLabel2.Text = "100%";
+                toolStripStatusLabel5.Text = "0:00";
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestRedirect", "Ошибка: " + ex.Message);
+            }
+
+            TestEnd();
+        }
+
+
+
     }
 }

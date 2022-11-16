@@ -90,9 +90,9 @@
             this.остановитьПроверкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxFrom = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxTo = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxReport = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -483,7 +483,7 @@
             "308 Permanent Redirect («постоянное перенаправление»)."});
             this.checkedListBox1.Location = new System.Drawing.Point(11, 25);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(484, 135);
+            this.checkedListBox1.Size = new System.Drawing.Size(484, 150);
             this.checkedListBox1.TabIndex = 0;
             // 
             // button1
@@ -555,7 +555,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.richTextBox1);
+            this.panel4.Controls.Add(this.richTextBoxFrom);
             this.panel4.Location = new System.Drawing.Point(0, 19);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(486, 314);
@@ -610,7 +610,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.richTextBox2);
+            this.panel7.Controls.Add(this.richTextBoxTo);
             this.panel7.Location = new System.Drawing.Point(0, 19);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(504, 314);
@@ -720,7 +720,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.richTextBox3);
+            this.panel13.Controls.Add(this.richTextBoxReport);
             this.panel13.Location = new System.Drawing.Point(0, 19);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(975, 187);
@@ -763,35 +763,35 @@
     "вол /";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // richTextBox1
+            // richTextBoxFrom
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(484, 312);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richTextBoxFrom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxFrom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxFrom.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxFrom.Name = "richTextBoxFrom";
+            this.richTextBoxFrom.Size = new System.Drawing.Size(484, 312);
+            this.richTextBoxFrom.TabIndex = 0;
+            this.richTextBoxFrom.Text = "";
             // 
-            // richTextBox2
+            // richTextBoxTo
             // 
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox2.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(502, 312);
-            this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "";
+            this.richTextBoxTo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxTo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxTo.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxTo.Name = "richTextBoxTo";
+            this.richTextBoxTo.Size = new System.Drawing.Size(502, 312);
+            this.richTextBoxTo.TabIndex = 0;
+            this.richTextBoxTo.Text = "";
             // 
-            // richTextBox3
+            // richTextBoxReport
             // 
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox3.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(973, 185);
-            this.richTextBox3.TabIndex = 0;
-            this.richTextBox3.Text = "";
+            this.richTextBoxReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxReport.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxReport.Name = "richTextBoxReport";
+            this.richTextBoxReport.Size = new System.Drawing.Size(973, 185);
+            this.richTextBoxReport.TabIndex = 0;
+            this.richTextBoxReport.Text = "";
             // 
             // saveFileDialog1
             // 
@@ -963,9 +963,9 @@
         private System.Windows.Forms.ToolStripMenuItem остановитьПроверкуToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox richTextBoxFrom;
+        private System.Windows.Forms.RichTextBox richTextBoxTo;
+        private System.Windows.Forms.RichTextBox richTextBoxReport;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
