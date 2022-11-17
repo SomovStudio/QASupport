@@ -171,6 +171,7 @@ namespace QASupport.TestSitemap
                     SW.Write(textBoxProcess.Text);
                     SW.Close();
                     QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                    MessageBox.Show("Файл сохранён", "Сообщение");
                 }
             }
             catch (Exception ex)
@@ -191,6 +192,7 @@ namespace QASupport.TestSitemap
                     SW.Write(richTextBox100.Text);
                     SW.Close();
                     QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                    MessageBox.Show("Файл сохранён", "Сообщение");
                 }
             }
             catch (Exception ex)
@@ -211,6 +213,7 @@ namespace QASupport.TestSitemap
                     SW.Write(richTextBox200.Text);
                     SW.Close();
                     QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                    MessageBox.Show("Файл сохранён", "Сообщение");
                 }
             }
             catch (Exception ex)
@@ -231,6 +234,7 @@ namespace QASupport.TestSitemap
                     SW.Write(richTextBox300.Text);
                     SW.Close();
                     QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                    MessageBox.Show("Файл сохранён", "Сообщение");
                 }
             }
             catch (Exception ex)
@@ -251,6 +255,7 @@ namespace QASupport.TestSitemap
                     SW.Write(richTextBox400.Text);
                     SW.Close();
                     QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                    MessageBox.Show("Файл сохранён", "Сообщение");
                 }
             }
             catch (Exception ex)
@@ -271,6 +276,7 @@ namespace QASupport.TestSitemap
                     SW.Write(richTextBox500.Text);
                     SW.Close();
                     QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                    MessageBox.Show("Файл сохранён", "Сообщение");
                 }
             }
             catch (Exception ex)
@@ -291,6 +297,7 @@ namespace QASupport.TestSitemap
                     SW.Write(richTextBoxOther.Text);
                     SW.Close();
                     QASupportApp.LogMsg("TestSitemap", "Сохранён файл " + saveFileDialog1.FileName);
+                    MessageBox.Show("Файл сохранён", "Сообщение");
                 }
             }
             catch (Exception ex)

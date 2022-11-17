@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -561,7 +562,25 @@ namespace QASupport.TestRedirect
             TestEnd();
         }
 
-
-
+        private void сохранитьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveFileDialog1.FileName = "report.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter SW = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create, FileAccess.Write));
+                    SW.Write(richTextBoxReport.Text);
+                    SW.Close();
+                    QASupportApp.LogMsg("TestRedirect", "Сохранён файл " + saveFileDialog1.FileName);
+                    MessageBox.Show("Отчет сохранён", "Сообщение");
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestRedirect", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
     }
 }
