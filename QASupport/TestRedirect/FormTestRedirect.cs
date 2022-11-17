@@ -310,8 +310,30 @@ namespace QASupport.TestRedirect
                         listView1.Items[listView1.Items.Count - 1].Selected = true;
                         listView1.Items[listView1.Items.Count - 1].EnsureVisible();
 
-                        if (test == true) richTextBoxReport.Text = richTextBoxReport.Text + "PASSED - cтатус [" + statusCode + "] - откуда [" + url + "] куда [" + redirectedUrl + "]" + Environment.NewLine;
-                        else richTextBoxReport.Text = richTextBoxReport.Text + "FAILED - cтатус [" + statusCode + "] - откуда [" + url + "] куда [" + redirectedUrl + "]" + Environment.NewLine;
+                        if (checkBoxReportFaildOnly.Checked == true) // отчет
+                        {
+                            if (test == false)
+                            {
+                                richTextBoxReport.Text = richTextBoxReport.Text + "FAILED - cтатус [" + statusCode + "]" + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- откуда: " + url + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- куда  : " + redirectedUrl + Environment.NewLine + Environment.NewLine;
+                            }
+                        }
+                        else
+                        {
+                            if (test == true)
+                            {
+                                richTextBoxReport.Text = richTextBoxReport.Text + "PASSED - cтатус [" + statusCode + "]" + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- откуда: " + url + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- куда  : " + redirectedUrl + Environment.NewLine + Environment.NewLine;
+                            }
+                            else
+                            {
+                                richTextBoxReport.Text = richTextBoxReport.Text + "FAILED - cтатус [" + statusCode + "]" + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- откуда: " + url + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- куда  : " + redirectedUrl + Environment.NewLine + Environment.NewLine;
+                            }
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -452,8 +474,7 @@ namespace QASupport.TestRedirect
                         item.SubItems.Add(subitem);
 
                         test = false;
-                        /*
-                        if (redirectedUrl != "")
+                        if (redirectedUrl == targetUrl)
                         {
                             if (response300 == true && statusCode == 300) test = true;
                             if (response301 == true && statusCode == 301) test = true;
@@ -465,10 +486,17 @@ namespace QASupport.TestRedirect
                             if (response307 == true && statusCode == 307) test = true;
                             if (response308 == true && statusCode == 308) test = true;
                         }
-                        */
-                        if (redirectedUrl == targetUrl)
+                        else if (redirectedUrl.Contains(targetUrl) == true)
                         {
-                            test = true;
+                            if (response300 == true && statusCode == 300) test = true;
+                            if (response301 == true && statusCode == 301) test = true;
+                            if (response302 == true && statusCode == 302) test = true;
+                            if (response303 == true && statusCode == 303) test = true;
+                            if (response304 == true && statusCode == 304) test = true;
+                            if (response305 == true && statusCode == 305) test = true;
+                            if (response306 == true && statusCode == 306) test = true;
+                            if (response307 == true && statusCode == 307) test = true;
+                            if (response308 == true && statusCode == 308) test = true;
                         }
 
                         subitem = new ListViewItem.ListViewSubItem();
@@ -484,8 +512,34 @@ namespace QASupport.TestRedirect
                         listView1.Items[listView1.Items.Count - 1].Selected = true;
                         listView1.Items[listView1.Items.Count - 1].EnsureVisible();
 
-                        if (test == true) richTextBoxReport.Text = richTextBoxReport.Text + "PASSED - cтатус [" + statusCode + "] - откуда [" + originalUrl + "] куда [" + targetUrl + "]  по факту [" + redirectedUrl + "]" + Environment.NewLine;
-                        else richTextBoxReport.Text = richTextBoxReport.Text + "FAILED - cтатус [" + statusCode + "] - откуда [" + originalUrl + "] куда [" + targetUrl + "] по факту [" + redirectedUrl + "]" + Environment.NewLine;
+                        if (checkBoxReportFaildOnly.Checked == true) // отчет
+                        {
+                            if (test == false)
+                            {
+                                richTextBoxReport.Text = richTextBoxReport.Text + "FAILED - cтатус [" + statusCode + "]" + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- откуда  : " + originalUrl + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- куда    : " + targetUrl + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- по факту: " + redirectedUrl + Environment.NewLine + Environment.NewLine;
+                            }
+                        }
+                        else
+                        {
+                            if (test == true)
+                            {
+                                richTextBoxReport.Text = richTextBoxReport.Text + "PASSED - cтатус [" + statusCode + "]" + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- откуда  : " + originalUrl + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- куда    : " + targetUrl + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- по факту: " + redirectedUrl + Environment.NewLine + Environment.NewLine;
+                            }
+                            else
+                            {
+                                richTextBoxReport.Text = richTextBoxReport.Text + "FAILED - cтатус [" + statusCode + "]" + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- откуда  : " + originalUrl + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- куда    : " + targetUrl + Environment.NewLine;
+                                richTextBoxReport.Text = richTextBoxReport.Text + "- по факту: " + redirectedUrl + Environment.NewLine + Environment.NewLine;
+                            }
+                        }
+
                     }
                     catch (Exception ex)
                     {

@@ -42,64 +42,65 @@
             this.сохранитьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запуститьПроверкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.остановитьПроверкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.textBoxUserAgent = new System.Windows.Forms.TextBox();
-            this.checkBoxUserAgent = new System.Windows.Forms.CheckBox();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.richTextBoxFrom = new System.Windows.Forms.RichTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.richTextBoxTo = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.textBoxUserAgent = new System.Windows.Forms.TextBox();
+            this.checkBoxUserAgent = new System.Windows.Forms.CheckBox();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.запуститьПроверкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.остановитьПроверкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.richTextBoxFrom = new System.Windows.Forms.RichTextBox();
-            this.richTextBoxTo = new System.Windows.Forms.RichTextBox();
-            this.richTextBoxReport = new System.Windows.Forms.RichTextBox();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.richTextBoxReport = new System.Windows.Forms.RichTextBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.checkBoxReportFaildOnly = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -109,29 +110,29 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -209,19 +210,44 @@
             // 
             this.сохранитьОтчетToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьОтчетToolStripMenuItem.Image")));
             this.сохранитьОтчетToolStripMenuItem.Name = "сохранитьОтчетToolStripMenuItem";
-            this.сохранитьОтчетToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьОтчетToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.сохранитьОтчетToolStripMenuItem.Text = "Сохранить отчет";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
+            // 
+            // действиеToolStripMenuItem
+            // 
+            this.действиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.запуститьПроверкуToolStripMenuItem,
+            this.остановитьПроверкуToolStripMenuItem});
+            this.действиеToolStripMenuItem.Name = "действиеToolStripMenuItem";
+            this.действиеToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.действиеToolStripMenuItem.Text = "Действие";
+            // 
+            // запуститьПроверкуToolStripMenuItem
+            // 
+            this.запуститьПроверкуToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("запуститьПроверкуToolStripMenuItem.Image")));
+            this.запуститьПроверкуToolStripMenuItem.Name = "запуститьПроверкуToolStripMenuItem";
+            this.запуститьПроверкуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.запуститьПроверкуToolStripMenuItem.Text = "Запустить проверку";
+            this.запуститьПроверкуToolStripMenuItem.Click += new System.EventHandler(this.запуститьПроверкуToolStripMenuItem_Click);
+            // 
+            // остановитьПроверкуToolStripMenuItem
+            // 
+            this.остановитьПроверкуToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("остановитьПроверкуToolStripMenuItem.Image")));
+            this.остановитьПроверкуToolStripMenuItem.Name = "остановитьПроверкуToolStripMenuItem";
+            this.остановитьПроверкуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.остановитьПроверкуToolStripMenuItem.Text = "Остановить проверку";
+            this.остановитьПроверкуToolStripMenuItem.Click += new System.EventHandler(this.остановитьПроверкуToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -248,6 +274,24 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(137, 22);
+            this.toolStripButton2.Text = "Запустить проверку";
+            this.toolStripButton2.Click += new System.EventHandler(this.запуститьПроверкуToolStripMenuItem_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(146, 22);
+            this.toolStripButton3.Text = "Остановить проверку";
+            this.toolStripButton3.Click += new System.EventHandler(this.остановитьПроверкуToolStripMenuItem_Click);
             // 
             // imageList1
             // 
@@ -297,90 +341,6 @@
             this.tabPage1.Text = "Проверка ссылок на редирект";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage5.Controls.Add(this.groupBox1);
-            this.tabPage5.Controls.Add(this.textBoxUserAgent);
-            this.tabPage5.Controls.Add(this.checkBoxUserAgent);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1000, 405);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "Параметры";
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Multiline = true;
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1008, 223);
-            this.tabControl2.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.panel8);
-            this.tabPage3.Location = new System.Drawing.Point(23, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(981, 215);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Результат";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.panel11);
-            this.tabPage4.Location = new System.Drawing.Point(23, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(981, 215);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Отчет";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(994, 63);
-            this.panel1.TabIndex = 0;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(9, 10);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(321, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Проверить переадресацию ссылок из списка (Redirection)";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(9, 33);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(314, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Сравнить списки ссылок на переадресацию (Redirection)";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -397,114 +357,6 @@
             this.splitContainer2.Size = new System.Drawing.Size(994, 336);
             this.splitContainer2.SplitterDistance = 486;
             this.splitContainer2.TabIndex = 1;
-            // 
-            // textBoxUserAgent
-            // 
-            this.textBoxUserAgent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUserAgent.Enabled = false;
-            this.textBoxUserAgent.Location = new System.Drawing.Point(214, 18);
-            this.textBoxUserAgent.Name = "textBoxUserAgent";
-            this.textBoxUserAgent.Size = new System.Drawing.Size(778, 20);
-            this.textBoxUserAgent.TabIndex = 16;
-            this.textBoxUserAgent.Text = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.83" +
-    "5.202 Safari/535.1";
-            // 
-            // checkBoxUserAgent
-            // 
-            this.checkBoxUserAgent.AutoSize = true;
-            this.checkBoxUserAgent.Checked = true;
-            this.checkBoxUserAgent.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxUserAgent.Location = new System.Drawing.Point(8, 20);
-            this.checkBoxUserAgent.Name = "checkBoxUserAgent";
-            this.checkBoxUserAgent.Size = new System.Drawing.Size(200, 17);
-            this.checkBoxUserAgent.TabIndex = 15;
-            this.checkBoxUserAgent.Text = "Включен User-Agent по умолчанию";
-            this.checkBoxUserAgent.UseVisualStyleBackColor = true;
-            this.checkBoxUserAgent.CheckedChanged += new System.EventHandler(this.checkBoxUserAgent_CheckedChanged);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(137, 22);
-            this.toolStripButton2.Text = "Запустить проверку";
-            this.toolStripButton2.Click += new System.EventHandler(this.запуститьПроверкуToolStripMenuItem_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(146, 22);
-            this.toolStripButton3.Text = "Остановить проверку";
-            this.toolStripButton3.Click += new System.EventHandler(this.остановитьПроверкуToolStripMenuItem_Click);
-            // 
-            // действиеToolStripMenuItem
-            // 
-            this.действиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.запуститьПроверкуToolStripMenuItem,
-            this.остановитьПроверкуToolStripMenuItem});
-            this.действиеToolStripMenuItem.Name = "действиеToolStripMenuItem";
-            this.действиеToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.действиеToolStripMenuItem.Text = "Действие";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.checkedListBox1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 54);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(994, 218);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Допустимые ответы сервера:";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "300 Multiple Choices («множество выборов»);",
-            "301 Moved Permanently («перемещено навсегда»);",
-            "302 Moved Temporarily («перемещено временно»), Found («найдено»);",
-            "303 See Other («смотреть другое»);",
-            "304 Not Modified («не изменялось»);",
-            "305 Use Proxy («использовать прокси»);",
-            "306 Зарезервировано (код использовался только в ранних спецификациях);",
-            "307 Temporary Redirect («временное перенаправление»);",
-            "308 Permanent Redirect («постоянное перенаправление»)."});
-            this.checkedListBox1.Location = new System.Drawing.Point(11, 25);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(484, 150);
-            this.checkedListBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(11, 178);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Выбрать всё";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(114, 178);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Снять выбор";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -561,6 +413,16 @@
             this.panel4.Size = new System.Drawing.Size(486, 314);
             this.panel4.TabIndex = 10;
             // 
+            // richTextBoxFrom
+            // 
+            this.richTextBoxFrom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxFrom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxFrom.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxFrom.Name = "richTextBoxFrom";
+            this.richTextBoxFrom.Size = new System.Drawing.Size(484, 312);
+            this.richTextBoxFrom.TabIndex = 0;
+            this.richTextBoxFrom.Text = "";
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.panel6);
@@ -615,6 +477,192 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(504, 314);
             this.panel7.TabIndex = 10;
+            // 
+            // richTextBoxTo
+            // 
+            this.richTextBoxTo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxTo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxTo.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxTo.Name = "richTextBoxTo";
+            this.richTextBoxTo.Size = new System.Drawing.Size(502, 312);
+            this.richTextBoxTo.TabIndex = 0;
+            this.richTextBoxTo.Text = "";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(994, 63);
+            this.panel1.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Location = new System.Drawing.Point(361, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(500, 40);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Примечание:";
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(3, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(494, 21);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "ответ 302 вместо 301 может быть иногда из за того что в конце ссылки не стоит сим" +
+    "вол /";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(9, 33);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(314, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Сравнить списки ссылок на переадресацию (Redirection)";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(9, 10);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(321, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.Text = "Проверить переадресацию ссылок из списка (Redirection)";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage5.Controls.Add(this.checkBoxReportFaildOnly);
+            this.tabPage5.Controls.Add(this.groupBox1);
+            this.tabPage5.Controls.Add(this.textBoxUserAgent);
+            this.tabPage5.Controls.Add(this.checkBoxUserAgent);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1000, 405);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "Параметры";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.checkedListBox1);
+            this.groupBox1.Location = new System.Drawing.Point(3, 90);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(994, 218);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Допустимые ответы сервера:";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(114, 178);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Снять выбор";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(11, 178);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Выбрать всё";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "300 Multiple Choices («множество выборов»);",
+            "301 Moved Permanently («перемещено навсегда»);",
+            "302 Moved Temporarily («перемещено временно»), Found («найдено»);",
+            "303 See Other («смотреть другое»);",
+            "304 Not Modified («не изменялось»);",
+            "305 Use Proxy («использовать прокси»);",
+            "306 Зарезервировано (код использовался только в ранних спецификациях);",
+            "307 Temporary Redirect («временное перенаправление»);",
+            "308 Permanent Redirect («постоянное перенаправление»)."});
+            this.checkedListBox1.Location = new System.Drawing.Point(11, 25);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(484, 150);
+            this.checkedListBox1.TabIndex = 0;
+            // 
+            // textBoxUserAgent
+            // 
+            this.textBoxUserAgent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxUserAgent.Enabled = false;
+            this.textBoxUserAgent.Location = new System.Drawing.Point(214, 18);
+            this.textBoxUserAgent.Name = "textBoxUserAgent";
+            this.textBoxUserAgent.Size = new System.Drawing.Size(778, 20);
+            this.textBoxUserAgent.TabIndex = 16;
+            this.textBoxUserAgent.Text = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.83" +
+    "5.202 Safari/535.1";
+            // 
+            // checkBoxUserAgent
+            // 
+            this.checkBoxUserAgent.AutoSize = true;
+            this.checkBoxUserAgent.Checked = true;
+            this.checkBoxUserAgent.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxUserAgent.Location = new System.Drawing.Point(8, 20);
+            this.checkBoxUserAgent.Name = "checkBoxUserAgent";
+            this.checkBoxUserAgent.Size = new System.Drawing.Size(200, 17);
+            this.checkBoxUserAgent.TabIndex = 15;
+            this.checkBoxUserAgent.Text = "Включен User-Agent по умолчанию";
+            this.checkBoxUserAgent.UseVisualStyleBackColor = true;
+            this.checkBoxUserAgent.CheckedChanged += new System.EventHandler(this.checkBoxUserAgent_CheckedChanged);
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Multiline = true;
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1008, 223);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel8);
+            this.tabPage3.Location = new System.Drawing.Point(23, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(981, 215);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Результат";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -671,6 +719,64 @@
             this.panel10.Size = new System.Drawing.Size(975, 187);
             this.panel10.TabIndex = 10;
             // 
+            // listView1
+            // 
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(973, 185);
+            this.listView1.SmallImageList = this.imageList1;
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "...";
+            this.columnHeader1.Width = 25;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Ссылка (редирект откуда)";
+            this.columnHeader2.Width = 250;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ответ сервера";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Ссылка (редирект куда)";
+            this.columnHeader4.Width = 290;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Статус";
+            this.columnHeader5.Width = 100;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.panel11);
+            this.tabPage4.Location = new System.Drawing.Point(23, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(981, 215);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Отчет";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.panel12);
@@ -726,63 +832,6 @@
             this.panel13.Size = new System.Drawing.Size(975, 187);
             this.panel13.TabIndex = 10;
             // 
-            // запуститьПроверкуToolStripMenuItem
-            // 
-            this.запуститьПроверкуToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("запуститьПроверкуToolStripMenuItem.Image")));
-            this.запуститьПроверкуToolStripMenuItem.Name = "запуститьПроверкуToolStripMenuItem";
-            this.запуститьПроверкуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.запуститьПроверкуToolStripMenuItem.Text = "Запустить проверку";
-            this.запуститьПроверкуToolStripMenuItem.Click += new System.EventHandler(this.запуститьПроверкуToolStripMenuItem_Click);
-            // 
-            // остановитьПроверкуToolStripMenuItem
-            // 
-            this.остановитьПроверкуToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("остановитьПроверкуToolStripMenuItem.Image")));
-            this.остановитьПроверкуToolStripMenuItem.Name = "остановитьПроверкуToolStripMenuItem";
-            this.остановитьПроверкуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.остановитьПроверкуToolStripMenuItem.Text = "Остановить проверку";
-            this.остановитьПроверкуToolStripMenuItem.Click += new System.EventHandler(this.остановитьПроверкуToolStripMenuItem_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(361, 10);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(500, 40);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Примечание:";
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(3, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(494, 21);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "ответ 302 вместо 301 может быть иногда из за того что в конце ссылки не стоит сим" +
-    "вол /";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // richTextBoxFrom
-            // 
-            this.richTextBoxFrom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxFrom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxFrom.Location = new System.Drawing.Point(0, 0);
-            this.richTextBoxFrom.Name = "richTextBoxFrom";
-            this.richTextBoxFrom.Size = new System.Drawing.Size(484, 312);
-            this.richTextBoxFrom.TabIndex = 0;
-            this.richTextBoxFrom.Text = "";
-            // 
-            // richTextBoxTo
-            // 
-            this.richTextBoxTo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxTo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxTo.Location = new System.Drawing.Point(0, 0);
-            this.richTextBoxTo.Name = "richTextBoxTo";
-            this.richTextBoxTo.Size = new System.Drawing.Size(502, 312);
-            this.richTextBoxTo.TabIndex = 0;
-            this.richTextBoxTo.Text = "";
-            // 
             // richTextBoxReport
             // 
             this.richTextBoxReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -797,52 +846,18 @@
             // 
             this.saveFileDialog1.Filter = "(*.txt)|*.txt|Все файлы (*.*)|*.*";
             // 
-            // listView1
+            // checkBoxReportFaildOnly
             // 
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(973, 185);
-            this.listView1.SmallImageList = this.imageList1;
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "...";
-            this.columnHeader1.Width = 25;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Ссылка (редирект откуда)";
-            this.columnHeader2.Width = 250;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Ответ сервера";
-            this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Ссылка (редирект куда)";
-            this.columnHeader4.Width = 290;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Статус";
-            this.columnHeader5.Width = 100;
+            this.checkBoxReportFaildOnly.AutoSize = true;
+            this.checkBoxReportFaildOnly.Checked = true;
+            this.checkBoxReportFaildOnly.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxReportFaildOnly.Location = new System.Drawing.Point(8, 55);
+            this.checkBoxReportFaildOnly.Name = "checkBoxReportFaildOnly";
+            this.checkBoxReportFaildOnly.Size = new System.Drawing.Size(555, 17);
+            this.checkBoxReportFaildOnly.TabIndex = 18;
+            this.checkBoxReportFaildOnly.Text = "В отчет записывать только failed (если этот параметр выключен тогда в отчет будет" +
+    " записываться всё)";
+            this.checkBoxReportFaildOnly.UseVisualStyleBackColor = true;
             // 
             // FormTestRedirect
             // 
@@ -871,31 +886,31 @@
             this.splitContainer1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -973,5 +988,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.CheckBox checkBoxReportFaildOnly;
     }
 }
