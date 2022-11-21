@@ -73,6 +73,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.checkBoxReportFaildOnly = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -100,7 +101,14 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.richTextBoxReport = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.checkBoxReportFaildOnly = new System.Windows.Forms.CheckBox();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -199,6 +207,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
             this.сохранитьОтчетToolStripMenuItem,
             this.toolStripSeparator1,
             this.закрытьToolStripMenuItem});
@@ -253,6 +262,8 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1,
+            this.toolStripSeparator3,
             this.toolStripButton1,
             this.toolStripSeparator2,
             this.toolStripButton2,
@@ -560,6 +571,19 @@
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Параметры";
             // 
+            // checkBoxReportFaildOnly
+            // 
+            this.checkBoxReportFaildOnly.AutoSize = true;
+            this.checkBoxReportFaildOnly.Checked = true;
+            this.checkBoxReportFaildOnly.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxReportFaildOnly.Location = new System.Drawing.Point(8, 55);
+            this.checkBoxReportFaildOnly.Name = "checkBoxReportFaildOnly";
+            this.checkBoxReportFaildOnly.Size = new System.Drawing.Size(555, 17);
+            this.checkBoxReportFaildOnly.TabIndex = 18;
+            this.checkBoxReportFaildOnly.Text = "В отчет записывать только failed (если этот параметр выключен тогда в отчет будет" +
+    " записываться всё)";
+            this.checkBoxReportFaildOnly.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -848,18 +872,65 @@
             // 
             this.saveFileDialog1.Filter = "(*.txt)|*.txt|Все файлы (*.*)|*.*";
             // 
-            // checkBoxReportFaildOnly
+            // loadToolStripMenuItem
             // 
-            this.checkBoxReportFaildOnly.AutoSize = true;
-            this.checkBoxReportFaildOnly.Checked = true;
-            this.checkBoxReportFaildOnly.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxReportFaildOnly.Location = new System.Drawing.Point(8, 55);
-            this.checkBoxReportFaildOnly.Name = "checkBoxReportFaildOnly";
-            this.checkBoxReportFaildOnly.Size = new System.Drawing.Size(555, 17);
-            this.checkBoxReportFaildOnly.TabIndex = 18;
-            this.checkBoxReportFaildOnly.Text = "В отчет записывать только failed (если этот параметр выключен тогда в отчет будет" +
-    " записываться всё)";
-            this.checkBoxReportFaildOnly.UseVisualStyleBackColor = true;
+            this.loadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem,
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem});
+            this.loadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("loadToolStripMenuItem.Image")));
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "Открыть файл";
+            // 
+            // загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem
+            // 
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Name = "загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem";
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (откуда)\"";
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem_Click);
+            // 
+            // загрузитьДанныеВСписокСсылоккудаToolStripMenuItem
+            // 
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Name = "загрузитьДанныеВСписокСсылоккудаToolStripMenuItem";
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (куда)\"";
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem,
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem
+            // 
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Name = "загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem";
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (откуда)\"";
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem_Click);
+            // 
+            // загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem
+            // 
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Name = "загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem";
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (куда)\"";
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "(*.txt)|*.txt";
             // 
             // FormTestRedirect
             // 
@@ -991,5 +1062,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.CheckBox checkBoxReportFaildOnly;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьДанныеВСписокСсылоккудаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

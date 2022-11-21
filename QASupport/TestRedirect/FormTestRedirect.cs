@@ -582,5 +582,41 @@ namespace QASupport.TestRedirect
                 MessageBox.Show(ex.Message, "Ошибка");
             }
         }
+
+        private void загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog1.FileName = "";
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    richTextBoxFrom.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestRedirect", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+            
+        }
+
+        private void загрузитьДанныеВСписокСсылоккудаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog1.FileName = "";
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    richTextBoxTo.LoadFile(openFileDialog1.FileName, RichTextBoxStreamType.PlainText);
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestRedirect", "Ошибка: " + ex.Message);
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+            
+        }
     }
 }
