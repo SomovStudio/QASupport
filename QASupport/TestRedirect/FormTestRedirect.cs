@@ -683,5 +683,33 @@ namespace QASupport.TestRedirect
             try { Process.Start(e.LinkText); }
             catch (Exception ex) { QASupportApp.LogMsg("TestRedirect", ex.Message); }
         }
+
+        private void openStep()
+        {
+            try
+            {
+                if (listView1.Items.Count <= 0) return;
+                FormTestRedirectResult result = new FormTestRedirectResult();
+                result.textBox1.Text = listView1.SelectedItems[0].SubItems[1].Text;
+                result.textBox2.Text = listView1.SelectedItems[0].SubItems[2].Text;
+                result.textBox3.Text = listView1.SelectedItems[0].SubItems[3].Text;
+                result.textBox4.Text = listView1.SelectedItems[0].SubItems[4].Text;
+                result.Show();
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestRedirect", ex.Message);
+            }
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            openStep();
+        }
+
+        private void resultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openStep();
+        }
     }
 }
