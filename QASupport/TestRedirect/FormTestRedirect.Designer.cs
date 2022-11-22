@@ -508,6 +508,7 @@
             this.richTextBoxFrom.Size = new System.Drawing.Size(484, 312);
             this.richTextBoxFrom.TabIndex = 0;
             this.richTextBoxFrom.Text = "";
+            this.richTextBoxFrom.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBoxFrom_LinkClicked);
             // 
             // panel5
             // 
@@ -574,6 +575,7 @@
             this.richTextBoxTo.Size = new System.Drawing.Size(502, 312);
             this.richTextBoxTo.TabIndex = 0;
             this.richTextBoxTo.Text = "";
+            this.richTextBoxTo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBoxTo_LinkClicked);
             // 
             // panel1
             // 
@@ -1012,7 +1014,7 @@
             this.toolStripSeparator4,
             this.toolStripMenuItem5});
             this.contextMenuTo.Name = "contextMenuStrip100";
-            this.contextMenuTo.Size = new System.Drawing.Size(181, 142);
+            this.contextMenuTo.Size = new System.Drawing.Size(149, 120);
             // 
             // toolStripMenuItem1
             // 

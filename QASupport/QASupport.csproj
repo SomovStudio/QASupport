@@ -116,6 +116,12 @@
     <Compile Include="TestRedirect\FormTestRedirect.Designer.cs">
       <DependentUpon>FormTestRedirect.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestRedirect\FormTestRedirectResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestRedirect\FormTestRedirectResult.Designer.cs">
+      <DependentUpon>FormTestRedirectResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestSitemap\FormTestSitemap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </Compile>
     <EmbeddedResource Include="TestRedirect\FormTestRedirect.resx">
       <DependentUpon>FormTestRedirect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestRedirect\FormTestRedirectResult.resx">
+      <DependentUpon>FormTestRedirectResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestSitemap\FormTestSitemap.resx">
       <DependentUpon>FormTestSitemap.cs</DependentUpon>

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -669,6 +670,18 @@ namespace QASupport.TestRedirect
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             richTextBoxTo.SelectAll();
+        }
+
+        private void richTextBoxFrom_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try { Process.Start(e.LinkText); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestRedirect", ex.Message); }
+        }
+
+        private void richTextBoxTo_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            try { Process.Start(e.LinkText); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestRedirect", ex.Message); }
         }
     }
 }
