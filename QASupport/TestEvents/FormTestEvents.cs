@@ -36,7 +36,7 @@ namespace QASupport.TestEvents
                 return result;
                 }());";
 
-                string jsonText = await BrowserView.CoreWebView2.ExecuteScriptAsync(script);
+                string jsonText = await webView21.CoreWebView2.ExecuteScriptAsync(script);
                 dynamic result = JsonConvert.DeserializeObject(jsonText);
                 events = result;
             }
