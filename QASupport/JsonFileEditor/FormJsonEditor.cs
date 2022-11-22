@@ -50,7 +50,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -63,7 +63,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -95,7 +95,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -108,7 +108,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -162,7 +162,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -222,8 +222,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                //QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.ToString());
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -282,7 +281,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -299,7 +298,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
                 return null;
             }
         }
@@ -318,7 +317,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
                 return null;
             }
         }
@@ -440,7 +439,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -481,7 +480,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -522,7 +521,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -564,7 +563,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -606,7 +605,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -660,7 +659,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -709,7 +708,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -723,7 +722,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
                 return 0;
             }
         }
@@ -738,6 +737,7 @@ namespace QASupport.JsonFileEditor
 
         private void FormJsonEditor_Load(object sender, EventArgs e)
         {
+            QASupportApp.LogMsg("JsonFileEditor", "Программа загружена");
             try
             {
                 _pathFileName = _safeFileName;
@@ -747,13 +747,13 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
         private void FormJsonEditor_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            QASupportApp.LogMsg("JsonFileEditor", "Программа закрыта");
         }
 
         private void новыйФайлToolStripMenuItem_Click(object sender, EventArgs e)
@@ -874,7 +874,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -886,7 +886,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -900,7 +900,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -914,7 +914,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -976,7 +976,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -988,7 +988,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -1003,7 +1003,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -1044,7 +1044,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -1069,7 +1069,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -1234,7 +1234,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -1256,7 +1256,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 
@@ -1321,7 +1321,7 @@ namespace QASupport.JsonFileEditor
             }
             catch (Exception ex)
             {
-                QASupportApp.ErrorMsg("JsonFileEditor", ex.Message);
+                QASupportApp.LogMsg("JsonFileEditor", "Ошибка: " + ex.Message);
             }
         }
 

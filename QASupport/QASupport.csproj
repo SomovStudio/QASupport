@@ -110,6 +110,24 @@
     <Compile Include="JsonFileEditor\JsonData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestRedirect\FormTestRedirect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestRedirect\FormTestRedirect.Designer.cs">
+      <DependentUpon>FormTestRedirect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestRedirect\FormTestRedirectResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestRedirect\FormTestRedirectResult.Designer.cs">
+      <DependentUpon>FormTestRedirectResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestSitemap\FormTestSitemap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestSitemap\FormTestSitemap.Designer.cs">
+      <DependentUpon>FormTestSitemap.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="App\FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +158,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TestRedirect\FormTestRedirect.resx">
+      <DependentUpon>FormTestRedirect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestRedirect\FormTestRedirectResult.resx">
+      <DependentUpon>FormTestRedirectResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestSitemap\FormTestSitemap.resx">
+      <DependentUpon>FormTestSitemap.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -157,6 +184,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.1343.22\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1343.22\build\Microsoft.Web.WebView2.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

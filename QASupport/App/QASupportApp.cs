@@ -11,7 +11,7 @@ namespace QASupport
     public static class QASupportApp
     {
         public const string Version = "1.0.0";
-        public const string LastUpdate = "09.09.2022";
+        public const string LastUpdate = "22.12.2022";
 
         public static FormMain MainForm { get; set; }
         public static FormErrors ErrorsForm { get; set; }
@@ -40,7 +40,8 @@ namespace QASupport
             }
             catch (Exception ex)
             {
-                ErrorMsg(appName, ex.ToString());
+                //ErrorMsg(appName, ex.ToString());
+                MessageBox.Show(ex.Message, "Ошибка");
             }
         }
 

@@ -533,7 +533,7 @@
             this.добавитьЗаписьТолькоЗначениеToolStripMenuItem2,
             this.удалитьToolStripMenuItem2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(280, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(280, 114);
             // 
             // добавитьОбъектToolStripMenuItem2
             // 
