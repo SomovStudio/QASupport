@@ -13,6 +13,7 @@ using QASupport.App;
 using QASupport.JsonFileEditor;
 using QASupport.TestSitemap;
 using QASupport.TestRedirect;
+using QASupport.TestEvents;
 
 namespace QASupport
 {
@@ -260,6 +261,12 @@ namespace QASupport
         {
             try { Process.Start("notepad.exe"); }
             catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
+
+        private void testEventsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTestEvents testevents = new FormTestEvents();
+            testevents.Show();
         }
     }
 }

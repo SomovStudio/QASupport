@@ -675,13 +675,13 @@ namespace QASupport.TestRedirect
         private void richTextBoxFrom_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             try { Process.Start(e.LinkText); }
-            catch (Exception ex) { QASupportApp.LogMsg("TestRedirect", ex.Message); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestRedirect", "Ошибка: " + ex.Message); }
         }
 
         private void richTextBoxTo_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             try { Process.Start(e.LinkText); }
-            catch (Exception ex) { QASupportApp.LogMsg("TestRedirect", ex.Message); }
+            catch (Exception ex) { QASupportApp.LogMsg("TestRedirect", "Ошибка: " + ex.Message); }
         }
 
         private void openStep()
@@ -698,7 +698,7 @@ namespace QASupport.TestRedirect
             }
             catch (Exception ex)
             {
-                QASupportApp.LogMsg("TestRedirect", ex.Message);
+                QASupportApp.LogMsg("TestRedirect", "Ошибка: " + ex.Message);
             }
         }
 
