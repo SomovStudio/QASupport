@@ -11,9 +11,9 @@
 9. Клиент ResrAPI					-
 --------------------------------------------------
 10. TestSitemap 					- готово
-11. TestRedirect 					- в разработке
+11. TestRedirect 					- готово
 12. TestCookie					-
-13. TestEvents					-
+13. TestEvents					- в разработке
 --------------------------------------------------
 14. SearchSiteContent				-
 15. SEOScanner					-
