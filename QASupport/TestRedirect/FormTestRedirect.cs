@@ -618,5 +618,57 @@ namespace QASupport.TestRedirect
             }
             
         }
+
+        private void toolStripMenuItem21_Click(object sender, EventArgs e)
+        {
+            richTextBoxFrom.Cut();
+        }
+
+        private void toolStripMenuItem22_Click(object sender, EventArgs e)
+        {
+            richTextBoxFrom.Copy();
+        }
+
+        private void toolStripMenuItem23_Click(object sender, EventArgs e)
+        {
+            richTextBoxFrom.Paste();
+        }
+
+        private void toolStripMenuItem24_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(" ");
+            richTextBoxFrom.Paste();
+        }
+
+        private void toolStripMenuItem25_Click(object sender, EventArgs e)
+        {
+            richTextBoxFrom.SelectAll();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            richTextBoxTo.Cut();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            richTextBoxTo.Copy();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            richTextBoxTo.Paste();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(" ");
+            richTextBoxTo.Paste();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            richTextBoxTo.SelectAll();
+        }
     }
 }

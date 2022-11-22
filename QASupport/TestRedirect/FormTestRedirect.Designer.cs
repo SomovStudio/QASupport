@@ -39,6 +39,9 @@
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +49,10 @@
             this.запуститьПроверкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.остановитьПроверкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -101,14 +108,21 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.richTextBoxReport = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.contextMenuFrom = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem22 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem23 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem24 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem25 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuTo = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -141,6 +155,8 @@
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.contextMenuFrom.SuspendLayout();
+            this.contextMenuTo.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -215,6 +231,30 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.fileToolStripMenuItem.Text = "Файл";
             // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem,
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem});
+            this.loadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("loadToolStripMenuItem.Image")));
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "Открыть файл";
+            // 
+            // загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem
+            // 
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Name = "загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem";
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (откуда)\"";
+            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem_Click);
+            // 
+            // загрузитьДанныеВСписокСсылоккудаToolStripMenuItem
+            // 
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Name = "загрузитьДанныеВСписокСсылоккудаToolStripMenuItem";
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (куда)\"";
+            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem_Click);
+            // 
             // сохранитьОтчетToolStripMenuItem
             // 
             this.сохранитьОтчетToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьОтчетToolStripMenuItem.Image")));
@@ -273,6 +313,38 @@
             this.toolStrip1.Size = new System.Drawing.Size(1008, 25);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem,
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem
+            // 
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Name = "загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem";
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (откуда)\"";
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem_Click);
+            // 
+            // загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem
+            // 
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Name = "загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem";
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (куда)\"";
+            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripButton1
             // 
@@ -429,6 +501,7 @@
             // richTextBoxFrom
             // 
             this.richTextBoxFrom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxFrom.ContextMenuStrip = this.contextMenuFrom;
             this.richTextBoxFrom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxFrom.Location = new System.Drawing.Point(0, 0);
             this.richTextBoxFrom.Name = "richTextBoxFrom";
@@ -494,6 +567,7 @@
             // richTextBoxTo
             // 
             this.richTextBoxTo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxTo.ContextMenuStrip = this.contextMenuTo;
             this.richTextBoxTo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxTo.Location = new System.Drawing.Point(0, 0);
             this.richTextBoxTo.Name = "richTextBoxTo";
@@ -872,65 +946,113 @@
             // 
             this.saveFileDialog1.Filter = "(*.txt)|*.txt|Все файлы (*.*)|*.*";
             // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem,
-            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem});
-            this.loadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("loadToolStripMenuItem.Image")));
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadToolStripMenuItem.Text = "Открыть файл";
-            // 
-            // загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem
-            // 
-            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Name = "загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem";
-            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
-            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (откуда)\"";
-            this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem_Click);
-            // 
-            // загрузитьДанныеВСписокСсылоккудаToolStripMenuItem
-            // 
-            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Name = "загрузитьДанныеВСписокСсылоккудаToolStripMenuItem";
-            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
-            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (куда)\"";
-            this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem_Click);
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem,
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem
-            // 
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Name = "загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem";
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (откуда)\"";
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылокоткудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылокоткудаToolStripMenuItem_Click);
-            // 
-            // загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem
-            // 
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Name = "загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem";
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Text = "Загрузить данные из txt файла в \"Список ссылок (куда)\"";
-            this.загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьДанныеВСписокСсылоккудаToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "(*.txt)|*.txt";
+            // 
+            // contextMenuFrom
+            // 
+            this.contextMenuFrom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem21,
+            this.toolStripMenuItem22,
+            this.toolStripMenuItem23,
+            this.toolStripMenuItem24,
+            this.toolStripSeparator10,
+            this.toolStripMenuItem25});
+            this.contextMenuFrom.Name = "contextMenuStrip100";
+            this.contextMenuFrom.Size = new System.Drawing.Size(149, 120);
+            // 
+            // toolStripMenuItem21
+            // 
+            this.toolStripMenuItem21.Name = "toolStripMenuItem21";
+            this.toolStripMenuItem21.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem21.Text = "Вырезать";
+            this.toolStripMenuItem21.Click += new System.EventHandler(this.toolStripMenuItem21_Click);
+            // 
+            // toolStripMenuItem22
+            // 
+            this.toolStripMenuItem22.Name = "toolStripMenuItem22";
+            this.toolStripMenuItem22.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem22.Text = "Копировать";
+            this.toolStripMenuItem22.Click += new System.EventHandler(this.toolStripMenuItem22_Click);
+            // 
+            // toolStripMenuItem23
+            // 
+            this.toolStripMenuItem23.Name = "toolStripMenuItem23";
+            this.toolStripMenuItem23.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem23.Text = "Вставить";
+            this.toolStripMenuItem23.Click += new System.EventHandler(this.toolStripMenuItem23_Click);
+            // 
+            // toolStripMenuItem24
+            // 
+            this.toolStripMenuItem24.Name = "toolStripMenuItem24";
+            this.toolStripMenuItem24.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem24.Text = "Удалить";
+            this.toolStripMenuItem24.Click += new System.EventHandler(this.toolStripMenuItem24_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripMenuItem25
+            // 
+            this.toolStripMenuItem25.Name = "toolStripMenuItem25";
+            this.toolStripMenuItem25.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem25.Text = "Выделить всё";
+            this.toolStripMenuItem25.Click += new System.EventHandler(this.toolStripMenuItem25_Click);
+            // 
+            // contextMenuTo
+            // 
+            this.contextMenuTo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripSeparator4,
+            this.toolStripMenuItem5});
+            this.contextMenuTo.Name = "contextMenuStrip100";
+            this.contextMenuTo.Size = new System.Drawing.Size(181, 142);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Вырезать";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "Копировать";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "Вставить";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Text = "Удалить";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(145, 6);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Text = "Выделить всё";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // FormTestRedirect
             // 
@@ -984,6 +1106,8 @@
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
+            this.contextMenuFrom.ResumeLayout(false);
+            this.contextMenuTo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1070,5 +1194,19 @@
         private System.Windows.Forms.ToolStripMenuItem загрузитьДанныеИзTxtФайлаВСписокСсылоккудаToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuFrom;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem21;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem22;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem23;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem24;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem25;
+        private System.Windows.Forms.ContextMenuStrip contextMenuTo;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     }
 }
