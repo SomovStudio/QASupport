@@ -256,6 +256,10 @@ namespace QASupport
             About.Show();
         }
 
-        
+        private void notebookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Process.Start("notepad.exe"); }
+            catch (Exception ex) { QASupportApp.ErrorMsg("QASupport", ex.Message); }
+        }
     }
 }
