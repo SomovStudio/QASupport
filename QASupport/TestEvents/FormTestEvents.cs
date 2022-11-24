@@ -97,11 +97,11 @@ namespace QASupport.TestEvents
                 item.SubItems.Add(subitem);
 
                 subitem = new ListViewItem.ListViewSubItem();
-                subitem.Text = dataErrors.entry.timestamp;
+                subitem.Text = dataErrors.entry.url;
                 item.SubItems.Add(subitem);
 
                 subitem = new ListViewItem.ListViewSubItem();
-                subitem.Text = dataErrors.entry.url;
+                subitem.Text = dataErrors.entry.timestamp;
                 item.SubItems.Add(subitem);
 
                 listViewErrors.Items.Add(item);
