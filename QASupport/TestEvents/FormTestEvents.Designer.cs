@@ -221,6 +221,8 @@
             this.toolStripComboBoxUrl.Name = "toolStripComboBoxUrl";
             this.toolStripComboBoxUrl.Size = new System.Drawing.Size(350, 25);
             this.toolStripComboBoxUrl.Text = "https://yandex.ru";
+            this.toolStripComboBoxUrl.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxUrl_SelectedIndexChanged);
+            this.toolStripComboBoxUrl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripComboBoxUrl_KeyPress);
             // 
             // toolStripButton4
             // 

@@ -174,5 +174,38 @@ namespace QASupport.TestEvents
                 QASupportApp.LogMsg("TestEvents", "Ошибка: " + ex.Message);
             }
         }
+
+        private void toolStripComboBoxUrl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar.GetHashCode().ToString() == "851981")
+                {
+                    if (toolStripComboBoxUrl.Text.Contains("https://") == false && toolStripComboBoxUrl.Text.Contains("http://") == false)
+                    {
+                        toolStripComboBoxUrl.Text = "https://" + toolStripComboBoxUrl.Text;
+                    }
+                    webView21.CoreWebView2.Navigate(toolStripComboBoxUrl.Text);
+                    updateToolStripComboBoxUrl();
+                }
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestEvents", "Ошибка: " + ex.Message);
+            }
+        }
+
+        private void toolStripComboBoxUrl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                webView21.CoreWebView2.Navigate(toolStripComboBoxUrl.Text);
+                updateToolStripComboBoxUrl();
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestEvents", "Ошибка: " + ex.Message);
+            }
+        }
     }
 }
