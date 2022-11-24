@@ -52,7 +52,7 @@ namespace QASupport.TestEvents
         private void FormTestEvents_Load(object sender, EventArgs e)
         {
             QASupportApp.LogMsg("TestEvents", "Программа загружена");
-            initWebView()
+            initWebView();
             webView21.Source = new Uri(toolStripComboBoxUrl.Text);
         }
 
