@@ -77,8 +77,40 @@ namespace QASupport.TestEvents
                 JsonDataErrors dataErrors = JsonConvert.DeserializeObject<JsonDataErrors>(e.ParameterObjectAsJson);
                 QASupportApp.LogMsg("TestEvents", $"{dataErrors.entry.level} | {dataErrors.entry.source} | {dataErrors.entry.url}");
 
-                richTextBoxErrors.AppendText(e.ParameterObjectAsJson + Environment.NewLine);
-                richTextBoxErrors.ScrollToCaret();
+                ListViewItem item;
+                ListViewItem.ListViewSubItem subitem;
+                item = new ListViewItem();
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = dataErrors.entry.level;
+                item.SubItems.Add(subitem);
+
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = dataErrors.entry.lineNumber.ToString();
+                item.SubItems.Add(subitem);
+
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = dataErrors.entry.source;
+                item.SubItems.Add(subitem);
+
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = dataErrors.entry.text;
+                item.SubItems.Add(subitem);
+
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = dataErrors.entry.timestamp;
+                item.SubItems.Add(subitem);
+
+                subitem = new ListViewItem.ListViewSubItem();
+                subitem.Text = dataErrors.entry.url;
+                item.SubItems.Add(subitem);
+
+                listViewErrors.Items.Add(item);
+                int index = listViewErrors.Items.Count - 1;
+                listViewErrors.Items[index].Selected = true;
+                listViewErrors.Items[index].EnsureVisible();
+
+
+                
             }
         }
 
@@ -90,7 +122,7 @@ namespace QASupport.TestEvents
 
         private void webView21_SourceChanged(object sender, CoreWebView2SourceChangedEventArgs e)
         {
-            richTextBoxErrors.Text = "";
+            listViewErrors.Items.Clear();
         }
 
         private void webView21_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)

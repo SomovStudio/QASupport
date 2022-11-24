@@ -93,7 +93,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.richTextBoxErrors = new System.Windows.Forms.RichTextBox();
+            this.listViewErrors = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
@@ -780,22 +787,67 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.richTextBoxErrors);
+            this.panel12.Controls.Add(this.listViewErrors);
             this.panel12.Controls.Add(this.toolStrip4);
             this.panel12.Location = new System.Drawing.Point(0, 19);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(496, 198);
             this.panel12.TabIndex = 13;
             // 
-            // richTextBoxErrors
+            // listViewErrors
             // 
-            this.richTextBoxErrors.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxErrors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxErrors.Location = new System.Drawing.Point(0, 25);
-            this.richTextBoxErrors.Name = "richTextBoxErrors";
-            this.richTextBoxErrors.Size = new System.Drawing.Size(494, 171);
-            this.richTextBoxErrors.TabIndex = 2;
-            this.richTextBoxErrors.Text = "";
+            this.listViewErrors.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listViewErrors.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.listViewErrors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewErrors.FullRowSelect = true;
+            this.listViewErrors.GridLines = true;
+            this.listViewErrors.HideSelection = false;
+            this.listViewErrors.Location = new System.Drawing.Point(0, 25);
+            this.listViewErrors.MultiSelect = false;
+            this.listViewErrors.Name = "listViewErrors";
+            this.listViewErrors.Size = new System.Drawing.Size(494, 171);
+            this.listViewErrors.TabIndex = 3;
+            this.listViewErrors.UseCompatibleStateImageBehavior = false;
+            this.listViewErrors.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "...";
+            this.columnHeader4.Width = 25;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "level";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "line number";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "source";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "text";
+            this.columnHeader8.Width = 200;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "timestamp";
+            this.columnHeader9.Width = 200;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "url";
+            this.columnHeader10.Width = 200;
             // 
             // toolStrip4
             // 
@@ -1031,7 +1083,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.RichTextBox richTextBoxErrors;
         private System.Windows.Forms.ToolStrip toolStrip4;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
@@ -1041,5 +1092,13 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ListView listViewErrors;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }
