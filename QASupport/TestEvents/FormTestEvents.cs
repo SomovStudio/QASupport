@@ -49,39 +49,20 @@ namespace QASupport.TestEvents
             return events;
         }
 
-        private void FormTestEvents_Load(object sender, EventArgs e)
-        {
-            QASupportApp.LogMsg("TestEvents", "Программа загружена");
-            initWebView();
-            webView21.Source = new Uri(toolStripComboBoxUrl.Text);
-        }
-
-        /* Инициализация WevView */
-        private void initWebView()
-        {
-            webView21.CoreWebView2InitializationCompleted += WebView_CoreWebView2InitializationCompleted;
-        }
-
-        private void WebView_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
+        private void updateToolStripComboBoxUrl()
         {
             try
             {
-                //consoleMsg("Инициализация WebView завершена");
-                webView21.EnsureCoreWebView2Async();
-                webView21.CoreWebView2.CallDevToolsProtocolMethodAsync("Network.clearBrowserCache", "{}");
-                webView21.CoreWebView2.CallDevToolsProtocolMethodAsync("Network.setCacheDisabled", @"{""cacheDisabled"":true}");
-                //consoleMsg("Выполнена очистка кэша WebView");
-                webView21.EnsureCoreWebView2Async();
-                webView21.CoreWebView2.GetDevToolsProtocolEventReceiver("Log.entryAdded").DevToolsProtocolEventReceived += showMessageConsoleErrors;
-                webView21.CoreWebView2.CallDevToolsProtocolMethodAsync("Log.enable", "{}");
-                //consoleMsg("Запущен монитор ошибок на страницах");
-                webView21.CoreWebView2.CallDevToolsProtocolMethodAsync("Security.setIgnoreCertificateErrors", "{\"ignore\": true}");
-                //consoleMsg("Опция Security.setIgnoreCertificateErrors - включен параметр ignore: true");
-                if (defaultUserAgent == "") defaultUserAgent = webView21.CoreWebView2.Settings.UserAgent;
-                //consoleMsg($"Опция User-Agent по умолчанию {Config.defaultUserAgent}");
-                webView21.CoreWebView2.Settings.AreDefaultScriptDialogsEnabled = false;
-                //consoleMsg("Выполнена настройка WebView (отключаны alert, prompt, confirm)");
-
+                bool thisIsNewUrl = true;
+                for (int k = 0; k < toolStripComboBoxUrl.Items.Count; k++)
+                {
+                    if (toolStripComboBoxUrl.Items[k].ToString() == toolStripComboBoxUrl.Text)
+                    {
+                        thisIsNewUrl = false;
+                        break;
+                    }
+                }
+                if (thisIsNewUrl == true) toolStripComboBoxUrl.Items.Add(toolStripComboBoxUrl.Text);
             }
             catch (Exception ex)
             {
@@ -93,15 +74,105 @@ namespace QASupport.TestEvents
         {
             if (e != null && e.ParameterObjectAsJson != null)
             {
-                //richTextBoxErrors.AppendText(e.ParameterObjectAsJson + Environment.NewLine);
-                //richTextBoxErrors.ScrollToCaret();
-                richTextBoxErrors.Text += e.ParameterObjectAsJson.ToString();   
+                richTextBoxErrors.AppendText(e.ParameterObjectAsJson + Environment.NewLine);
+                richTextBoxErrors.ScrollToCaret();
             }
+        }
+
+        private void FormTestEvents_Load(object sender, EventArgs e)
+        {
+            QASupportApp.LogMsg("TestEvents", "Программа загружена");
+            webView21.Source = new Uri(toolStripComboBoxUrl.Text);
         }
 
         private void webView21_SourceChanged(object sender, CoreWebView2SourceChangedEventArgs e)
         {
             richTextBoxErrors.Text = "";
+        }
+
+        private void webView21_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
+        {
+            try
+            {
+                QASupportApp.LogMsg("TestEvents", "Инициализация WebView завершена");
+
+                webView21.EnsureCoreWebView2Async();
+                webView21.CoreWebView2.CallDevToolsProtocolMethodAsync("Network.clearBrowserCache", "{}");
+                webView21.CoreWebView2.CallDevToolsProtocolMethodAsync("Network.setCacheDisabled", @"{""cacheDisabled"":true}");
+                QASupportApp.LogMsg("TestEvents", "Выполнена очистка кэша WebView");
+
+                webView21.EnsureCoreWebView2Async();
+                webView21.CoreWebView2.GetDevToolsProtocolEventReceiver("Log.entryAdded").DevToolsProtocolEventReceived += showMessageConsoleErrors;
+                webView21.CoreWebView2.CallDevToolsProtocolMethodAsync("Log.enable", "{}");
+                QASupportApp.LogMsg("TestEvents", "Запущен монитор ошибок на страницах");
+
+                webView21.CoreWebView2.CallDevToolsProtocolMethodAsync("Security.setIgnoreCertificateErrors", "{\"ignore\": true}");
+                QASupportApp.LogMsg("TestEvents", "Опция Security.setIgnoreCertificateErrors - включен параметр ignore: true");
+
+                if (defaultUserAgent == "") defaultUserAgent = webView21.CoreWebView2.Settings.UserAgent;
+                QASupportApp.LogMsg("TestEvents", $"Опция User-Agent по умолчанию {defaultUserAgent}");
+
+                //webView21.CoreWebView2.Settings.AreDefaultScriptDialogsEnabled = false;
+                //QASupportApp.LogMsg("TestEvents", "Выполнена настройка WebView (отключаны alert, prompt, confirm)");
+
+                webView21.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
+                QASupportApp.LogMsg("TestEvents", "Отключено открытие страниц в новых окнах");
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestEvents", "Ошибка: " + ex.Message);
+            }
+        }
+
+        private void CoreWebView2_NewWindowRequested(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NewWindowRequestedEventArgs e)
+        {
+            try
+            {
+                e.Handled = true;
+                toolStripComboBoxUrl.Text = e.Uri.ToString();
+                if (toolStripComboBoxUrl.Text.Contains("https://") == false && toolStripComboBoxUrl.Text.Contains("http://") == false)
+                {
+                    toolStripComboBoxUrl.Text = "https://" + toolStripComboBoxUrl.Text;
+                }
+                webView21.CoreWebView2.Navigate(toolStripComboBoxUrl.Text);
+                updateToolStripComboBoxUrl();
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestEvents", "Ошибка: " + ex.Message);
+            }
+        }
+
+        private void webView21_ContentLoading(object sender, CoreWebView2ContentLoadingEventArgs e)
+        {
+            try
+            {
+                toolStripComboBoxUrl.Text = webView21.Source.ToString();
+                QASupportApp.LogMsg("TestEvents", "Загрузка страницы: " + webView21.Source.ToString());
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestEvents", "Ошибка: " + ex.Message);
+            }
+        }
+
+        private void webView21_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
+        {
+            try
+            {
+                toolStripComboBoxUrl.Text = webView21.Source.ToString();
+                QASupportApp.LogMsg("TestEvents", "Выполнена загрузка страницы: " + webView21.Source.ToString());
+                if (webView21.CoreWebView2.Settings.UserAgent != null && defaultUserAgent == "")
+                {
+                    defaultUserAgent = webView21.CoreWebView2.Settings.UserAgent;
+                    textBoxUserAgent.Text = defaultUserAgent;
+                }
+                if (defaultUserAgent != webView21.CoreWebView2.Settings.UserAgent) QASupportApp.LogMsg("TestEvents", "Текущий User-Agent: " + webView21.CoreWebView2.Settings.UserAgent);
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestEvents", "Ошибка: " + ex.Message);
+            }
         }
     }
 }
