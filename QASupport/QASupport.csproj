@@ -116,6 +116,7 @@
     <Compile Include="TestEvents\FormTestEvents.Designer.cs">
       <DependentUpon>FormTestEvents.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestEvents\JsonDataErrors.cs" />
     <Compile Include="TestRedirect\FormTestRedirect.cs">
       <SubType>Form</SubType>
     </Compile>

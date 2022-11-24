@@ -74,6 +74,9 @@ namespace QASupport.TestEvents
         {
             if (e != null && e.ParameterObjectAsJson != null)
             {
+                JsonDataErrors dataErrors = JsonConvert.DeserializeObject<JsonDataErrors>(e.ParameterObjectAsJson);
+                QASupportApp.LogMsg("TestEvents", $"{dataErrors.entry.level} | {dataErrors.entry.source} | {dataErrors.entry.url}");
+
                 richTextBoxErrors.AppendText(e.ParameterObjectAsJson + Environment.NewLine);
                 richTextBoxErrors.ScrollToCaret();
             }
