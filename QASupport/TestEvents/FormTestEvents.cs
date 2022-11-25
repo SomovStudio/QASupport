@@ -21,6 +21,7 @@ namespace QASupport.TestEvents
             CheckForIllegalCrossThreadCalls = false;
         }
 
+        private string errors = "";
         private string defaultUserAgent = "";
         private bool processRun = false;
         private Thread thread;
@@ -75,7 +76,9 @@ namespace QASupport.TestEvents
             if (e != null && e.ParameterObjectAsJson != null)
             {
                 JsonDataErrors dataErrors = JsonConvert.DeserializeObject<JsonDataErrors>(e.ParameterObjectAsJson);
-                QASupportApp.LogMsg("TestEvents", $"{dataErrors.entry.level} | {dataErrors.entry.source} | {dataErrors.entry.url}");
+
+                if (errors.Contains(dataErrors.entry.text) == true) return;
+                errors += dataErrors.entry.text + Environment.NewLine;
 
                 ListViewItem item;
                 ListViewItem.ListViewSubItem subitem;
@@ -108,9 +111,6 @@ namespace QASupport.TestEvents
                 int index = listViewErrors.Items.Count - 1;
                 listViewErrors.Items[index].Selected = true;
                 listViewErrors.Items[index].EnsureVisible();
-
-
-                
             }
         }
 
@@ -122,6 +122,7 @@ namespace QASupport.TestEvents
 
         private void webView21_SourceChanged(object sender, CoreWebView2SourceChangedEventArgs e)
         {
+            errors = "";
             listViewErrors.Items.Clear();
         }
 
