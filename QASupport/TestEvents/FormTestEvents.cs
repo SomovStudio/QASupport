@@ -108,9 +108,9 @@ namespace QASupport.TestEvents
                 item.SubItems.Add(subitem);
 
                 listViewErrors.Items.Add(item);
-                int index = listViewErrors.Items.Count - 1;
-                listViewErrors.Items[index].Selected = true;
-                listViewErrors.Items[index].EnsureVisible();
+                //int index = listViewErrors.Items.Count - 1;
+                //listViewErrors.Items[index].Selected = true;
+                //listViewErrors.Items[index].EnsureVisible();
             }
         }
 
@@ -242,6 +242,31 @@ namespace QASupport.TestEvents
             {
                 QASupportApp.LogMsg("TestEvents", "Ошибка: " + ex.Message);
             }
+        }
+
+        private void openStep()
+        {
+            try
+            {
+                if (listViewErrors.Items.Count <= 0) return;
+                FormTestEventsOpenError error = new FormTestEventsOpenError();
+                error.textBoxLevel.Text = listViewErrors.SelectedItems[0].SubItems[1].Text;
+                error.textBoxLineNumber.Text = listViewErrors.SelectedItems[0].SubItems[2].Text;
+                error.textBoxSource.Text = listViewErrors.SelectedItems[0].SubItems[3].Text;
+                error.textBoxText.Text = listViewErrors.SelectedItems[0].SubItems[4].Text;
+                error.textBoxUrl.Text = listViewErrors.SelectedItems[0].SubItems[5].Text;
+                error.textBoxTimestamp.Text = listViewErrors.SelectedItems[0].SubItems[6].Text;
+                error.Show();
+            }
+            catch (Exception ex)
+            {
+                QASupportApp.LogMsg("TestRedirect", "Ошибка: " + ex.Message);
+            }
+        }
+
+        private void listViewErrors_DoubleClick(object sender, EventArgs e)
+        {
+            openStep();
         }
     }
 }

@@ -116,6 +116,12 @@
     <Compile Include="TestEvents\FormTestEvents.Designer.cs">
       <DependentUpon>FormTestEvents.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestEvents\FormTestEventsOpenError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestEvents\FormTestEventsOpenError.Designer.cs">
+      <DependentUpon>FormTestEventsOpenError.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestEvents\JsonDataErrors.cs" />
     <Compile Include="TestRedirect\FormTestRedirect.cs">
       <SubType>Form</SubType>
@@ -167,6 +173,9 @@
     </Compile>
     <EmbeddedResource Include="TestEvents\FormTestEvents.resx">
       <DependentUpon>FormTestEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestEvents\FormTestEventsOpenError.resx">
+      <DependentUpon>FormTestEventsOpenError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestRedirect\FormTestRedirect.resx">
       <DependentUpon>FormTestRedirect.cs</DependentUpon>

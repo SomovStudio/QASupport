@@ -99,8 +99,8 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
@@ -816,6 +816,7 @@
             this.listViewErrors.TabIndex = 3;
             this.listViewErrors.UseCompatibleStateImageBehavior = false;
             this.listViewErrors.View = System.Windows.Forms.View.Details;
+            this.listViewErrors.DoubleClick += new System.EventHandler(this.listViewErrors_DoubleClick);
             // 
             // columnHeader4
             // 
@@ -839,15 +840,15 @@
             this.columnHeader8.Text = "text";
             this.columnHeader8.Width = 200;
             // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "timestamp";
-            this.columnHeader10.Width = 200;
-            // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "url";
             this.columnHeader9.Width = 200;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "timestamp";
+            this.columnHeader10.Width = 200;
             // 
             // toolStrip4
             // 
